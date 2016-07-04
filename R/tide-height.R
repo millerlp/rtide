@@ -1,10 +1,24 @@
 get_stations <- function(stations, harmonics) {
-  datacheckr::check_vector(stations, value = c(""))
+  check_vector(stations, value = c(""))
 
   match <- stringr::str_detect(harmonics$station, stations)
   match %<>% which()
   if (!length(match)) stop("no matching stations", call. = FALSE)
   harmonics$station[sort(unique(match))]
+}
+
+get_newdata <- function(stations, minutes = minutes, from = from, to = to, tz = tz) {
+  check_scalar(minutes, c(1L, 60L))
+  check_date(from)
+  check_date(to)
+  check_string(tz)
+
+  from <- ISOdatetime(year = lubridate::year(from), month = lubridate::month(from),
+                      day = lubridate::day(from), hour = 0, min = 0, sec = 0, tz = tz)
+  to <- ISOdatetime(year = lubridate::year(to), month = lubridate::month(to),
+                      day = lubridate::day(to), hour = 23, min = 59, sec = 59, tz = tz)
+
+  seq <- seq(from, to, by = paste(minutes, "min"))
 }
 
 #' Tide Height
@@ -32,5 +46,10 @@ tide_height <- function(
   tz = "PST8PDT") {
 
   stations %<>% get_stations(harmonics)
+  newdata <- get_newdata(stations, minutes = minutes, from = from, to = to, tz = tz)
+  # set up data...with tz and then UTC and back again
+
+
+
   stations
 }
