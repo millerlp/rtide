@@ -5,7 +5,7 @@
 \title{Tide Height}
 \usage{
 tide_height(stations = "Monterey Harbor", minutes = 60L,
-  from = as.Date("2015-01-01"), to = as.Date("2015-12-31"),
+  from = as.Date("2015-01-01"), to = as.Date("2015-01-01"),
   tz = "PST8PDT", harmonics = rtide::harmonics)
 }
 \arguments{
@@ -26,8 +26,5 @@ A tibble of the tide heights in m by the number of minutes for each station from
 }
 \description{
 Calculates tide height at specified stations based on the supplied harmonics object.
-}
-\examples{
-tide_height()
 }
 

@@ -117,12 +117,9 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
 #'
 #' @return A tibble of the tide heights in m by the number of minutes for each station from from to to.
 #' @export
-#'
-#' @examples
-#' tide_height()
 tide_height <- function(
   stations = "Monterey Harbor", minutes = 60L,
-  from = as.Date("2015-01-01"), to = as.Date("2015-12-31"), tz = "PST8PDT",
+  from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), tz = "PST8PDT",
   harmonics = rtide::harmonics) {
 
   stations %<>% tide_stations(harmonics)
