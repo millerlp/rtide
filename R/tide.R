@@ -70,7 +70,7 @@ hours_year <- function(datetime) {
 
   startdatetime <- ISOdate(year, 1, 1, 0, tz = "UTC")
   hours <- difftime(datetime, startdatetime, units = 'hours')
-  hours %<>% as.numeric()
+  hours %<>% as.integer()
   hours
 }
 
