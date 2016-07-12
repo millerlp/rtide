@@ -7,7 +7,11 @@ Depends:
     R (>= 3.3.0)
 Imports:
     datacheckr,
+    dplyr,
+    lubridate,
     magrittr,
+    plyr,
+    stringr,
     tidyr
 License: What license is it under?
 Encoding: UTF-8
