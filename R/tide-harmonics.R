@@ -71,4 +71,3 @@ format.tide_harmonics <- function(x, ...) {
 print.tide_harmonics <- function(x, ...) {
   cat(format(x, ...), "\n")
 }
-

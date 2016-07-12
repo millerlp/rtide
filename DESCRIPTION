@@ -1,7 +1,7 @@
 Package: rtide
 Title: Tide Heights
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: person("Joseph", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
 Description: Calculates tide heights based on tide station harmonics.
 Depends:
     R (>= 3.3.0)

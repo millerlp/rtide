@@ -11,13 +11,7 @@ tide_stations(stations = ".*", harmonics = rtide::harmonics)
 
 \item{harmonics}{The harmonics object.}
 }
-\value{
-A character vector of the matching stations in the harmonics object.
-}
 \description{
-Tide Stations
-}
-\examples{
-tide_stations()
+Gets vector of matching stations.
 }
 

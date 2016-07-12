@@ -1,16 +1,14 @@
 #' Tide Stations
 #'
+#' Gets vector of matching stations.
+#'
 #' @param stations A character vector of stations to match - treated as regular expressions.
 #' @param harmonics The harmonics object.
-#'
-#' @return A character vector of the matching stations in the harmonics object.
 #' @export
-#'
-#' @examples
-#' tide_stations()
 tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
   check_vector(stations, value = c(""))
-  if(!is.tide_harmonics(harmonics))
+  check_tide_harmonics(harmonics)
+  if (!is.tide_harmonics(harmonics))
     stop("harmonics must be an object of class 'tide_harmonics'", call. = FALSE)
 
   match <- stringr::str_detect(harmonics$Station$Station, stations)
@@ -85,7 +83,6 @@ tide_height_data_station <- function(data, harmonics) {
 #'
 #' @param data A data frame with the columns Station and DateTime.
 #' @inheritParams tide_stations
-#'
 #' @return A tibble of the tide heights in m.
 #' @export
 tide_height_data <- function(data, harmonics = rtide::harmonics) {
@@ -105,6 +102,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = tz))
   data %<>% dplyr::select_(~Station, ~DateTime, ~TideHeight) %>%
     dplyr::arrange_(~Station, ~DateTime)
+  data %<>% dplyr::as.tbl()
   data
 }
 
@@ -114,14 +112,12 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
 #'
 #' @inheritParams tide_stations
 #' @inheritParams tide_datetimes
-#'
 #' @return A tibble of the tide heights in m by the number of minutes for each station from from to to.
 #' @export
 tide_height <- function(
   stations = "Monterey Harbor", minutes = 60L,
   from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), tz = "PST8PDT",
   harmonics = rtide::harmonics) {
-
   stations %<>% tide_stations(harmonics)
   datetimes <- tide_datetimes(minutes = minutes, from = from, to = to, tz = tz)
 
