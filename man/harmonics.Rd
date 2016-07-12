@@ -4,12 +4,16 @@
 \name{harmonics}
 \alias{harmonics}
 \title{Harmonics}
-\format{An object of class \code{tide_harmonics} of length 5.}
+\format{An object of class \code{tide_harmonics} of length 4.}
 \usage{
 harmonics
 }
 \description{
 A object of class tide_harmonics providing tidal harmonic data for US stations.
+}
+\details{
+The tidal harmonic data was originally derived from XTide (http://www.flaterco.com/xtide/)
+by Luke Miller (https://github.com/millerlp/Misc_R_scripts).
 }
 \keyword{datasets}
 

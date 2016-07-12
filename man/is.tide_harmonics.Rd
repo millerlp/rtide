@@ -12,7 +12,4 @@ is.tide_harmonics(x)
 \description{
 Tests if object inherits from class tide_harmonics.
 }
-\examples{
-is.tide_harmonics()
-}
 

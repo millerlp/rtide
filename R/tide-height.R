@@ -10,11 +10,13 @@
 #' tide_stations()
 tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
   check_vector(stations, value = c(""))
+  if(!is.tide_harmonics(harmonics))
+    stop("harmonics must be an object of class 'tide_harmonics'", call. = FALSE)
 
-  match <- stringr::str_detect(harmonics$station, stations)
+  match <- stringr::str_detect(harmonics$Station$Station, stations)
   match %<>% which()
   if (!length(match)) stop("no matching stations", call. = FALSE)
-  harmonics$station[sort(unique(match))]
+  harmonics$Station$Station[sort(unique(match))]
 }
 
 #' Tide Date Times
@@ -58,52 +60,21 @@ hours_year <- function(datetime) {
   hours
 }
 
-station_number <- function(station, harmonics) {
-  check_string(station)
-  station <- stringr::str_detect(harmonics$station, paste0("^", station, "$")) %>% which() %>%
-    as.integer()
-  if (!length(station)) stop("no matching stations", call. = FALSE)
-  if (length(station) > 1) stop("multiple matching stations", call. = FALSE)
-  station
-}
+tide_height_data_datetime <- function(d, h) {
+  h$NodeYear <- h$NodeYear[,as.character(d$Year),,drop = FALSE]
 
-tide_height_data_row <- function(data, station, harmonics) {
+  height <- h$Station$Datum + sum(h$NodeYear[,,"NodeFactor"] * h$StationNode[,,"A"] *
+    cos((h$Node$Speed * d$Hours + h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"])
+        * pi/180))
 
-  harmonics$nodefactor
-
-    # for (i in 1:length(harms$name)) {
-  #   pred[j] = pred[j] + ((harms$nodefactor[i,times$yrindx[j]] *
-  #                           t(harms$A[stInd,i]) *
-  #                           (cos((harms$speed[i] *
-  #                                   times$hours[j] +
-  #                                   harms$equilarg[i, times$yrindx[j]] -
-  #                                   t(harms$kappa[stInd,i])) *
-  #                                  pi/180))))
-  # }
-  #
-
-  print(data)
-  # for (i in 1:length(harms$name)) {
-  #   pred[j] = pred[j] + ((harms$nodefactor[i,times$yrindx[j]] *
-  #                           t(harms$A[stInd,i]) *
-  #                           (cos((harms$speed[i] *
-  #                                   times$hours[j] +
-  #                                   harms$equilarg[i, times$yrindx[j]] -
-  #                                   t(harms$kappa[stInd,i])) *
-  #                                  pi/180))))
-  # }
-  data
+  d$TideHeight <- height
+  d
 }
 
 tide_height_data_station <- function(data, harmonics) {
-
-  station <- station_number(data$Station[1], harmonics)
-
-  data %<>% dplyr::mutate_(YearIndex = ~Year - harmonics$startyear + 1,
-                           TideHeight = ~harmonics$datum[station])
-
-  data %<>% plyr::adply(.margins = 1, .fun = tide_height_data_row,
-                        station = station, harmonics = harmonics)
+  harmonics %<>% subset(data$Station[1])
+  data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
+                        h = harmonics)
   data
 }
 
@@ -129,7 +100,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
                            Year = ~lubridate::year(DateTime),
                            Hours = ~hours_year(DateTime))
 
-  data %<>% plyr::ddply(c("Station"), tide_height_data_station, harmonics = harmonics)
+  data %<>% plyr::ddply(.variables = c("Station"), tide_height_data_station, harmonics = harmonics)
 
   data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = tz))
   data %<>% dplyr::select_(~Station, ~DateTime, ~TideHeight) %>%

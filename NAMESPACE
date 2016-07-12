@@ -2,6 +2,7 @@
 
 S3method(format,tide_harmonics)
 S3method(print,tide_harmonics)
+S3method(subset,tide_harmonics)
 export(is.tide_harmonics)
 export(tide_datetimes)
 export(tide_height)
