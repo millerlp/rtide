@@ -4,12 +4,12 @@
 \name{harmonics}
 \alias{harmonics}
 \title{Harmonics}
-\format{An object of class \code{list} of length 14.}
+\format{An object of class \code{tide_harmonics} of length 5.}
 \usage{
 harmonics
 }
 \description{
-A list of harmonics data for US sites.
+A object of class tide_harmonics providing tidal harmonic data for US stations.
 }
 \keyword{datasets}
 
