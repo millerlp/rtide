@@ -12,8 +12,7 @@ harmonics
 A object of class tide_harmonics providing tidal harmonic data for US stations.
 }
 \details{
-The tidal harmonic data was originally derived from XTide (http://www.flaterco.com/xtide/)
-by Luke Miller (https://github.com/millerlp/Misc_R_scripts).
+The data are derived from XTide (http://www.flaterco.com/xtide/).
 }
 \keyword{datasets}
 

@@ -2,7 +2,7 @@
 #'
 #' A object of class tide_harmonics providing tidal harmonic data for US stations.
 #'
-#' The data is derived from XTide (http://www.flaterco.com/xtide/).
+#' The data are derived from XTide (http://www.flaterco.com/xtide/).
 "harmonics"
 
 #' Monterey Tide Height Data

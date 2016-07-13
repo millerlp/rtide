@@ -7,7 +7,7 @@ rtide
 
 `rtide` is an R package to calculate tide heights based on tide station harmonics.
 
-It includes the harmonics for 637 US stations.
+It includes the harmonics for 637 US stations which are derived from XTide <http://www.flaterco.com/xtide/>.
 
 Usage
 -----
