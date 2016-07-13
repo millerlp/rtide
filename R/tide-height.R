@@ -1,3 +1,8 @@
+ft2m <- function(x) {
+  x %<>% magrittr::multiply_by(0.3048)
+  x
+}
+
 #' Tide Stations
 #'
 #' Gets vector of matching stations.
@@ -59,10 +64,10 @@ hours_year <- function(datetime) {
 }
 
 tide_height_data_datetime <- function(d, h) {
-  h$NodeYear <- h$NodeYear[,as.character(d$Year),,drop = FALSE]
+  h$NodeYear <- h$NodeYear[,as.character(lubridate::year(d$DateTime)),,drop = FALSE]
 
   height <- h$Station$Datum + sum(h$NodeYear[,,"NodeFactor"] * h$StationNode[,,"A"] *
-    cos((h$Node$Speed * (d$Hours - h$Station$Hours) +
+    cos((h$Node$Speed * (hours_year(d$DateTime) - h$Station$Hours) +
            h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"]) * pi/180))
 
   d$TideHeight <- height
@@ -74,7 +79,7 @@ tide_height_data_station <- function(data, harmonics) {
   data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
                         h = harmonics)
   if (harmonics$Station$Units %in% c("feet", "ft"))
-    data %<>% dplyr::mutate_(TideHeight = ~TideHeight * 0.3048)
+    data %<>% dplyr::mutate_(TideHeight = ~ft2m(TideHeight))
   data
 }
 
@@ -95,16 +100,12 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   if (length(stations)) stop("unrecognised stations", call. = FALSE)
 
   tz <- lubridate::tz(data$DateTime)
-  data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = "UTC"),
-                           Year = ~lubridate::year(DateTime),
-                           Hours = ~hours_year(DateTime))
+  data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = "UTC"))
 
   data %<>% plyr::ddply(.variables = c("Station"), tide_height_data_station, harmonics = harmonics)
 
   data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = tz))
-  data %<>% dplyr::inner_join(harmonics$Station, by = "Station") %>%
-    dplyr::select_(~Station, ~DateTime, ~TideHeight, ~TZ, ~Longitude, ~Latitude) %>%
-    dplyr::arrange_(~Station, ~DateTime)
+  data %<>% dplyr::arrange_(~Station, ~DateTime)
   data %<>% dplyr::as.tbl()
   data
 }
