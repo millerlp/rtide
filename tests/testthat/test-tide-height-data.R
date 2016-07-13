@@ -17,5 +17,5 @@ test_that("tide_height_data predictions", {
   expect_equal(rtide::monterey$MLLW,
                tide_height_data(rtide::monterey)$TideHeight, tolerance = 0.002)
   expect_equal(rtide::brandywine$MLLW,
-               tide_height_data(rtide::brandywine)$TideHeight, tolerance = 1)
+               tide_height_data(rtide::brandywine)$TideHeight, tolerance = 0.002)
 })
