@@ -48,6 +48,8 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
 
 To install and load the development version from GitHub
 ```
-devtools::install_github("rtide")
-library(rtide)
+install.packages("devtools") # if not already installed
+
+library(devtools)
+install_github("poissonconsulting/rtide")
 ```

@@ -5,7 +5,7 @@ rtide
 
 `rtide` is an R package to calculate tide heights based on tide station harmonics.
 
-It includes the harmonics for 637 US reference stations.
+It includes the harmonics for 637 US stations.
 
 Usage
 -----
@@ -57,5 +57,7 @@ Installation
 
 To install and load the development version from GitHub
 
-    devtools::install_github("rtide")
-    library(rtide)
+    install.packages("devtools") # if not already installed
+
+    library(devtools)
+    install_github("poissonconsulting/rtide")
