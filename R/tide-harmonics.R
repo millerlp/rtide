@@ -17,7 +17,10 @@ check_tide_harmonics <- function(x) {
   check_data2(x$Station, values = list(
     Station = "",
     Units = c("feet", "ft", "m", "metre"),
-    TimeZone = c(-12,12),
+    Longitude = 1,
+    Latitude = 1,
+    Hours = c(-12,12),
+    TZ = "",
     Datum = 1))
 
   x
@@ -33,7 +36,7 @@ tide_harmonics <- function (x) {
 
   x$Station <- dplyr::data_frame(
     Station = x$station, Units = x$unit, Longitude = x$longitude, Latitude = x$latitude,
-    TimeZone = x$timezone, TZFile = x$tzfile, Datum = x$datum)
+    Hours = x$timezone, TZ = x$tzfile, Datum = x$datum)
 
   x$Node <- dplyr::data_frame(Node = x$name, Speed = x$speed)
   x$StationNode <- abind::abind(A = x$A, Kappa = x$kappa, along = 3)

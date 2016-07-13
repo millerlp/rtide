@@ -62,7 +62,7 @@ tide_height_data_datetime <- function(d, h) {
   h$NodeYear <- h$NodeYear[,as.character(d$Year),,drop = FALSE]
 
   height <- h$Station$Datum + sum(h$NodeYear[,,"NodeFactor"] * h$StationNode[,,"A"] *
-    cos((h$Node$Speed * (d$Hours - h$Station$TimeZone) +
+    cos((h$Node$Speed * (d$Hours - h$Station$Hours) +
            h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"]) * pi/180))
 
   d$TideHeight <- height
@@ -102,7 +102,8 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   data %<>% plyr::ddply(.variables = c("Station"), tide_height_data_station, harmonics = harmonics)
 
   data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = tz))
-  data %<>% dplyr::select_(~Station, ~DateTime, ~TideHeight) %>%
+  data %<>% dplyr::inner_join(harmonics$Station, by = "Station") %>%
+    dplyr::select_(~Station, ~DateTime, ~TideHeight, ~TZ, ~Longitude, ~Latitude) %>%
     dplyr::arrange_(~Station, ~DateTime)
   data %<>% dplyr::as.tbl()
   data
@@ -118,7 +119,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
 #' @export
 tide_height <- function(
   stations = "Monterey Harbor", minutes = 60L,
-  from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), tz = "PST8PDT",
+  from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), tz = "UTC",
   harmonics = rtide::harmonics) {
   stations %<>% tide_stations(harmonics)
   datetimes <- tide_datetimes(minutes = minutes, from = from, to = to, tz = tz)
