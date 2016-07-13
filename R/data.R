@@ -6,15 +6,14 @@
 #' by Luke Miller (https://github.com/millerlp/Misc_R_scripts).
 "harmonics"
 
-#' Monterey Tide Height Data
+#' Tide Height Data
 #'
-#' High/Low Tide Predictions for Monterey (StationID: 9413450).
-#'
-#' The predictions were taken from \url{http://tidesandcurrents.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=9413450}.
+#' High/Low Tide Predictions from \url{http://tidesandcurrents.noaa.gov/tide_predictions.html}.
 #'
 #' @format A tbl data frame:
 #' \describe{
+#'   \item{Station}{The station name (chr).}
 #'   \item{DateTime}{The date time (time).}
 #'   \item{MLLW}{The tide height in m (dbl).}
 #' }
-"monterey"
+"mllw"

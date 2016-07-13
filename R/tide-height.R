@@ -16,6 +16,7 @@ tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
   if (!is.tide_harmonics(harmonics))
     stop("harmonics must be an object of class 'tide_harmonics'", call. = FALSE)
 
+  stations <- paste0("(", paste(stations, collapse = ")|("), ")")
   match <- stringr::str_detect(harmonics$Station$Station, stations)
   match %<>% which()
   if (!length(match)) stop("no matching stations", call. = FALSE)
@@ -95,9 +96,8 @@ tide_height_data_station <- function(data, harmonics) {
 tide_height_data <- function(data, harmonics = rtide::harmonics) {
   data %<>% check_data2(values = list(Station = "", DateTime = Sys.time()))
 
-  stations <- unique(data$Station)
-  stations <- stations[!stations %in% tide_stations(stations, harmonics)]
-  if (length(stations)) stop("unrecognised stations", call. = FALSE)
+  if (!all(data$Station %in% tide_stations()))
+    stop("unrecognised stations", call. = FALSE)
 
   tz <- lubridate::tz(data$DateTime)
   data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = "UTC"))

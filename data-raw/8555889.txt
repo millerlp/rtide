@@ -1,0 +1,22 @@
+NOAA/NOS/CO-OPS
+Disclaimer: These data are based upon the latest information available as of the date of your request, and may differ from the published tide tables.
+Daily Tide Prediction
+StationName: Brandywine Shoal Light
+State: DE
+Stationid: 8555889
+Prediction Type: Harmonic
+From: 20160713 12:00AM - 20160714 11:59PM
+Units: Feet
+Time Zone: LST/LDT
+Datum: MLLW
+Interval Type: High/Low Tide Predictions
+
+Date 	Day	Time	Pred	High/Low
+2016/07/13	Wed	04:06 AM	4.25	H
+2016/07/13	Wed	10:16 AM	0.59	L
+2016/07/13	Wed	04:46 PM	4.73	H
+2016/07/13	Wed	10:56 PM	0.88	L
+2016/07/14	Thu	05:02 AM	4.18	H
+2016/07/14	Thu	11:04 AM	0.62	L
+2016/07/14	Thu	05:37 PM	4.91	H
+2016/07/14	Thu	11:50 PM	0.83	L

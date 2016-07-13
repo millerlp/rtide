@@ -3,7 +3,9 @@
 rtide
 =====
 
-`rtide` is an R package to calculate tide heights based on tide station harmonics. It includes the harmonics for US reference stations.
+`rtide` is an R package to calculate tide heights based on tide station harmonics.
+
+It includes the harmonics for 637 US reference stations.
 
 Usage
 -----
@@ -17,7 +19,7 @@ data <- rtide::tide_height(
   minutes = 10L, tz = "PST8PDT")
 
 print(data)
-#> Source: local data frame [144 x 6]
+#> Source: local data frame [144 x 3]
 #> 
 #>                                  Station            DateTime TideHeight
 #>                                    (chr)              (time)      (dbl)
@@ -32,7 +34,6 @@ print(data)
 #> 9  Monterey, Monterey Harbor, California 2015-01-01 01:20:00  0.6512954
 #> 10 Monterey, Monterey Harbor, California 2015-01-01 01:30:00  0.6667771
 #> ..                                   ...                 ...        ...
-#> Variables not shown: TZ (chr), Longitude (dbl), Latitude (dbl)
 ```
 
 ``` r
