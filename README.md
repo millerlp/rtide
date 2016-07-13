@@ -1,5 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+[![Travis-CI Build Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.org/poissonconsulting/rtide)
+
 rtide
 =====
 
@@ -19,10 +21,9 @@ data <- rtide::tide_height(
   minutes = 10L, tz = "PST8PDT")
 
 print(data)
-#> Source: local data frame [144 x 3]
-#> 
+#> # A tibble: 144 x 3
 #>                                  Station            DateTime TideHeight
-#>                                    (chr)              (time)      (dbl)
+#>                                    <chr>              <time>      <dbl>
 #> 1  Monterey, Monterey Harbor, California 2015-01-01 00:00:00  0.6452338
 #> 2  Monterey, Monterey Harbor, California 2015-01-01 00:10:00  0.6353040
 #> 3  Monterey, Monterey Harbor, California 2015-01-01 00:20:00  0.6281772
@@ -33,7 +34,7 @@ print(data)
 #> 8  Monterey, Monterey Harbor, California 2015-01-01 01:10:00  0.6391874
 #> 9  Monterey, Monterey Harbor, California 2015-01-01 01:20:00  0.6512954
 #> 10 Monterey, Monterey Harbor, California 2015-01-01 01:30:00  0.6667771
-#> ..                                   ...                 ...        ...
+#> # ... with 134 more rows
 ```
 
 ``` r
