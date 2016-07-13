@@ -1,7 +1,10 @@
 Package: rtide
 Title: Tide Heights
 Version: 0.0.0.9000
-Authors@R: person("Joseph", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"))
+Date: 2016-07-13
+Authors@R: c(
+    person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
+    person("Luke", "Miller", email = "contact@lukemiller.org", role = "aut"))
 Description: Calculates tide heights based on tide station harmonics.
 Depends:
     R (>= 3.3.0)
@@ -19,7 +22,7 @@ Suggests:
     ggplot2,
     scales,
     testthat
-License: What license is it under?
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
