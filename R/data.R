@@ -6,7 +6,7 @@
 #' by Luke Miller (https://github.com/millerlp/Misc_R_scripts).
 "harmonics"
 
-#' Tide Height Data
+#' Monterey Tide Height Data
 #'
 #' High/Low Tide Predictions from \url{http://tidesandcurrents.noaa.gov/tide_predictions.html}.
 #'
@@ -16,4 +16,16 @@
 #'   \item{DateTime}{The date time (time).}
 #'   \item{MLLW}{The tide height in m (dbl).}
 #' }
-"mllw"
+"monterey"
+
+#' Brandywine Tide Height Data
+#'
+#' High/Low Tide Predictions from \url{http://tidesandcurrents.noaa.gov/tide_predictions.html}.
+#'
+#' @format A tbl data frame:
+#' \describe{
+#'   \item{Station}{The station name (chr).}
+#'   \item{DateTime}{The date time (time).}
+#'   \item{MLLW}{The tide height in m (dbl).}
+#' }
+"brandywine"
