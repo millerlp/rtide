@@ -3,28 +3,43 @@
 rtide
 =====
 
-`rtide` is an R package to calculate tide heights based on tide station harmonics. It includes the harmonics for US stations.
-
-Disclaimer
-----------
-
-`rtide` is not suitable for navigation.
+`rtide` is an R package to calculate tide heights based on tide station harmonics. It includes the harmonics for US reference stations.
 
 Usage
 -----
 
 ``` r
-library(lubridate)
-library(ggplot2)
-library(scales)
 library(rtide)
-```
+#> rtide is not suitable for navigation
 
-``` r
 data <- rtide::tide_height(
   "Monterey Harbor", from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), 
   minutes = 10L, tz = "PST8PDT")
 
+print(data)
+#> # A tibble: 144 x 6
+#>                                  Station            DateTime TideHeight
+#>                                    <chr>              <time>      <dbl>
+#> 1  Monterey, Monterey Harbor, California 2015-01-01 00:00:00  0.6452338
+#> 2  Monterey, Monterey Harbor, California 2015-01-01 00:10:00  0.6452338
+#> 3  Monterey, Monterey Harbor, California 2015-01-01 00:20:00  0.6452338
+#> 4  Monterey, Monterey Harbor, California 2015-01-01 00:30:00  0.6452338
+#> 5  Monterey, Monterey Harbor, California 2015-01-01 00:40:00  0.6452338
+#> 6  Monterey, Monterey Harbor, California 2015-01-01 00:50:00  0.6452338
+#> 7  Monterey, Monterey Harbor, California 2015-01-01 01:00:00  0.6304487
+#> 8  Monterey, Monterey Harbor, California 2015-01-01 01:10:00  0.6304487
+#> 9  Monterey, Monterey Harbor, California 2015-01-01 01:20:00  0.6304487
+#> 10 Monterey, Monterey Harbor, California 2015-01-01 01:30:00  0.6304487
+#> # ... with 134 more rows, and 3 more variables: TZ <chr>, Longitude <dbl>,
+#> #   Latitude <dbl>
+```
+
+``` r
+library(ggplot2)
+library(scales)
+```
+
+``` r
 ggplot(data = data, aes(x = DateTime, y = TideHeight)) + 
   geom_line() + 
   scale_x_datetime(name = "1st January 2015", 
@@ -33,7 +48,7 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   ggtitle("Monterey Harbour")
 ```
 
-![](README-unnamed-chunk-3-1.png)
+![](README-unnamed-chunk-4-1.png)
 
 Installation
 ------------
