@@ -1,14 +1,25 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-rtide
-=====
 
-R package to calculate tide heights
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
 
-``` r
+# rtide
+
+`rtide` is an R package to calculate tide heights based on tide station harmonics.
+It includes the harmonics for US stations.
+
+```{r}
 library(ggplot2)
 library(rtide)
-#> rtide is not suitable for navigation
 data <- tide_height(
   "Monterey Harbor", from = as.Date("2015-01-01"), to = as.Date("2015-01-01"),
   minutes = 10L, tz = "PST8PDT")
@@ -21,4 +32,10 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   expand_limits(y = 0)
 ```
 
-![](README-unnamed-chunk-2-1.png)
+## Installation
+
+To install and load the development version from GitHub
+```
+devtools::install_github("rtide")
+library(rtide)
+```
