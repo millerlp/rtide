@@ -62,8 +62,8 @@ tide_height_data_datetime <- function(d, h) {
   h$NodeYear <- h$NodeYear[,as.character(d$Year),,drop = FALSE]
 
   height <- h$Station$Datum + sum(h$NodeYear[,,"NodeFactor"] * h$StationNode[,,"A"] *
-    cos((h$Node$Speed * (d$Hours - h$Station$TimeZone) + h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"])
-        * pi/180))
+    cos((h$Node$Speed * (d$Hours - h$Station$TimeZone) +
+           h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"]) * pi/180))
 
   d$TideHeight <- height
   d
@@ -73,6 +73,8 @@ tide_height_data_station <- function(data, harmonics) {
   harmonics %<>% subset(data$Station[1])
   data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
                         h = harmonics)
+  if (harmonics$Station$Units %in% c("feet", "ft"))
+    data %<>% dplyr::mutate_(TideHeight = ~TideHeight * 0.3048)
   data
 }
 

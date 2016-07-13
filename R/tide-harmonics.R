@@ -14,6 +14,12 @@ check_tide_harmonics <- function(x) {
   if (!all(c("Station", "Node", "StationNode", "NodeYear") %in% names(x)))
     stop("x is missing components", call. = FALSE)
 
+  check_data2(x$Station, values = list(
+    Station = "",
+    Units = c("feet", "ft", "m", "metre"),
+    TimeZone = c(-12,12),
+    Datum = 1))
+
   x
 }
 
