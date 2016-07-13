@@ -62,7 +62,7 @@ tide_height_data_datetime <- function(d, h) {
   h$NodeYear <- h$NodeYear[,as.character(d$Year),,drop = FALSE]
 
   height <- h$Station$Datum + sum(h$NodeYear[,,"NodeFactor"] * h$StationNode[,,"A"] *
-    cos((h$Node$Speed * d$Hours + h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"])
+    cos((h$Node$Speed * (d$Hours - h$Station$TimeZone) + h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"])
         * pi/180))
 
   d$TideHeight <- height
