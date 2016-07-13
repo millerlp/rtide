@@ -17,21 +17,22 @@ data <- rtide::tide_height(
   minutes = 10L, tz = "PST8PDT")
 
 print(data)
-#> # A tibble: 144 x 6
+#> Source: local data frame [144 x 6]
+#> 
 #>                                  Station            DateTime TideHeight
-#>                                    <chr>              <time>      <dbl>
+#>                                    (chr)              (time)      (dbl)
 #> 1  Monterey, Monterey Harbor, California 2015-01-01 00:00:00  0.6452338
-#> 2  Monterey, Monterey Harbor, California 2015-01-01 00:10:00  0.6452338
-#> 3  Monterey, Monterey Harbor, California 2015-01-01 00:20:00  0.6452338
-#> 4  Monterey, Monterey Harbor, California 2015-01-01 00:30:00  0.6452338
-#> 5  Monterey, Monterey Harbor, California 2015-01-01 00:40:00  0.6452338
-#> 6  Monterey, Monterey Harbor, California 2015-01-01 00:50:00  0.6452338
+#> 2  Monterey, Monterey Harbor, California 2015-01-01 00:10:00  0.6353040
+#> 3  Monterey, Monterey Harbor, California 2015-01-01 00:20:00  0.6281772
+#> 4  Monterey, Monterey Harbor, California 2015-01-01 00:30:00  0.6240083
+#> 5  Monterey, Monterey Harbor, California 2015-01-01 00:40:00  0.6229294
+#> 6  Monterey, Monterey Harbor, California 2015-01-01 00:50:00  0.6250485
 #> 7  Monterey, Monterey Harbor, California 2015-01-01 01:00:00  0.6304487
-#> 8  Monterey, Monterey Harbor, California 2015-01-01 01:10:00  0.6304487
-#> 9  Monterey, Monterey Harbor, California 2015-01-01 01:20:00  0.6304487
-#> 10 Monterey, Monterey Harbor, California 2015-01-01 01:30:00  0.6304487
-#> # ... with 134 more rows, and 3 more variables: TZ <chr>, Longitude <dbl>,
-#> #   Latitude <dbl>
+#> 8  Monterey, Monterey Harbor, California 2015-01-01 01:10:00  0.6391874
+#> 9  Monterey, Monterey Harbor, California 2015-01-01 01:20:00  0.6512954
+#> 10 Monterey, Monterey Harbor, California 2015-01-01 01:30:00  0.6667771
+#> ..                                   ...                 ...        ...
+#> Variables not shown: TZ (chr), Longitude (dbl), Latitude (dbl)
 ```
 
 ``` r
