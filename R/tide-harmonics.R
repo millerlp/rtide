@@ -38,6 +38,8 @@ tide_harmonics <- function (x) {
     Station = x$station, Units = x$unit, Longitude = x$longitude, Latitude = x$latitude,
     Hours = x$timezone, TZ = x$tzfile, Datum = x$datum)
 
+  x$Station$Station %<>% enc2utf8()
+
   x$Node <- dplyr::data_frame(Node = x$name, Speed = x$speed)
   x$StationNode <- abind::abind(A = x$A, Kappa = x$kappa, along = 3)
   dimnames(x$StationNode) <- list(x$Station$Station, x$Node$Node, c("A", "Kappa"))
