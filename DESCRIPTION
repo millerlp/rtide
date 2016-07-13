@@ -16,7 +16,9 @@ Imports:
     tidyr,
     utils
 Suggests:
-    ggplot2
+    ggplot2,
+    scales,
+    testthat
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
