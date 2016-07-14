@@ -39,19 +39,15 @@ tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
 #' tide_datetimes()
 tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.Date("2015-12-31"),
                            tz = "PST8PDT") {
-   if ( class(minutes) == 'integer'){ # Check integer values
-	   check_scalar(minutes, c(1L, 60L))
-   } else if ( class(minutes) == 'numeric'){ # Deal with integer vales
-	   if ( minutes %% 1 != 0) {	# If modulo isn't 0, decimal value is present
-		warning("Truncating minutes interval to whole number",call.=FALSE)
-		minutes <- as.integer(minutes) # Truncates decimal values
-		check_scalar(minutes, c(1L, 60L)) # Check interval
-	   } else { # minutes was a whole number, but not declared as integer
-		   minutes <- as.integer(minutes) # Silently convert to integer
-		   check_scalar(minutes, c(1L, 60L)) # Check interval
-	   }
-   }
-#  check_scalar(minutes, c(1L, 60L))
+
+  if (class(minutes) == "numeric"){
+    check_scalar(minutes, c(1,60))
+    if (minutes %% 1 != 0)	# If modulo isn't 0, decimal value is present
+      warning("Truncating minutes interval to whole number", call.=FALSE)
+    minutes %<>% as.integer()
+  }
+  check_scalar(minutes, c(1L, 60L))
+
   check_date(from)
   check_date(to)
   check_string(tz)
@@ -80,8 +76,8 @@ tide_height_data_datetime <- function(d, h) {
   h$NodeYear <- h$NodeYear[,as.character(lubridate::year(d$DateTime)),,drop = FALSE]
 
   height <- h$Station$Datum + sum(h$NodeYear[,,"NodeFactor"] * h$StationNode[,,"A"] *
-    cos((h$Node$Speed * (hours_year(d$DateTime) - h$Station$Hours) +
-           h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"]) * pi/180))
+                                    cos((h$Node$Speed * (hours_year(d$DateTime) - h$Station$Hours) +
+                                           h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"]) * pi/180))
 
   d$TideHeight <- height
   d
@@ -90,7 +86,7 @@ tide_height_data_datetime <- function(d, h) {
 tide_height_data_station <- function(data, harmonics) {
   harmonics %<>% subset(data$Station[1])
   data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
-                        h = harmonics)
+                      h = harmonics)
   if (harmonics$Station$Units %in% c("feet", "ft"))
     data %<>% dplyr::mutate_(TideHeight = ~ft2m(TideHeight))
   data
