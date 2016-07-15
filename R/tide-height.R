@@ -107,6 +107,9 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   if (!all(data$Station %in% tide_stations()))
     stop("unrecognised stations", call. = FALSE)
 
+  if (tibble::has_name(data, "TideHeight"))
+    stop("data already has 'TideHeight' column", call. = FALSE)
+
   tz <- lubridate::tz(data$DateTime)
   data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = "UTC"))
 

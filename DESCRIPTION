@@ -17,6 +17,7 @@ Imports:
     plyr,
     stringr,
     tidyr,
+    tibble,
     utils
 Suggests:
     ggplot2,

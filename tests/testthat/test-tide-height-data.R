@@ -19,3 +19,14 @@ test_that("tide_height_data predictions", {
   expect_equal(rtide::brandywine$MLLW,
                tide_height_data(rtide::brandywine)$TideHeight, tolerance = 0.002)
 })
+
+test_that("tide_height_data checks", {
+
+  data <- data.frame(Station = "Monterey, Monterey Harbor, California",
+                     DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
+                     stringsAsFactors = FALSE)
+
+  data$TideHeight <- 1
+
+  expect_error(tide_height_data(data), "data already has 'TideHeight' column")
+})
