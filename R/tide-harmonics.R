@@ -21,8 +21,31 @@ check_tide_harmonics <- function(x) {
     Latitude = 1,
     Hours = c(-12,12),
     TZ = "",
-    Datum = 1))
+    Datum = 1),
+    key = "Station")
 
+  check_data2(x$Node, values = list(
+    Node = "",
+    Speed = 1),
+    key = "Node")
+
+  if (!is.array(x$StationNode)) stop("StationNode must be an array", call. = FALSE)
+  if (!is.array(x$NodeYear)) stop("NodeYear must be an array", call. = FALSE)
+  if (mode(x$StationNode) != "numeric")
+    stop("StationNode must be a numeric array", call. = FALSE)
+  if (mode(x$NodeYear) != "numeric")
+    stop("NodeYear must be a numeric array", call. = FALSE)
+
+  if (!identical(dimnames(x$StationNode), list(x$Station$Station, x$Node$Node, c("A", "Kappa"))))
+    stop("StationNode has invalid dimnames", call. = FALSE)
+
+  if (!identical(dimnames(x$NodeYear)[c(1,3)], list(x$Node$Node, c("NodeFactor", "EquilArg"))))
+    stop("NodeYear has invalid dimnames", call. = FALSE)
+
+  years <- dimnames(x$NodeYear)[2][[1]]
+  years <- as.numeric(years)
+  years <- diff(years)
+  if (!all(years == 1)) stop("NodeYear has invalid dimnames", call. = FALSE)
   x
 }
 
@@ -30,8 +53,8 @@ tide_harmonics <- function (x) {
   if (!is.list(x)) stop("x must be a list", call. = FALSE)
 
   if (!all(c("name", "speed", "startyear", "equilarg", "nodefactor", "station",
-            "units", "longitude", "latitude", "timezone", "tzfile", "datum",
-            "A", "kappa") %in% names(x))) stop("x missing components", call. = FALSE)
+             "units", "longitude", "latitude", "timezone", "tzfile", "datum",
+             "A", "kappa") %in% names(x))) stop("x missing components", call. = FALSE)
 
 
   x$Station <- dplyr::data_frame(
