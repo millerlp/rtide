@@ -44,9 +44,9 @@ tide_harmonics <- function (x) {
   x$StationNode <- abind::abind(A = x$A, Kappa = x$kappa, along = 3)
   dimnames(x$StationNode) <- list(x$Station$Station, x$Node$Node, c("A", "Kappa"))
 
-  x$NodeYear <- abind::abind(EquilArg = x$equilarg, NodeFactor = x$nodefactor, along = 3)
+  x$NodeYear <- abind::abind(NodeFactor = x$nodefactor, EquilArg = x$equilarg, along = 3)
   dimnames(x$NodeYear) <- list(x$Node$Node, seq(x$startyear, length.out = dim(x$NodeYear)[2]),
-                               c("EquilArg", "NodeFactor"))
+                               c("NodeFactor", "EquilArg"))
 
   x <- x[c("Station", "Node", "StationNode", "NodeYear")]
 
