@@ -104,7 +104,7 @@ tide_height_data_station <- function(data, harmonics) {
 tide_height_data <- function(data, harmonics = rtide::harmonics) {
   data %<>% check_data2(values = list(Station = "", DateTime = Sys.time()))
 
-  if (!all(data$Station %in% tide_stations()))
+  if (!all(data$Station %in% tide_stations(harmonics = harmonics)))
     stop("unrecognised stations", call. = FALSE)
 
   if (tibble::has_name(data, "TideHeight"))
