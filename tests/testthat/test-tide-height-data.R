@@ -35,3 +35,17 @@ test_that("tide_height_data checks", {
   year(data$DateTime) <- 1699
   expect_error(tide_height_data(data), "years are outside harmonics range")
 })
+
+test_that("tide_height_data tz", {
+  library(lubridate)
+
+  data <- data.frame(Station = "Monterey, Monterey Harbor, California",
+                     DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
+                     stringsAsFactors = FALSE)
+
+  data2 <- data
+  data2$DateTime <- lubridate::with_tz(data2$DateTime, tz = "EST")
+
+  expect_equal(tide_height_data(data), tide_height_data(data2))
+})
+
