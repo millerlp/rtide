@@ -113,6 +113,10 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   tz <- lubridate::tz(data$DateTime)
   data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = "UTC"))
 
+  years <- range(lubridate::year(data$DateTime), na.rm = TRUE)
+  if (!all(years %in% years_tide_harmonics(harmonics)))
+    stop("years are outside harmonics range", call. = FALSE)
+
   data %<>% plyr::ddply(.variables = c("Station"), tide_height_data_station, harmonics = harmonics)
 
   data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = tz))

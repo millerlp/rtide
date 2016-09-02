@@ -21,6 +21,7 @@ test_that("tide_height_data predictions", {
 })
 
 test_that("tide_height_data checks", {
+  library(lubridate)
 
   data <- data.frame(Station = "Monterey, Monterey Harbor, California",
                      DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
@@ -29,4 +30,8 @@ test_that("tide_height_data checks", {
   data$TideHeight <- 1
 
   expect_error(tide_height_data(data), "data already has 'TideHeight' column")
+
+  data$TideHeight <- NULL
+  year(data$DateTime) <- 1699
+  expect_error(tide_height_data(data), "years are outside harmonics range")
 })

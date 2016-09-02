@@ -105,3 +105,9 @@ format.tide_harmonics <- function(x, ...) {
 print.tide_harmonics <- function(x, ...) {
   cat(format(x, ...), "\n")
 }
+
+years_tide_harmonics <- function(x) {
+  x <- dimnames(x$NodeYear)[[2]]
+  x %<>% as.character() %>% as.integer()
+  x
+}
