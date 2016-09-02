@@ -1,6 +1,6 @@
 Package: rtide
 Title: Tide Heights
-Version: 0.0.1.9001
+Version: 0.0.2
 Date: 2016-09-02
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
@@ -10,6 +10,7 @@ Description: Calculates tide heights based on tide station harmonics.
     The harmonics data was converted from harmonics-dwf-20151227-free,
     NOAA web site data processed by David Flater for XTide.
     The code to calculate tide heights from the harmonics is based on XTide.
+URL: https://github.com/poissonconsulting/rtide
 Depends:
     R (>= 3.3.0)
 Imports:

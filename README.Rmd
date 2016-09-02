@@ -16,14 +16,16 @@ knitr::opts_chunk$set(
 
 # rtide
 
+## Introduction
+
 `rtide` is an R package to calculate tide heights based on tide station harmonics.
 
 It includes the harmonics data for `r length(rtide::tide_stations())` US stations.
 The harmonics data was converted from harmonics-dwf-20151227-free, NOAA web site data
 processed by David Flater for XTide.
-The code to calculate tide heights from the harmonics is based on XTide.
+The code to calculate tide heights from the harmonics is based on [XTide](http://www.flaterco.com/xtide/).
 
-## Usage
+## Utilisation
 
 ```{r}
 library(rtide)
@@ -51,11 +53,23 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
 
 ## Installation
 
-To install and load the development version from GitHub
+To install the release version from CRAN
 ```
-install.packages("devtools") # if not already installed
+install.packages("rtide")
+```
 
-library(devtools)
-install_github("poissonconsulting/rtide")
-library(rtide)
+Or the development version from GitHub
 ```
+# install.packages("devtools")
+devtools::install_github("poissonconsulting/rtide")
+```
+
+## Contribution
+
+Please [report](https://github.com/poissonconsulting/rtide/issues) any issues.
+
+[Pull requests](https://github.com/poissonconsulting/rtide/pulls) and [suggestions](https://github.com/poissonconsulting/rtide/issues) for improvements are always welcome.
+
+## Inspiration
+
+- [XTide](http://www.flaterco.com/xtide/)

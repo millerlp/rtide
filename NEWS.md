@@ -1,7 +1,9 @@
 # NEWS rtide
 
-- Improved harmonics data checking.
+#### v0.0.2
+
+- Released on CRAN
 
 #### v0.0.1
 
-- Initial Release
+- Released on GitHub

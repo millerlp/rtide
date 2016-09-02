@@ -5,12 +5,15 @@
 rtide
 =====
 
+Introduction
+------------
+
 `rtide` is an R package to calculate tide heights based on tide station harmonics.
 
-It includes the harmonics data for 637 US stations. Converted from harmonics-dwf-20151227-free, NOAA web site data processed by David Flater for XTide.
+It includes the harmonics data for 637 US stations. The harmonics data was converted from harmonics-dwf-20151227-free, NOAA web site data processed by David Flater for XTide. The code to calculate tide heights from the harmonics is based on [XTide](http://www.flaterco.com/xtide/).
 
-Usage
------
+Utilisation
+-----------
 
 ``` r
 library(rtide)
@@ -21,9 +24,9 @@ data <- rtide::tide_height(
   minutes = 10L, tz = "PST8PDT")
 
 print(data)
-#> # A tibble: 144 x 3
+#> # A tibble: 144 × 3
 #>                                  Station            DateTime TideHeight
-#>                                    <chr>              <time>      <dbl>
+#>                                    <chr>              <dttm>      <dbl>
 #> 1  Monterey, Monterey Harbor, California 2015-01-01 00:00:00  0.6452338
 #> 2  Monterey, Monterey Harbor, California 2015-01-01 00:10:00  0.6353040
 #> 3  Monterey, Monterey Harbor, California 2015-01-01 00:20:00  0.6281772
@@ -56,9 +59,23 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
 Installation
 ------------
 
-To install and load the development version from GitHub
+To install the release version from CRAN
 
-    install.packages("devtools") # if not already installed
+    install.packages("rtide")
 
-    library(devtools)
-    install_github("poissonconsulting/rtide")
+Or the development version from GitHub
+
+    # install.packages("devtools")
+    devtools::install_github("poissonconsulting/rtide")
+
+Contribution
+------------
+
+Please [report](https://github.com/poissonconsulting/rtide/issues) any issues.
+
+[Pull requests](https://github.com/poissonconsulting/rtide/pulls) and [suggestions](https://github.com/poissonconsulting/rtide/issues) for improvements are always welcome.
+
+Inspiration
+-----------
+
+-   [XTide](http://www.flaterco.com/xtide/)
