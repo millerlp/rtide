@@ -16,6 +16,7 @@ tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
   if (!is.tide_harmonics(harmonics))
     stop("harmonics must be an object of class 'tide_harmonics'", call. = FALSE)
 
+  stations %<>% stringr::str_replace_all("[(]", "[(]") %>% stringr::str_replace_all("[)]", "[)]")
   stations <- paste0("(", paste(stations, collapse = ")|("), ")")
   match <- stringr::str_detect(harmonics$Station$Station, stations)
   match %<>% which()
