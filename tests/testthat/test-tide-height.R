@@ -7,4 +7,6 @@ test_that("tide_height works", {
     Station = "", DateTime = Sys.time(), TideHeight = 1),
     min_row = 24, max_row = 24,
     key = "DateTime"))
+
+  expect_df(tide_height(stations = ".*"))
 })

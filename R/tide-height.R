@@ -85,7 +85,7 @@ tide_height_data_datetime <- function(d, h) {
 }
 
 tide_height_data_station <- function(data, harmonics) {
-  harmonics %<>% subset(data$Station[1])
+  harmonics %<>% subset(stringr::str_c("^", data$Station[1], "$"))
   data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
                       h = harmonics)
   if (harmonics$Station$Units %in% c("feet", "ft"))
