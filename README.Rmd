@@ -16,7 +16,14 @@ knitr::opts_chunk$set(
 [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/598p54bq0m5qv0j1/branch/master?svg=true)](https://ci.appveyor.com/project/joethorley/rtide/branch/master)
 [![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
-[![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rtide)](https://hadley.shinyapps.io/cran-downloads)
+[![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rtide)](https://cran.r-project.org/package=rtide)
+
+Found the following (possibly) invalid URLs:
+  URL: https://hadley.shinyapps.io/cran-downloads
+    From: README.md
+    Status: 404
+    Message: Not Found
+    
 
 # rtide
 
