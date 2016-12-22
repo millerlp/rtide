@@ -6,3 +6,4 @@
 .DS_Store
 .settings/de.walware.r.core.prefs
 *.project
+.Rapp.history
