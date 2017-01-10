@@ -2,6 +2,7 @@
 # Conservation Metrics Inc
 # www.conservationmetrics.com
 # 10 Jan 2016
+# abram AT conservationmetrics.com
 
 # use rvest to scrape station info from NOAA site
 library(stringr)
