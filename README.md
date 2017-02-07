@@ -20,19 +20,19 @@ library(rtide)
 #> rtide is not suitable for navigation
 
 data <- rtide::tide_height(
-  "Monterey Harbor", from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), 
+  "Monterey Harbor", from = as.Date("2016-07-13"), to = as.Date("2016-07-15"), 
   minutes = 10L, tz = "PST8PDT")
 
 print(head(data))
 #> # A tibble: 6 × 3
 #>                                 Station            DateTime TideHeight
 #>                                   <chr>              <dttm>      <dbl>
-#> 1 Monterey, Monterey Harbor, California 2015-01-01 00:00:00  0.6452338
-#> 2 Monterey, Monterey Harbor, California 2015-01-01 00:10:00  0.6353040
-#> 3 Monterey, Monterey Harbor, California 2015-01-01 00:20:00  0.6281772
-#> 4 Monterey, Monterey Harbor, California 2015-01-01 00:30:00  0.6240083
-#> 5 Monterey, Monterey Harbor, California 2015-01-01 00:40:00  0.6229294
-#> 6 Monterey, Monterey Harbor, California 2015-01-01 00:50:00  0.6250485
+#> 1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00  0.5143565
+#> 2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00  0.4964219
+#> 3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00  0.4808828
+#> 4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00  0.4677869
+#> 5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00  0.4571651
+#> 6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00  0.4490316
 ```
 
 ``` r
@@ -43,8 +43,8 @@ library(scales)
 ``` r
 ggplot(data = data, aes(x = DateTime, y = TideHeight)) + 
   geom_line() + 
-  scale_x_datetime(name = "1st January 2015", 
-                   labels = date_format("%H:%M", tz="PST8PDT")) +
+  scale_x_datetime(name = "Date", 
+                   labels = date_format("%d %b %Y", tz="PST8PDT")) +
   scale_y_continuous(name = "Tide Height (m)") +
   ggtitle("Monterey Harbour")
 ```

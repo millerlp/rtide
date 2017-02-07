@@ -14,4 +14,3 @@ tide_stations(stations = ".*", harmonics = rtide::harmonics)
 \description{
 Gets vector of matching stations.
 }
-

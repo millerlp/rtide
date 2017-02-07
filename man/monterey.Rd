@@ -17,4 +17,3 @@ monterey
 High/Low Tide Predictions from \url{http://tidesandcurrents.noaa.gov/tide_predictions.html}.
 }
 \keyword{datasets}
-

@@ -73,14 +73,18 @@ hours_year <- function(datetime) {
   hours
 }
 
-tide_height_data_datetime <- function(d, h) {
-  h$NodeYear <- h$NodeYear[,as.character(lubridate::year(d$DateTime)),,drop = FALSE]
+tide_height_datetime <- function(d, h) {
+  h$NodeYear <- h$NodeYear[,as.character(lubridate::year(d)),,drop = FALSE]
 
   height <- h$Station$Datum + sum(h$NodeYear[,,"NodeFactor"] * h$StationNode[,,"A"] *
-                                    cos((h$Node$Speed * (hours_year(d$DateTime) - h$Station$Hours) +
+                                    cos((h$Node$Speed * (hours_year(d) - h$Station$Hours) +
                                            h$NodeYear[,,"EquilArg"] - h$StationNode[,,"Kappa"]) * pi/180))
 
-  d$TideHeight <- height
+  height
+}
+
+tide_height_data_datetime <- function(d, h) {
+  d$TideHeight <- tide_height_datetime(d$DateTime, h)
   d
 }
 

@@ -32,7 +32,7 @@ It includes the harmonics data for `r length(rtide::tide_stations())` US station
 library(rtide)
 
 data <- rtide::tide_height(
-  "Monterey Harbor", from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), 
+  "Monterey Harbor", from = as.Date("2016-07-13"), to = as.Date("2016-07-15"), 
   minutes = 10L, tz = "PST8PDT")
 
 print(head(data))
@@ -46,8 +46,8 @@ library(scales)
 ```{r}
 ggplot(data = data, aes(x = DateTime, y = TideHeight)) + 
   geom_line() + 
-  scale_x_datetime(name = "1st January 2015", 
-                   labels = date_format("%H:%M", tz="PST8PDT")) +
+  scale_x_datetime(name = "Date", 
+                   labels = date_format("%d %b %Y", tz="PST8PDT")) +
   scale_y_continuous(name = "Tide Height (m)") +
   ggtitle("Monterey Harbour")
 ```
