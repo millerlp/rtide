@@ -8,8 +8,8 @@ Authors@R: c(
     person("Luke", "Miller", email = "contact@lukemiller.org", role = "aut"))
 Description: Calculates tide heights based on tide station harmonics.
     It includes the harmonics data for 637 US stations.
-    The harmonics data was converted from harmonics-dwf-20151227-free,
-    NOAA web site data processed by David Flater for XTide.
+    The harmonics data was converted from <ftp://ftp.flaterco.com/xtide/harmonics-dwf-20151227-free.tar.bz2>,
+    which is NOAA web site data processed by David Flater for XTide.
     The code to calculate tide heights from the harmonics is based on XTide.
 URL: https://github.com/poissonconsulting/rtide
 BugReports: https://github.com/poissonconsulting/rtide/issues
@@ -30,7 +30,7 @@ Suggests:
     ggplot2,
     scales,
     testthat
-License: GPL-3 + file LICENSE
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
