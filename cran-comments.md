@@ -16,16 +16,16 @@ Maintainer: 'Joe Thorley <joe@poissonconsulting.ca>'
 License components with restrictions and base license permitting such:
   GPL-3 + file LICENSE
 File 'LICENSE':
-  YEAR: 2016
+  YEAR: 2017
   COPYRIGHT HOLDER: Poisson Consulting
 
 **The copyright holder is correct.**
 
 Possibly mis-spelled words in DESCRIPTION:
-  Flater (11:43)
-  NOAA (11:5)
-  XTide (11:54, 12:71)
-  dwf (10:53)
+  Flater (12:43)
+  NOAA (12:5)
+  XTide (12:54, 13:71)
+  dwf (11:53)
 
 **All words are spelt correctly.**
 
