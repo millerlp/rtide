@@ -25,4 +25,3 @@ Generates sequence of date times.
 \examples{
 tide_datetimes()
 }
-

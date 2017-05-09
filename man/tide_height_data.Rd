@@ -17,4 +17,3 @@ A tibble of the tide heights in m.
 \description{
 Calculates tide height at specified stations at particular date times based on the supplied harmonics object.
 }
-
