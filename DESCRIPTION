@@ -1,7 +1,7 @@
 Package: rtide
 Title: Tide Heights
-Version: 0.0.3.9000
-Date: 2017-01-02
+Version: 0.0.4
+Date: 2017-05-09
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
     person("Luke", "Miller", email = "contact@lukemiller.org", role = "aut"))
@@ -17,7 +17,6 @@ Depends:
 Imports:
     abind,
     datacheckr (>= 0.1.1),
-    dplyr,
     lubridate,
     magrittr,
     plyr,
@@ -26,6 +25,7 @@ Imports:
     tibble,
     utils
 Suggests:
+    dplyr,
     ggplot2,
     scales,
     testthat

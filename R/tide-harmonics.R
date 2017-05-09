@@ -57,13 +57,13 @@ tide_harmonics <- function (x) {
              "A", "kappa") %in% names(x))) stop("x missing components", call. = FALSE)
 
 
-  x$Station <- dplyr::data_frame(
+  x$Station <- data.frame(
     Station = x$station, Units = x$unit, Longitude = x$longitude, Latitude = x$latitude,
-    Hours = x$timezone, TZ = x$tzfile, Datum = x$datum)
+    Hours = x$timezone, TZ = x$tzfile, Datum = x$datum, stringsAsFactors = TRUE)
 
   x$Station$Station %<>% enc2utf8()
 
-  x$Node <- dplyr::data_frame(Node = x$name, Speed = x$speed)
+  x$Node <- data.frame(Node = x$name, Speed = x$speed, stringsAsFactors = TRUE)
   x$StationNode <- abind::abind(A = x$A, Kappa = x$kappa, along = 3)
   dimnames(x$StationNode) <- list(x$Station$Station, x$Node$Node, c("A", "Kappa"))
 
@@ -91,7 +91,7 @@ tide_harmonics <- function (x) {
 subset.tide_harmonics <- function(x, stations, ...) {
   stations %<>% tide_stations(x)
   stations <- x$Station$Station %in% stations %>% which()
-  x$Station %<>% dplyr::slice(stations)
+  x$Station <- x$Station[stations,]
   x$StationNode <- x$StationNode[stations,,,drop = FALSE]
   x
 }
