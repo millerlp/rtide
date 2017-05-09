@@ -4,6 +4,7 @@ Version: 0.0.4
 Date: 2017-05-09
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
+    person("Abram", "Fleishman", role = "aut"),
     person("Luke", "Miller", email = "contact@lukemiller.org", role = "aut"))
 Description: Calculates tide heights based on tide station harmonics.
     It includes the harmonics data for 637 US stations.
