@@ -4,21 +4,25 @@
 
 |setting  |value                        |
 |:--------|:----------------------------|
-|version  |R version 3.3.2 (2016-10-31) |
-|system   |x86_64, darwin13.4.0         |
-|ui       |RStudio (1.0.44)             |
+|version  |R version 3.4.0 (2017-04-21) |
+|system   |x86_64, darwin15.6.0         |
+|ui       |RStudio (1.0.143)            |
 |language |(EN)                         |
 |collate  |en_CA.UTF-8                  |
 |tz       |America/Vancouver            |
-|date     |2016-12-21                   |
+|date     |2017-05-09                   |
 
 ## Packages
 
-|package |*  |version |date       |source                             |
-|:-------|:--|:-------|:----------|:----------------------------------|
-|rtide   |   |0.0.3   |2016-12-22 |local (poissonconsulting/rtide@NA) |
+|package   |*  |version    |date       |source                             |
+|:---------|:--|:----------|:----------|:----------------------------------|
+|lubridate |   |1.6.0.9009 |2017-05-09 |Github (hadley/lubridate@2608730)  |
+|rtide     |*  |0.0.4      |2017-05-09 |local (poissonconsulting/rtide@NA) |
 
 # Check results
+
 0 packages with problems
+
+
 
 

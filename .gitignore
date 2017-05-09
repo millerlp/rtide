@@ -7,3 +7,4 @@
 .settings/de.walware.r.core.prefs
 *.project
 .Rapp.history
+/revdep/.cache.rds
