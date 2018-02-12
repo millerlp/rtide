@@ -1,6 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.org/poissonconsulting/rtide)
 [![AppVeyor Build
@@ -55,7 +56,7 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   ggtitle("Monterey Harbour")
 ```
 
-![](README-unnamed-chunk-4-1.png)<!-- -->
+![](tools/README-unnamed-chunk-4-1.png)<!-- -->
 
 ## Installation
 
