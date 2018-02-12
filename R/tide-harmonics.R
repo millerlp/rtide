@@ -63,7 +63,7 @@ tide_harmonics <- function (x) {
     Station = x$station, Units = x$unit, Longitude = x$longitude, Latitude = x$latitude,
     Hours = x$timezone, TZ = x$tzfile, Datum = x$datum)
 
-  x$Station$Station %<>% enc2utf8()
+  x$Station$Station <- enc2utf8(x$Station$Station)
 
   x$Node <- dplyr::data_frame(Node = x$name, Speed = x$speed)
   x$StationNode <- abind::abind(A = x$A, Kappa = x$kappa, along = 3)
@@ -91,9 +91,9 @@ tide_harmonics <- function (x) {
 
 #' @export
 subset.tide_harmonics <- function(x, stations, ...) {
-  stations %<>% tide_stations(x)
-  stations <- x$Station$Station %in% stations %>% which()
-  x$Station %<>% dplyr::slice(stations)
+  stations <- tide_stations(stations, x)
+  stations <- which(x$Station$Station %in% stations)
+  x$Station <- dplyr::slice(x$Station, stations)
   x$StationNode <- x$StationNode[stations,,,drop = FALSE]
   x
 }
@@ -110,6 +110,6 @@ print.tide_harmonics <- function(x, ...) {
 
 years_tide_harmonics <- function(x) {
   x <- dimnames(x$NodeYear)[[2]]
-  x %<>% as.character() %>% as.integer()
+  x <- as.integer(as.character(x))
   x
 }

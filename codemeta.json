@@ -132,17 +132,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "magrittr",
-      "name": "magrittr",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "plyr",
       "name": "plyr",
       "provider": {
@@ -194,11 +183,11 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": "3.2.0"
+      "version": "3.3.0"
     }
   ],
   "contIntegration": "https://travis-ci.org/poissonconsulting/rtide",
   "releaseNotes": "https://github.com/poissonconsulting/rtide/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/rtide/blob/master/README.md",
-  "fileSize": "397.919KB"
+  "fileSize": "390.702KB"
 }

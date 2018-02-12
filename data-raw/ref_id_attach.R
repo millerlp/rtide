@@ -9,6 +9,8 @@ library(stringr)
 library(dplyr)
 library(rvest)
 library(rtide)
+library(magrittr)
+
 noaa_tide <- read_html("https://tidesandcurrents.noaa.gov/tide_predictions.html")
 noaa_tide %>% html_nodes(xpath = "//table//td//a") %>% html_attrs() ->a
 dataOut<-NULL

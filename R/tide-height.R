@@ -1,6 +1,5 @@
 ft2m <- function(x) {
-  x %<>% magrittr::multiply_by(0.3048)
-  x
+  x * 0.3048
 }
 
 #' Tide Stations
@@ -16,10 +15,11 @@ tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
   if (!is.tide_harmonics(harmonics))
     stop("harmonics must be an object of class 'tide_harmonics'", call. = FALSE)
 
-  stations %<>% stringr::str_replace_all("[(]", "[(]") %>% stringr::str_replace_all("[)]", "[)]")
+  stations <- stringr::str_replace_all(stations, "[(]", "[(]")
+  stations <- stringr::str_replace_all(stations, "[)]", "[)]")
   stations <- paste0("(", paste(stations, collapse = ")|("), ")")
   match <- stringr::str_detect(harmonics$Station$Station, stations)
-  match %<>% which()
+  match <- which(match)
   if (!length(match)) stop("no matching stations", call. = FALSE)
   harmonics$Station$Station[sort(unique(match))]
 }
@@ -45,7 +45,7 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
     check_vector(minutes, c(1,60), length = 1)
     if (minutes %% 1 != 0)	# If modulo isn't 0, decimal value is present
       warning("Truncating minutes interval to whole number", call.=FALSE)
-    minutes %<>% as.integer()
+    minutes <- as.integer(minutes)
   }
   check_vector(minutes, c(1L, 60L), length = 1)
 
@@ -69,7 +69,7 @@ hours_year <- function(datetime) {
 
   startdatetime <- ISOdate(year, 1, 1, 0, tz = "UTC")
   hours <- difftime(datetime, startdatetime, units = 'hours')
-  hours %<>% as.numeric()
+  hours <- as.numeric(hours)
   hours
 }
 
@@ -89,11 +89,11 @@ tide_height_data_datetime <- function(d, h) {
 }
 
 tide_height_data_station <- function(data, harmonics) {
-  harmonics %<>% subset(stringr::str_c("^", data$Station[1], "$"))
+  harmonics <- subset(harmonics, stringr::str_c("^", data$Station[1], "$"))
   data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
                       h = harmonics)
   if (harmonics$Station$Units %in% c("feet", "ft"))
-    data %<>% dplyr::mutate_(TideHeight = ~ft2m(TideHeight))
+    data <- dplyr::mutate_(data, TideHeight = ~ft2m(TideHeight))
   data
 }
 
@@ -107,7 +107,7 @@ tide_height_data_station <- function(data, harmonics) {
 #' @return A tibble of the tide heights in m.
 #' @export
 tide_height_data <- function(data, harmonics = rtide::harmonics) {
-  data %<>% check_data(values = list(Station = "", DateTime = Sys.time()),
+  check_data(data, values = list(Station = "", DateTime = Sys.time()),
                         nrow = c(1L, .Machine$integer.max))
 
   if (!all(data$Station %in% tide_stations(harmonics = harmonics)))
@@ -117,18 +117,17 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
     stop("data already has 'TideHeight' column", call. = FALSE)
 
   tz <- lubridate::tz(data$DateTime)
-  data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = "UTC"))
+  data <- dplyr::mutate_(data, DateTime = ~lubridate::with_tz(DateTime, tzone = "UTC"))
 
   years <- range(lubridate::year(data$DateTime), na.rm = TRUE)
   if (!all(years %in% years_tide_harmonics(harmonics)))
     stop("years are outside harmonics range", call. = FALSE)
 
-  data %<>% plyr::ddply(.variables = c("Station"), tide_height_data_station, harmonics = harmonics)
+  data <- plyr::ddply(data, .variables = c("Station"), tide_height_data_station, harmonics = harmonics)
 
-  data %<>% dplyr::mutate_(DateTime = ~lubridate::with_tz(DateTime, tzone = tz))
-  data %<>% dplyr::arrange_(~Station, ~DateTime)
-  data %<>% dplyr::as.tbl()
-  data
+  data <- dplyr::mutate_(data, DateTime = ~lubridate::with_tz(DateTime, tzone = tz))
+  data <- dplyr::arrange_(data, ~Station, ~DateTime)
+  dplyr::as.tbl(data)
 }
 
 #' Tide Height
@@ -143,7 +142,7 @@ tide_height <- function(
   stations = "Monterey Harbor", minutes = 60L,
   from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), tz = "UTC",
   harmonics = rtide::harmonics) {
-  stations %<>% tide_stations(harmonics)
+  stations <- tide_stations(stations, harmonics)
   datetimes <- tide_datetimes(minutes = minutes, from = from, to = to, tz = tz)
 
   data <- tidyr::crossing(Station = stations, DateTime = datetimes)
