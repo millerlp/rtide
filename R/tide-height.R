@@ -93,7 +93,7 @@ tide_height_data_station <- function(data, harmonics) {
   data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
                       h = harmonics)
   if (harmonics$Station$Units %in% c("feet", "ft"))
-    data <- dplyr::mutate_(data, TideHeight = ~ft2m(TideHeight))
+    data$TideHeight <- ft2m(data$TideHeight)
   data
 }
 
@@ -108,7 +108,7 @@ tide_height_data_station <- function(data, harmonics) {
 #' @export
 tide_height_data <- function(data, harmonics = rtide::harmonics) {
   check_data(data, values = list(Station = "", DateTime = Sys.time()),
-                        nrow = c(1L, .Machine$integer.max))
+             nrow = c(1L, .Machine$integer.max))
 
   if (!all(data$Station %in% tide_stations(harmonics = harmonics)))
     stop("unrecognised stations", call. = FALSE)
@@ -117,7 +117,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
     stop("data already has 'TideHeight' column", call. = FALSE)
 
   tz <- lubridate::tz(data$DateTime)
-  data <- dplyr::mutate_(data, DateTime = ~lubridate::with_tz(DateTime, tzone = "UTC"))
+  data$DateTime <- lubridate::with_tz(data$DateTime, tzone = "UTC")
 
   years <- range(lubridate::year(data$DateTime), na.rm = TRUE)
   if (!all(years %in% years_tide_harmonics(harmonics)))
@@ -125,9 +125,9 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
 
   data <- plyr::ddply(data, .variables = c("Station"), tide_height_data_station, harmonics = harmonics)
 
-  data <- dplyr::mutate_(data, DateTime = ~lubridate::with_tz(DateTime, tzone = tz))
-  data <- dplyr::arrange_(data, ~Station, ~DateTime)
-  dplyr::as.tbl(data)
+  data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)
+  data <- data[order(data$Station, data$DateTime),]
+  tibble::as_tibble(data)
 }
 
 #' Tide Height

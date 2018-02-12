@@ -18,7 +18,6 @@ Depends:
 Imports:
     abind,
     checkr,
-    dplyr,
     lubridate,
     plyr,
     stringr,
