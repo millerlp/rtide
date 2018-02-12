@@ -77,6 +77,10 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/rtide/pulls) are
 always welcome.
 
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
+
 ## Inspiration
 
 The harmonics data was converted from harmonics-dwf-20151227-free, NOAA

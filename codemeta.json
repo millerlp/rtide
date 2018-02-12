@@ -132,17 +132,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "stringr",
-      "name": "stringr",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "tibble",
       "name": "tibble",
       "provider": {
@@ -167,5 +156,5 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/rtide",
   "releaseNotes": "https://github.com/poissonconsulting/rtide/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/rtide/blob/master/README.md",
-  "fileSize": "397.804KB"
+  "fileSize": "397.812KB"
 }
