@@ -145,6 +145,6 @@ tide_height <- function(
   stations <- tide_stations(stations, harmonics)
   datetimes <- tide_datetimes(minutes = minutes, from = from, to = to, tz = tz)
 
-  data <- tidyr::crossing(Station = stations, DateTime = datetimes)
+  data <- expand.grid(Station = stations, DateTime = datetimes, stringsAsFactors = FALSE)
   tide_height_data(data, harmonics = harmonics)
 }

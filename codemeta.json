@@ -11,7 +11,7 @@
   "issueTracker": "https://github.com/poissonconsulting/rtide/issues",
   "datePublished": "2018-02-12",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.0.3.9001",
+  "version": "0.0.3.9002",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -143,17 +143,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "tidyr",
-      "name": "tidyr",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "tibble",
       "name": "tibble",
       "provider": {
@@ -178,5 +167,5 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/rtide",
   "releaseNotes": "https://github.com/poissonconsulting/rtide/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/rtide/blob/master/README.md",
-  "fileSize": "397.799KB"
+  "fileSize": "397.804KB"
 }

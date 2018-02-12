@@ -1,6 +1,6 @@
 Package: rtide
 Title: Tide Heights
-Version: 0.0.3.9001
+Version: 0.0.3.9002
 Date: 2018-02-12
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
@@ -21,7 +21,6 @@ Imports:
     lubridate,
     plyr,
     stringr,
-    tidyr,
     tibble,
     utils
 Suggests:
