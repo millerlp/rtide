@@ -56,7 +56,8 @@ tide_slack_data_station <- function(data, harmonics) {
 #' @return A tibble of the slack tide date times and heights in m.
 #' @export
 tide_slack_data <- function (data, harmonics = rtide::harmonics) {
-  data %<>% check_data2(values = list(Station = "", DateTime = Sys.time()))
+  data %<>% check_data(values = list(Station = "", DateTime = Sys.time()),
+                       nrow = c(1L, .Machine$integer.max))
 
   if (!all(data$Station %in% tide_stations(harmonics = harmonics)))
     stop("unrecognised stations", call. = FALSE)

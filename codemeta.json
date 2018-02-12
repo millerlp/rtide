@@ -34,14 +34,14 @@
     },
     {
       "@type": "Person",
-      "givenName": "Abram",
-      "familyName": "Fleishman"
-    },
-    {
-      "@type": "Person",
       "givenName": "Luke",
       "familyName": "Miller",
       "email": "contact@lukemiller.org"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Abram",
+      "familyName": "Fleishman"
     }
   ],
   "maintainer": {
@@ -99,9 +99,8 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "datacheckr",
-      "name": "datacheckr",
-      "version": "0.1.1",
+      "identifier": "checkr",
+      "name": "checkr",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -195,11 +194,11 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": "3.3.0"
+      "version": "3.2.0"
     }
   ],
   "contIntegration": "https://travis-ci.org/poissonconsulting/rtide",
   "releaseNotes": "https://github.com/poissonconsulting/rtide/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/rtide/blob/master/README.md",
-  "fileSize": "357.793KB"
+  "fileSize": "397.919KB"
 }

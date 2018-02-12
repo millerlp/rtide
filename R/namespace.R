@@ -1,3 +1,3 @@
-#' @import datacheckr
+#' @import checkr
 #' @importFrom magrittr %<>% %>%
 NULL

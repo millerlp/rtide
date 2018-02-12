@@ -4,8 +4,8 @@ Version: 0.0.3.9001
 Date: 2018-02-12
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
-    person("Abram", "Fleishman", role = "aut"),
-    person("Luke", "Miller", email = "contact@lukemiller.org", role = "aut"))
+    person("Luke", "Miller", email = "contact@lukemiller.org", role = "aut"),
+    person("Abram", "Fleishman", role = "aut"))
 Description: Calculates tide heights based on tide station harmonics.
     It includes the harmonics data for 637 US stations.
     The harmonics data was converted from harmonics-dwf-20151227-free,
@@ -14,10 +14,10 @@ Description: Calculates tide heights based on tide station harmonics.
 URL: https://github.com/poissonconsulting/rtide
 BugReports: https://github.com/poissonconsulting/rtide/issues
 Depends:
-    R (>= 3.3.0)
+    R (>= 3.2.0)
 Imports:
     abind,
-    datacheckr (>= 0.1.1),
+    checkr,
     dplyr,
     lubridate,
     magrittr,

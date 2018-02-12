@@ -3,10 +3,12 @@ context("tide-height")
 test_that("tide_height works", {
   expect_df <- function (x) expect_is(x, "data.frame")
 
-  expect_df(check_data3(tide_height(), values = list(
+  expect_df(checkr::check_data(tide_height(), values = list(
     Station = "", DateTime = Sys.time(), TideHeight = 1),
-    min_row = 24, max_row = 24,
-    key = "DateTime"))
+    nrow = 24,
+    key = "DateTime",
+    exclusive = TRUE,
+    order = TRUE))
 
   expect_df(tide_height(stations = ".*"))
 })

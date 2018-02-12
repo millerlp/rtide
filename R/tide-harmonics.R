@@ -14,7 +14,7 @@ check_tide_harmonics <- function(x) {
   if (!all(c("Station", "Node", "StationNode", "NodeYear") %in% names(x)))
     stop("x is missing components", call. = FALSE)
 
-  check_data2(x$Station, values = list(
+  check_data(x$Station, values = list(
     Station = "",
     Units = c("feet", "ft", "m", "metre"),
     Longitude = 1,
@@ -22,11 +22,13 @@ check_tide_harmonics <- function(x) {
     Hours = c(-12,12),
     TZ = "",
     Datum = 1),
+    nrow = c(1L, .Machine$integer.max),
     key = "Station")
 
-  check_data2(x$Node, values = list(
+  check_data(x$Node, values = list(
     Node = "",
     Speed = 1),
+    nrow = c(1L, .Machine$integer.max),
     key = "Node")
 
   if (!is.array(x$StationNode)) stop("StationNode must be an array", call. = FALSE)

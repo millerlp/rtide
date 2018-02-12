@@ -11,7 +11,7 @@ ft2m <- function(x) {
 #' @param harmonics The harmonics object.
 #' @export
 tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
-  check_vector(stations, value = c(""))
+  check_vector(stations, "")
   check_tide_harmonics(harmonics)
   if (!is.tide_harmonics(harmonics))
     stop("harmonics must be an object of class 'tide_harmonics'", call. = FALSE)
@@ -42,12 +42,12 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
                            tz = "PST8PDT") {
 
   if (class(minutes) == "numeric"){
-    check_scalar(minutes, c(1,60))
+    check_vector(minutes, c(1,60), length = 1)
     if (minutes %% 1 != 0)	# If modulo isn't 0, decimal value is present
       warning("Truncating minutes interval to whole number", call.=FALSE)
     minutes %<>% as.integer()
   }
-  check_scalar(minutes, c(1L, 60L))
+  check_vector(minutes, c(1L, 60L), length = 1)
 
   check_date(from)
   check_date(to)
@@ -62,7 +62,7 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
 }
 
 hours_year <- function(datetime) {
-  check_vector(datetime, value = Sys.time())
+  check_vector(datetime, Sys.time())
   stopifnot(identical(lubridate::tz(datetime), "UTC"))
 
   year <- lubridate::year(datetime)
@@ -107,7 +107,8 @@ tide_height_data_station <- function(data, harmonics) {
 #' @return A tibble of the tide heights in m.
 #' @export
 tide_height_data <- function(data, harmonics = rtide::harmonics) {
-  data %<>% check_data2(values = list(Station = "", DateTime = Sys.time()))
+  data %<>% check_data(values = list(Station = "", DateTime = Sys.time()),
+                        nrow = c(1L, .Machine$integer.max))
 
   if (!all(data$Station %in% tide_stations(harmonics = harmonics)))
     stop("unrecognised stations", call. = FALSE)

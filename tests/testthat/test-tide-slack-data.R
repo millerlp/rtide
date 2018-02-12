@@ -7,10 +7,10 @@ test_that("tide_slack_data works", {
                      DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
                      stringsAsFactors = FALSE)
 
-  expect_df(check_data3(tide_slack_data(data), values = list(
+  expect_df(check_data(tide_slack_data(data), values = list(
     Station = "", DateTime = Sys.time(), SlackDateTime = Sys.time(),
     SlackTideHeight = 1, SlackType = ""),
-    min_row = 1, max_row = 1))
+    nrow = 1, exclusive = TRUE, order = TRUE))
 })
 
 test_that("tide_height_data predictions", {
