@@ -20,7 +20,6 @@ Imports:
     checkr,
     lubridate,
     plyr,
-    stringr,
     tibble,
     utils
 Suggests:

@@ -1,3 +1,5 @@
+- Removed dependencies
+
 # v0.0.3
 
 - Recognises station names with brackets like 'Annapolis (US Naval Academy), Severn River, Maryland'

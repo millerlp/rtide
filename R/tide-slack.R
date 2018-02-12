@@ -39,7 +39,7 @@ tide_slack_data_datetime <- function(d, h) {
 }
 
 tide_slack_data_station <- function(data, harmonics) {
-  harmonics <- subset(harmonics, stringr::str_c("^", data$Station[1], "$"))
+  harmonics <- subset(harmonics, paste0("^", data$Station[1], "$"))
   data <- plyr::adply(.data = data, .margins = 1, .fun = tide_slack_data_datetime,
                       h = harmonics)
   if (harmonics$Station$Units %in% c("feet", "ft"))
