@@ -66,6 +66,12 @@ Or the development version from GitHub
 devtools::install_github("poissonconsulting/rtide")
 ```
 
+## Citation
+
+```{r, comment="", echo=FALSE}
+citation(package = "rtide")
+```
+
 ## Contribution
 
 Please report any [issues](https://github.com/poissonconsulting/rtide/issues).

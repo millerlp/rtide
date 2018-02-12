@@ -69,6 +69,27 @@ Or the development version from GitHub
     # install.packages("devtools")
     devtools::install_github("poissonconsulting/rtide")
 
+## Citation
+
+``` 
+
+To cite package 'rtide' in publications use:
+
+  Joe Thorley, Luke Miller and Abram Fleishman (2018). rtide: Tide
+  Heights. R package version 0.0.3.9002.
+  https://github.com/poissonconsulting/rtide
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {rtide: Tide Heights},
+    author = {Joe Thorley and Luke Miller and Abram Fleishman},
+    year = {2018},
+    note = {R package version 0.0.3.9002},
+    url = {https://github.com/poissonconsulting/rtide},
+  }
+```
+
 ## Contribution
 
 Please report any
