@@ -7,3 +7,6 @@
 cran-comments.md
 ^appveyor\.yml$
 ^revdep$
+^codemeta\.json$
+^docs$
+^document.R$

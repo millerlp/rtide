@@ -2,6 +2,8 @@ language: R
 cache: packages
 
 r:
+  - 3.2
+  - oldrel
   - release
   - devel
 
@@ -10,3 +12,11 @@ r_packages:
 
 after_success:
   - Rscript -e 'covr::codecov()'
+
+notifications:
+  email: false
+  slack:
+    rooms:
+      - poissonconsulting:BKjfn7jsVh8zXTu2rq7BEQEb
+    on_success: change
+    on_failure: always

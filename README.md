@@ -1,19 +1,25 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.org/poissonconsulting/rtide) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/598p54bq0m5qv0j1/branch/master?svg=true)](https://ci.appveyor.com/project/joethorley/rtide/branch/master) [![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide) [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rtide)](https://cran.r-project.org/package=rtide)
 
-rtide
-=====
+[![Travis-CI Build
+Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.org/poissonconsulting/rtide)
+[![AppVeyor Build
+status](https://ci.appveyor.com/api/projects/status/598p54bq0m5qv0j1/branch/master?svg=true)](https://ci.appveyor.com/project/joethorley/rtide/branch/master)
+[![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
+[![CRAN
+Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rtide)](https://cran.r-project.org/package=rtide)
 
-Introduction
-------------
+# rtide
 
-`rtide` is an R package to calculate tide heights based on tide station harmonics.
+## Introduction
+
+`rtide` is an R package to calculate tide heights based on tide station
+harmonics.
 
 It includes the harmonics data for 637 US stations.
 
-Utilisation
------------
+## Utilisation
 
 ``` r
 library(rtide)
@@ -24,15 +30,15 @@ data <- rtide::tide_height(
   minutes = 10L, tz = "PST8PDT")
 
 print(head(data))
-#> # A tibble: 6 × 3
-#>                                 Station            DateTime TideHeight
-#>                                   <chr>              <dttm>      <dbl>
-#> 1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00  0.5143565
-#> 2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00  0.4964219
-#> 3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00  0.4808828
-#> 4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00  0.4677869
-#> 5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00  0.4571651
-#> 6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00  0.4490316
+#> # A tibble: 6 x 3
+#>   Station                               DateTime            TideHeight
+#>   <chr>                                 <dttm>                   <dbl>
+#> 1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514
+#> 2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.496
+#> 3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.481
+#> 4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.468
+#> 5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.457
+#> 6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.449
 ```
 
 ``` r
@@ -49,10 +55,9 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   ggtitle("Monterey Harbour")
 ```
 
-![](README-unnamed-chunk-4-1.png)
+![](README-unnamed-chunk-4-1.png)<!-- -->
 
-Installation
-------------
+## Installation
 
 To install the release version from CRAN
 
@@ -63,14 +68,17 @@ Or the development version from GitHub
     # install.packages("devtools")
     devtools::install_github("poissonconsulting/rtide")
 
-Contribution
-------------
+## Contribution
 
-Please report any [issues](https://github.com/poissonconsulting/rtide/issues).
+Please report any
+[issues](https://github.com/poissonconsulting/rtide/issues).
 
-[Pull requests](https://github.com/poissonconsulting/rtide/pulls) are always welcome.
+[Pull requests](https://github.com/poissonconsulting/rtide/pulls) are
+always welcome.
 
-Inspiration
------------
+## Inspiration
 
-The harmonics data was converted from harmonics-dwf-20151227-free, NOAA web site data processed by David Flater for [XTide](http://www.flaterco.com/xtide/). The code to calculate tide heights from the harmonics is based on XTide.
+The harmonics data was converted from harmonics-dwf-20151227-free, NOAA
+web site data processed by David Flater for
+[XTide](http://www.flaterco.com/xtide/). The code to calculate tide
+heights from the harmonics is based on XTide.
