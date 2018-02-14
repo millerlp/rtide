@@ -1,3 +1,5 @@
+# rtide 0.0.4
+
 - Reduced dependencies
 
 # rtide 0.0.3
