@@ -1,6 +1,9 @@
+- Replaced datacheckr with checkr
+- Reduced dependencies on magrittr, tidyr, stringr
+
 # rtide 0.0.4
 
-- Reduced dependencies
+- Removed dependency on dplyr
 
 # rtide 0.0.3
 

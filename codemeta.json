@@ -9,9 +9,9 @@
   "name": "rtide: Tide Heights",
   "codeRepository": "https://github.com/poissonconsulting/rtide",
   "issueTracker": "https://github.com/poissonconsulting/rtide/issues",
-  "datePublished": "2018-02-13",
+  "datePublished": "2018-02-14",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.0.5",
+  "version": "0.0.4.9010",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -156,7 +156,7 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/rtide",
   "releaseNotes": "https://github.com/poissonconsulting/rtide/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/rtide/blob/master/README.md",
-  "fileSize": "398.054KB",
+  "fileSize": "398.104KB",
   "copyrightHolder": [
     {
       "@type": "Organization",
