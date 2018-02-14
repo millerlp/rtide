@@ -1,6 +1,6 @@
 Package: rtide
 Title: Tide Heights
-Version: 0.0.4
+Version: 0.0.5
 Date: 2018-02-13
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),

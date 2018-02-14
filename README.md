@@ -76,7 +76,7 @@ Or the development version from GitHub
 To cite package 'rtide' in publications use:
 
   Joe Thorley, Luke Miller and Abram Fleishman (2018). rtide: Tide
-  Heights. R package version 0.0.4.
+  Heights. R package version 0.0.5.
   https://github.com/poissonconsulting/rtide
 
 A BibTeX entry for LaTeX users is
@@ -85,7 +85,7 @@ A BibTeX entry for LaTeX users is
     title = {rtide: Tide Heights},
     author = {Joe Thorley and Luke Miller and Abram Fleishman},
     year = {2018},
-    note = {R package version 0.0.4},
+    note = {R package version 0.0.5},
     url = {https://github.com/poissonconsulting/rtide},
   }
 ```

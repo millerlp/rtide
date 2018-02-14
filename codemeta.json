@@ -11,7 +11,7 @@
   "issueTracker": "https://github.com/poissonconsulting/rtide/issues",
   "datePublished": "2018-02-13",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -156,5 +156,11 @@
   "contIntegration": "https://travis-ci.org/poissonconsulting/rtide",
   "releaseNotes": "https://github.com/poissonconsulting/rtide/blob/master/NEWS.md",
   "readme": "https://github.com/poissonconsulting/rtide/blob/master/README.md",
-  "fileSize": "398.108KB"
+  "fileSize": "398.054KB",
+  "copyrightHolder": [
+    {
+      "@type": "Organization",
+      "name": "Poisson Consulting"
+    }
+  ]
 }
