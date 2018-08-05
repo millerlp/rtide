@@ -4,8 +4,6 @@
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.org/poissonconsulting/rtide)
-[![AppVeyor Build
-status](https://ci.appveyor.com/api/projects/status/598p54bq0m5qv0j1/branch/master?svg=true)](https://ci.appveyor.com/project/joethorley/rtide/branch/master)
 [![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
 [![CRAN
@@ -89,6 +87,12 @@ A BibTeX entry for LaTeX users is
     url = {https://github.com/poissonconsulting/rtide},
   }
 ```
+
+## Interaction
+
+Tide heights can be also obtained using rtide through a [shiny
+interface](https://poissonconsulting.shinyapps.io/rtide/) developed by
+Seb Dalgarno.
 
 ## Contribution
 
