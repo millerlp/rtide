@@ -54,7 +54,7 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   ggtitle("Monterey Harbour")
 ```
 
-![](tools/README-unnamed-chunk-4-1.png)<!-- -->
+![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
 
 ## Installation
 
