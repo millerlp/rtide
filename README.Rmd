@@ -54,25 +54,33 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
 
 ## Installation
 
-To install the release version from CRAN
+To install the latest official release from [CRAN](https://CRAN.R-project.org/package=rtide)
 ```
 install.packages("rtide")
 ```
 
-Or the development version from GitHub
+To install the latest development version from [GitHub](https://github.com/poissonconsulting/rtide)
 ```
 # install.packages("devtools")
 devtools::install_github("poissonconsulting/rtide")
 ```
-## Citation
 
-```{r, comment="", echo=FALSE}
-citation(package = "rtide")
+To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
+```
+# install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("rtide")
 ```
 
 ## Interaction
 
 Tide heights can be also obtained using rtide through a [shiny interface](https://poissonconsulting.shinyapps.io/rtide/) developed by Seb Dalgarno.
+
+## Citation
+
+```{r, comment="", echo=FALSE}
+citation(package = "rtide")
+```
 
 ## Contribution
 

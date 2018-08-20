@@ -58,14 +58,29 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
 
 ## Installation
 
-To install the release version from CRAN
+To install the latest official release from
+[CRAN](https://CRAN.R-project.org/package=rtide)
 
     install.packages("rtide")
 
-Or the development version from GitHub
+To install the latest development version from
+[GitHub](https://github.com/poissonconsulting/rtide)
 
     # install.packages("devtools")
     devtools::install_github("poissonconsulting/rtide")
+
+To install the latest development version from the Poisson drat
+[repository](https://github.com/poissonconsulting/drat)
+
+    # install.packages("drat")
+    drat::addRepo("poissonconsulting")
+    install.packages("rtide")
+
+## Interaction
+
+Tide heights can be also obtained using rtide through a [shiny
+interface](https://poissonconsulting.shinyapps.io/rtide/) developed by
+Seb Dalgarno.
 
 ## Citation
 
@@ -74,7 +89,7 @@ Or the development version from GitHub
 To cite package 'rtide' in publications use:
 
   Joe Thorley, Luke Miller and Abram Fleishman (2018). rtide: Tide
-  Heights. R package version 0.0.4.9010.
+  Heights. R package version 0.0.5.
   https://github.com/poissonconsulting/rtide
 
 A BibTeX entry for LaTeX users is
@@ -83,16 +98,10 @@ A BibTeX entry for LaTeX users is
     title = {rtide: Tide Heights},
     author = {Joe Thorley and Luke Miller and Abram Fleishman},
     year = {2018},
-    note = {R package version 0.0.4.9010},
+    note = {R package version 0.0.5},
     url = {https://github.com/poissonconsulting/rtide},
   }
 ```
-
-## Interaction
-
-Tide heights can be also obtained using rtide through a [shiny
-interface](https://poissonconsulting.shinyapps.io/rtide/) developed by
-Seb Dalgarno.
 
 ## Contribution
 

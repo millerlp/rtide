@@ -1,5 +1,7 @@
-- Replaced datacheckr with checkr
-- Reduced dependencies on magrittr, tidyr, stringr
+# rtide 0.0.5
+
+- Replaced dependency datacheckr with checkr
+- Removed dependencies on magrittr, tidyr, stringr
 
 # rtide 0.0.4
 
