@@ -53,7 +53,7 @@ tide_slack_data_station <- function(data, harmonics) {
 #'
 #' @param data A data frame with the columns Station and DateTime.
 #' @inheritParams tide_stations
-#' @return A tibble of the slack tide date times and heights in m.
+#' @return A data frame of the slack tide date times and heights in m.
 #' @export
 tide_slack_data <- function (data, harmonics = rtide::harmonics) {
   check_data(data, values = list(Station = "", DateTime = Sys.time()),
@@ -62,13 +62,13 @@ tide_slack_data <- function (data, harmonics = rtide::harmonics) {
   if (!all(data$Station %in% tide_stations(harmonics = harmonics)))
     stop("unrecognised stations", call. = FALSE)
 
-  if (tibble::has_name(data, "SlackTideHeight"))
+  if (has_name(data, "SlackTideHeight"))
     stop("data already has 'SlackTideHeight' column", call. = FALSE)
 
-  if (tibble::has_name(data, "SlackDateTime"))
+  if (has_name(data, "SlackDateTime"))
     stop("data already has 'SlackDateTime' column", call. = FALSE)
 
-  if (tibble::has_name(data, "SlackType"))
+  if (has_name(data, "SlackType"))
     stop("data already has 'SlackType' column", call. = FALSE)
 
   tz <- lubridate::tz(data$DateTime)
@@ -83,5 +83,5 @@ tide_slack_data <- function (data, harmonics = rtide::harmonics) {
   data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)
   data$SlackDateTime <- lubridate::with_tz(data$SlackDateTime, tzone = tz)
   data <- data[order(data$Station, data$DateTime),]
-  tibble::as_tibble(data)
+  as_conditional_tibble(data)
 }

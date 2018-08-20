@@ -12,7 +12,7 @@ tide_height_data(data, harmonics = rtide::harmonics)
 \item{harmonics}{The harmonics object.}
 }
 \value{
-A tibble of the tide heights in m.
+A data frame of the tide heights in m.
 }
 \description{
 Calculates tide height at specified stations at particular date times based on the supplied harmonics object.

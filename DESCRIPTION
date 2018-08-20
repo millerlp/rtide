@@ -21,11 +21,11 @@ Imports:
     checkr,
     lubridate,
     plyr,
-    tibble,
     utils
 Suggests:
     ggplot2,
     scales,
+    tibble,
     testthat
 License: GPL-3
 Encoding: UTF-8

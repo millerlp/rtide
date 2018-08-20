@@ -104,7 +104,7 @@ tide_height_data_station <- function(data, harmonics) {
 #'
 #' @param data A data frame with the columns Station and DateTime.
 #' @inheritParams tide_stations
-#' @return A tibble of the tide heights in m.
+#' @return A data frame of the tide heights in m.
 #' @export
 tide_height_data <- function(data, harmonics = rtide::harmonics) {
   check_data(data, values = list(Station = "", DateTime = Sys.time()),
@@ -113,7 +113,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   if (!all(data$Station %in% tide_stations(harmonics = harmonics)))
     stop("unrecognised stations", call. = FALSE)
 
-  if (tibble::has_name(data, "TideHeight"))
+  if (has_name(data, "TideHeight"))
     stop("data already has 'TideHeight' column", call. = FALSE)
 
   tz <- lubridate::tz(data$DateTime)
@@ -127,7 +127,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
 
   data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)
   data <- data[order(data$Station, data$DateTime),]
-  tibble::as_tibble(data)
+  as_conditional_tibble(data)
 }
 
 #' Tide Height
@@ -136,7 +136,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
 #'
 #' @inheritParams tide_stations
 #' @inheritParams tide_datetimes
-#' @return A tibble of the tide heights in m by the number of minutes for each station from from to to.
+#' @return A data frame of the tide heights in m by the number of minutes for each station from from to to.
 #' @export
 tide_height <- function(
   stations = "Monterey Harbor", minutes = 60L,

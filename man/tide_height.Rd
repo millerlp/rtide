@@ -22,7 +22,7 @@ tide_height(stations = "Monterey Harbor", minutes = 60L,
 \item{harmonics}{The harmonics object.}
 }
 \value{
-A tibble of the tide heights in m by the number of minutes for each station from from to to.
+A data frame of the tide heights in m by the number of minutes for each station from from to to.
 }
 \description{
 Calculates tide height at specified stations based on the supplied harmonics object.
