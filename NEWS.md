@@ -1,7 +1,7 @@
 # rtide 0.0.5
 
 - Replaced dependency datacheckr with checkr
-- Removed dependencies on magrittr, tidyr, stringr
+- Removed dependencies plyr, magrittr, tidyr, stringr
 - tibble now only suggested
 
 # rtide 0.0.4

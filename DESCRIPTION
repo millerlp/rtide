@@ -20,7 +20,6 @@ Imports:
     abind,
     checkr,
     lubridate,
-    plyr,
     utils
 Suggests:
     ggplot2,

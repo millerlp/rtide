@@ -90,8 +90,10 @@ tide_height_data_datetime <- function(d, h) {
 
 tide_height_data_station <- function(data, harmonics) {
   harmonics <- subset(harmonics, paste0("^", data$Station[1], "$"))
-  data <- plyr::adply(.data = data, .margins = 1, .fun = tide_height_data_datetime,
-                      h = harmonics)
+  data <- split(data, 1:nrow(data))
+  data <- lapply(data, FUN = tide_height_data_datetime, h = harmonics)
+  data$stringsAsFactors <- FALSE
+  data <- do.call("rbind", data)
   if (harmonics$Station$Units %in% c("feet", "ft"))
     data$TideHeight <- ft2m(data$TideHeight)
   data
@@ -123,7 +125,11 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   if (!all(years %in% years_tide_harmonics(harmonics)))
     stop("years are outside harmonics range", call. = FALSE)
 
-  data <- plyr::ddply(data, .variables = c("Station"), tide_height_data_station, harmonics = harmonics)
+  station <- data$Station
+  data <- split(data, station)
+  data <- lapply(data, FUN = tide_height_data_station, harmonics = harmonics)
+  data$stringsAsFactors <- FALSE
+  data <- do.call("rbind", data)
 
   data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)
   data <- data[order(data$Station, data$DateTime),]
