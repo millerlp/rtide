@@ -1,8 +1,8 @@
 ## Test environments
 
 * local OS X install, R 3.5.1
-* ubuntu (travis-ci oldrel, devel and release)
-* win-builder (devel and release)
+* ubuntu (travis-ci oldrel, release and devel)
+* win-builder (release and devel)
 
 ## R CMD check results
 
