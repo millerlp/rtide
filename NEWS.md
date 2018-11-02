@@ -1,4 +1,4 @@
-- internal rbind of list of data frames no longer includes stringsAsFactors as causes error with rbind.sf
+- internal rbind of list of data frames no longer includes stringsAsFactors as causes error with rbind.sf (instead sets and unsets in options)
 
 # rtide 0.0.5
 
