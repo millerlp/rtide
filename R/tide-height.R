@@ -127,6 +127,8 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   station <- data$Station
   data <- split(data, station)
   data <- lapply(data, FUN = tide_height_data_station, harmonics = harmonics)
+  op <- options(stringsAsFactors = FALSE)
+  on.exit(options(op))
   data <- do.call("rbind", data)
 
   data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)

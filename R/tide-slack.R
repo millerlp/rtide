@@ -81,6 +81,8 @@ tide_slack_data <- function (data, harmonics = rtide::harmonics) {
 
   data <- split(data, data$Station)
   data <- lapply(data, FUN = tide_slack_data_station, harmonics = harmonics)
+  op <- options(stringsAsFactors = FALSE)
+  on.exit(options(op))
   data <- do.call("rbind", data)
 
   data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)
