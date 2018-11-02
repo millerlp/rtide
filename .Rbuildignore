@@ -1,3 +1,4 @@
+^_pkgdown\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
@@ -9,5 +10,5 @@ cran-comments.md
 ^revdep$
 ^codemeta\.json$
 ^docs$
-^document.R$
+^build\.R$
 ^CONDUCT\.md$

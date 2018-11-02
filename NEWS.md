@@ -1,3 +1,5 @@
+- internal rbind of list of data frames no longer includes stringsAsFactors as causes error with rbind.sf
+
 # rtide 0.0.5
 
 - Replaced dependency datacheckr with checkr

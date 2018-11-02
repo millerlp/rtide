@@ -92,7 +92,6 @@ tide_height_data_station <- function(data, harmonics) {
   harmonics <- subset(harmonics, paste0("^", data$Station[1], "$"))
   data <- split(data, 1:nrow(data))
   data <- lapply(data, FUN = tide_height_data_datetime, h = harmonics)
-  data$stringsAsFactors <- FALSE
   data <- do.call("rbind", data)
   if (harmonics$Station$Units %in% c("feet", "ft"))
     data$TideHeight <- ft2m(data$TideHeight)
@@ -128,7 +127,6 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   station <- data$Station
   data <- split(data, station)
   data <- lapply(data, FUN = tide_height_data_station, harmonics = harmonics)
-  data$stringsAsFactors <- FALSE
   data <- do.call("rbind", data)
 
   data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)

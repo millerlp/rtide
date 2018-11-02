@@ -4,6 +4,8 @@
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.org/poissonconsulting/rtide)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/rtide?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/rtide)
 [![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
 [![CRAN
@@ -66,13 +68,15 @@ To install the latest official release from
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/rtide)
 
-    # install.packages("devtools")
+    install.packages("devtools")
+    devtools::install_github("poissonconsulting/err")
+    devtools::install_github("poissonconsulting/checkr")
     devtools::install_github("poissonconsulting/rtide")
 
 To install the latest development version from the Poisson drat
 [repository](https://github.com/poissonconsulting/drat)
 
-    # install.packages("drat")
+    install.packages("drat")
     drat::addRepo("poissonconsulting")
     install.packages("rtide")
 
@@ -117,7 +121,8 @@ abide by its terms.
 
 ## Inspiration
 
-The harmonics data was converted from harmonics-dwf-20151227-free, NOAA
-web site data processed by David Flater for
-[XTide](http://www.flaterco.com/xtide/). The code to calculate tide
-heights from the harmonics is based on XTide.
+The harmonics data was converted from
+<https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
+NOAA web site data processed by David Flater for
+[`XTide`](http://www.flaterco.com/xtide/). The code to calculate tide
+heights from the harmonics is based on `XTide`.
