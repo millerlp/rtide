@@ -10,7 +10,7 @@ test_that("tide_height_data works", {
   expect_df(checkr::check_data(tide_height_data(data), values = list(
     Station = "", DateTime = Sys.time(), TideHeight = 1),
     nrow = 1, exclusive = TRUE, order = TRUE))
-  expect_identical(lubridate::tz(data$DateTime), "PST8PDT")
+  expect_identical(dtt_tz(data$DateTime), "PST8PDT")
 })
 
 test_that("tide_height_data predictions", {

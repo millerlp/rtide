@@ -72,7 +72,7 @@ tide_slack_data <- function (data, harmonics = rtide::harmonics) {
   if (has_name(data, "SlackType"))
     stop("data already has 'SlackType' column", call. = FALSE)
 
-  tz <- lubridate::tz(data$DateTime)
+  tz <- dtt_tz(data$DateTime)
   data$DateTime <- dtt_adjust_tz(data$DateTime, tz = "UTC")
 
   years <- range(dtt_year(data$DateTime), na.rm = TRUE)

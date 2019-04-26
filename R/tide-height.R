@@ -63,7 +63,7 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
 
 hours_year <- function(datetime) {
   check_vector(datetime, Sys.time())
-  stopifnot(identical(lubridate::tz(datetime), "UTC"))
+  stopifnot(identical(dtt_tz(datetime), "UTC"))
 
   year <- dtt_year(datetime)
 
@@ -117,7 +117,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   if (has_name(data, "TideHeight"))
     stop("data already has 'TideHeight' column", call. = FALSE)
 
-  tz <- lubridate::tz(data$DateTime)
+  tz <- dtt_tz(data$DateTime)
   data$DateTime <- dtt_adjust_tz(data$DateTime, tz = "UTC")
 
   years <- range(dtt_year(data$DateTime), na.rm = TRUE)
