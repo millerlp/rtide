@@ -75,7 +75,7 @@ tide_slack_data <- function (data, harmonics = rtide::harmonics) {
   tz <- lubridate::tz(data$DateTime)
   data$DateTime <- lubridate::with_tz(data$DateTime, tzone = "UTC")
 
-  years <- range(lubridate::year(data$DateTime), na.rm = TRUE)
+  years <- range(dtt_year(data$DateTime), na.rm = TRUE)
   if (!all(years %in% years_tide_harmonics(harmonics)))
     stop("years are outside harmonics range", call. = FALSE)
 

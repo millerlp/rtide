@@ -17,6 +17,7 @@ Depends:
 Imports:
     abind,
     checkr,
+    dttr,
     lubridate,
     utils
 Suggests:
@@ -24,6 +25,8 @@ Suggests:
     scales,
     tibble,
     testthat
+Remotes:
+    poissonconsulting/dttr
 URL: https://github.com/poissonconsulting/rtide
 BugReports: https://github.com/poissonconsulting/rtide/issues
 Encoding: UTF-8

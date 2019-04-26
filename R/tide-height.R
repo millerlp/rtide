@@ -53,10 +53,10 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
   check_date(to)
   check_string(tz)
 
-  from <- ISOdatetime(year = lubridate::year(from), month = lubridate::month(from),
-                      day = lubridate::day(from), hour = 0, min = 0, sec = 0, tz = tz)
-  to <- ISOdatetime(year = lubridate::year(to), month = lubridate::month(to),
-                    day = lubridate::day(to), hour = 23, min = 59, sec = 59, tz = tz)
+  from <- ISOdatetime(year = dtt_year(from), month = dtt_month(from),
+                      day = dtt_day(from), hour = 0, min = 0, sec = 0, tz = tz)
+  to <- ISOdatetime(year = dtt_year(to), month = dtt_month(to),
+                    day = dtt_day(to), hour = 23, min = 59, sec = 59, tz = tz)
 
   seq(from, to, by = paste(minutes, "min"))
 }
@@ -65,7 +65,7 @@ hours_year <- function(datetime) {
   check_vector(datetime, Sys.time())
   stopifnot(identical(lubridate::tz(datetime), "UTC"))
 
-  year <- lubridate::year(datetime)
+  year <- dtt_year(datetime)
 
   startdatetime <- ISOdate(year, 1, 1, 0, tz = "UTC")
   hours <- difftime(datetime, startdatetime, units = 'hours')
@@ -74,7 +74,7 @@ hours_year <- function(datetime) {
 }
 
 tide_height_datetime <- function(d, h) {
-  h$NodeYear <- h$NodeYear[,as.character(lubridate::year(d)),,drop = FALSE]
+  h$NodeYear <- h$NodeYear[,as.character(dtt_year(d)),,drop = FALSE]
 
   height <- h$Station$Datum + sum(h$NodeYear[,,"NodeFactor"] * h$StationNode[,,"A"] *
                                     cos((h$Node$Speed * (hours_year(d) - h$Station$Hours) +
