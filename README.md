@@ -8,8 +8,7 @@ Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https:
 status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/rtide?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/rtide)
 [![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
-[![CRAN
-Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rtide)](https://cran.r-project.org/package=rtide)
+![CRAN Downloads](http://cranlogs.r-pkg.org/badges/ypr)
 
 # rtide
 
@@ -60,52 +59,33 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
 
 ## Installation
 
-To install the latest official release from
-[CRAN](https://CRAN.R-project.org/package=rtide)
+To install the latest release version from
+[CRAN](https://cran.r-project.org)
 
+    install.packages("rtide")
+
+To install the latest development version from the Poisson drat
+[repository](https://github.com/poissonconsulting/drat)
+
+    if(!"drat" %in% installed.packages()[,1]) 
+      install.packages("drat")
+    drat::addRepo("poissonconsulting")
     install.packages("rtide")
 
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/rtide)
 
-    install.packages("devtools")
+    if(!"devtools" %in% installed.packages()[,1]) 
+      install.packages("devtools")
     devtools::install_github("poissonconsulting/err")
     devtools::install_github("poissonconsulting/checkr")
     devtools::install_github("poissonconsulting/rtide")
-
-To install the latest development version from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-    install.packages("drat")
-    drat::addRepo("poissonconsulting")
-    install.packages("rtide")
 
 ## Interaction
 
 Tide heights can be also obtained using rtide through a [shiny
 interface](https://poissonconsulting.shinyapps.io/rtide/) developed by
 Seb Dalgarno.
-
-## Citation
-
-``` 
-
-To cite package 'rtide' in publications use:
-
-  Joe Thorley, Luke Miller and Abram Fleishman (2018). rtide: Tide
-  Heights. R package version 0.0.5.
-  https://github.com/poissonconsulting/rtide
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {rtide: Tide Heights},
-    author = {Joe Thorley and Luke Miller and Abram Fleishman},
-    year = {2018},
-    note = {R package version 0.0.5},
-    url = {https://github.com/poissonconsulting/rtide},
-  }
-```
 
 ## Contribution
 
