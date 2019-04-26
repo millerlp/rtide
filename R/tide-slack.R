@@ -73,7 +73,7 @@ tide_slack_data <- function (data, harmonics = rtide::harmonics) {
     stop("data already has 'SlackType' column", call. = FALSE)
 
   tz <- lubridate::tz(data$DateTime)
-  data$DateTime <- lubridate::with_tz(data$DateTime, tzone = "UTC")
+  data$DateTime <- dtt_adjust_tz(data$DateTime, tz = "UTC")
 
   years <- range(dtt_year(data$DateTime), na.rm = TRUE)
   if (!all(years %in% years_tide_harmonics(harmonics)))
@@ -85,8 +85,8 @@ tide_slack_data <- function (data, harmonics = rtide::harmonics) {
   on.exit(options(op))
   data <- do.call("rbind", data)
 
-  data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)
-  data$SlackDateTime <- lubridate::with_tz(data$SlackDateTime, tzone = tz)
+  data$DateTime <- dtt_adjust_tz(data$DateTime, tz = tz)
+  data$SlackDateTime <- dtt_adjust_tz(data$SlackDateTime, tz = tz)
   data <- data[order(data$Station, data$DateTime),]
   as_conditional_tibble(data)
 }

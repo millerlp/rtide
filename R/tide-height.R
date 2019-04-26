@@ -118,9 +118,9 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
     stop("data already has 'TideHeight' column", call. = FALSE)
 
   tz <- lubridate::tz(data$DateTime)
-  data$DateTime <- lubridate::with_tz(data$DateTime, tzone = "UTC")
+  data$DateTime <- dtt_adjust_tz(data$DateTime, tz = "UTC")
 
-  years <- range(lubridate::year(data$DateTime), na.rm = TRUE)
+  years <- range(dtt_year(data$DateTime), na.rm = TRUE)
   if (!all(years %in% years_tide_harmonics(harmonics)))
     stop("years are outside harmonics range", call. = FALSE)
 
@@ -131,7 +131,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
   on.exit(options(op))
   data <- do.call("rbind", data)
 
-  data$DateTime <- lubridate::with_tz(data$DateTime, tzone = tz)
+  data$DateTime <- dtt_adjust_tz(data$DateTime, tz = tz)
   data <- data[order(data$Station, data$DateTime),]
   as_conditional_tibble(data)
 }
