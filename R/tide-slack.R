@@ -1,25 +1,27 @@
 tide_slack_datetime <- function(d, h, high = TRUE, forward = TRUE) {
   hours <- lubridate::minutes(cumsum(c(0,rep(15,25)))) * if (forward) 1 else -1
-  height <- vapply(d + hours, tide_height_datetime, 1, h = h)
+  d <- d + hours
+  height <- vapply(d, tide_height_datetime, 1, h = h)
   which <- which.max(height * if (high) 1 else -1)
-  d <- d + hours[which]
+  d <- d[which]
 
   minutes <- lubridate::minutes(c(cumsum(rep(-1,15)), 0, cumsum(rep(1,15))))
-  height <- vapply(d + minutes, tide_height_datetime, 1, h = h)
+  d <- d + minutes
+  height <- vapply(d, tide_height_datetime, 1, h = h)
   which <- which.max(height * if (high) 1 else -1)
-  d <- d + minutes[which]
+  d <- d[which]
 
   seconds <- lubridate::seconds(c(cumsum(rep(-3,10)), 0, cumsum(rep(3,10))))
-  height <- vapply(d + seconds, tide_height_datetime, 1, h = h)
+  d <- d + seconds
+  height <- vapply(d, tide_height_datetime, 1, h = h)
   which <- which.max(height * if (high) 1 else -1)
-  d <- d + seconds[which]
+  d <- d[which]
 
   seconds <- lubridate::seconds(c(cumsum(rep(-1,3)), 0, cumsum(rep(1,3))))
-  height <- vapply(d + seconds, tide_height_datetime, 1, h = h)
+  d <- d + seconds
+  height <- vapply(d, tide_height_datetime, 1, h = h)
   which <- which.max(height * if (high) 1 else -1)
-  d <- d + seconds[which]
-
-  d
+  d[which]
 }
 
 tide_slack_data_datetime <- function(d, h) {
