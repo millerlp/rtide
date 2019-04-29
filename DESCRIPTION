@@ -18,7 +18,6 @@ Imports:
     abind,
     checkr,
     dttr,
-    lubridate,
     utils
 Suggests:
     ggplot2,

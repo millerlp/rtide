@@ -1,25 +1,22 @@
 tide_slack_datetime <- function(d, h, high = TRUE, forward = TRUE) {
   minutes <- seq(0L, 375L, by = 15L)
   if(!forward) minutes <- minutes * -1L
-  d <- d + minutes
+  d <- dtt_add_minutes(d, minutes)
   height <- vapply(d, tide_height_datetime, 1, h = h)
   which <- which.max(height * if (high) 1 else -1)
   d <- d[which]
 
-  minutes <- lubridate::minutes(-15:15)
-  d <- d + minutes
+  d <- dtt_add_minutes(d, -15:15)
   height <- vapply(d, tide_height_datetime, 1, h = h)
   which <- which.max(height * if (high) 1 else -1)
   d <- d[which]
 
-  seconds <- lubridate::seconds(seq(-30L, 30L, by = 3L))
-  d <- d + seconds
+  d <- dtt_add_seconds(d, seq(-30L, 30L, by = 3L))
   height <- vapply(d, tide_height_datetime, 1, h = h)
   which <- which.max(height * if (high) 1 else -1)
   d <- d[which]
 
-  seconds <- lubridate::seconds(-3:3)
-  d <- d + seconds
+  d <- dtt_add_seconds(d, -3:3)
   height <- vapply(d, tide_height_datetime, 1, h = h)
   which <- which.max(height * if (high) 1 else -1)
   d[which]
