@@ -1,6 +1,6 @@
 Package: rtide
 Title: Tide Heights
-Version: 0.0.5.9001
+Version: 0.0.6
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("Luke", "Miller", email = "contact@lukemiller.org", role = "aut"),

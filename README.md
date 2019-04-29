@@ -7,6 +7,8 @@ Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https:
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/rtide?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/rtide)
 [![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
+[![License:
+GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
 ![CRAN Downloads](http://cranlogs.r-pkg.org/badges/ypr)
 
@@ -79,6 +81,7 @@ To install the latest development version from
       install.packages("devtools")
     devtools::install_github("poissonconsulting/err")
     devtools::install_github("poissonconsulting/checkr")
+    devtools::install_github("poissonconsulting/dttr")
     devtools::install_github("poissonconsulting/rtide")
 
 ## Interaction
