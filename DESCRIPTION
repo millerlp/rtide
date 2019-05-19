@@ -17,7 +17,7 @@ Depends:
 Imports:
     abind,
     checkr,
-    dttr,
+    dttr2,
     utils
 Suggests:
     ggplot2,
@@ -25,7 +25,7 @@ Suggests:
     tibble,
     testthat
 Remotes:
-    poissonconsulting/dttr
+    poissonconsulting/dttr2
 URL: https://github.com/poissonconsulting/rtide
 BugReports: https://github.com/poissonconsulting/rtide/issues
 Encoding: UTF-8

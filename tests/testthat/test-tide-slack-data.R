@@ -20,6 +20,6 @@ test_that("tide_height_data predictions", {
   expect_identical(slack$SlackType, rep(c("low", "high"), 4))
 
   monterey <- rtide::monterey
-  monterey$DateTime <- dttr::dtt_add_hours(monterey$DateTime, 2L)
+  monterey$DateTime <- dtt_add_hours(monterey$DateTime, 2L)
   slack2 <- tide_slack_data(monterey)
 })

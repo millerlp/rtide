@@ -40,7 +40,7 @@ test_that("tide_height_data tz", {
                      stringsAsFactors = FALSE)
 
   data2 <- data
-  data2$DateTime <- dttr::dtt_adjust_tz(data2$DateTime, tz = "EST")
+  data2$DateTime <- dtt_adjust_tz(data2$DateTime, tz = "EST")
 
   expect_equal(tide_height_data(data)$TideHeight, tide_height_data(data2)$TideHeight)
 })
