@@ -1,5 +1,3 @@
-context("tide-datetimes")
-
 test_that("tide_datetimes works", {
 
   minutes <- 17L

@@ -1,5 +1,3 @@
-context("tide-stations")
-
 test_that("tide_stations works", {
 
   expect_equal(tide_stations("Monterey", rtide::harmonics), c("Elkhorn Slough railroad bridge, Monterey Bay, California", "Monterey, Monterey Harbor, California"))

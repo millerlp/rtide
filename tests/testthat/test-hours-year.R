@@ -1,5 +1,3 @@
-context("hours-year")
-
 test_that("hours_year works", {
   expect_error(hours_year(1))
   expect_identical(hours_year(ISOdate(2000,1,1,1,tz = "UTC")), 1)
