@@ -1,13 +1,9 @@
-context("tide-height-data")
-
 test_that("tide_height_data works", {
-  expect_df <- function(x) expect_is(x, "data.frame")
-
   data <- data.frame(Station = "Monterey, Monterey Harbor, California",
                      DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
                      stringsAsFactors = FALSE)
 
-  expect_df(checkr::check_data(tide_height_data(data), values = list(
+  expect_null(chk::check_data(tide_height_data(data), values = list(
     Station = "", DateTime = Sys.time(), TideHeight = 1),
     nrow = 1, exclusive = TRUE, order = TRUE))
   expect_identical(dtt_tz(data$DateTime), "PST8PDT")

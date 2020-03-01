@@ -1,13 +1,9 @@
-context("tide-slack-data")
-
 test_that("tide_slack_data works", {
-  expect_df <- function(x) expect_is(x, "data.frame")
-
   data <- data.frame(Station = "Monterey, Monterey Harbor, California",
                      DateTime = ISOdate(2015,1,1,10,tz = "PST8PDT"),
                      stringsAsFactors = FALSE)
 
-  expect_df(checkr::check_data(tide_slack_data(data), values = list(
+  expect_null(chk::check_data(tide_slack_data(data), values = list(
     Station = "", DateTime = Sys.time(), SlackDateTime = Sys.time(),
     SlackTideHeight = 1, SlackType = ""),
     nrow = 1, exclusive = TRUE, order = TRUE))

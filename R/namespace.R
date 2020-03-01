@@ -1,3 +1,3 @@
-#' @import checkr dttr2
-#' @importFrom chk chk_string chk_date
+#' @import chk dttr2
+#' @importFrom checkr check_vector
 NULL
