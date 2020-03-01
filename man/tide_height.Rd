@@ -4,9 +4,14 @@
 \alias{tide_height}
 \title{Tide Height}
 \usage{
-tide_height(stations = "Monterey Harbor", minutes = 60L,
-  from = as.Date("2015-01-01"), to = as.Date("2015-01-01"),
-  tz = "UTC", harmonics = rtide::harmonics)
+tide_height(
+  stations = "Monterey Harbor",
+  minutes = 60L,
+  from = as.Date("2015-01-01"),
+  to = as.Date("2015-01-01"),
+  tz = "UTC",
+  harmonics = rtide::harmonics
+)
 }
 \arguments{
 \item{stations}{A character vector of stations to match - treated as regular expressions.}

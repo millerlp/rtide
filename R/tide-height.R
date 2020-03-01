@@ -51,7 +51,7 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
 
   check_date(from)
   check_date(to)
-  check_string(tz)
+  chk_string(tz)
 
   from <- ISOdatetime(year = dtt_year(from), month = dtt_month(from),
                       day = dtt_day(from), hour = 0, min = 0, sec = 0, tz = tz)

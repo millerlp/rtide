@@ -4,8 +4,12 @@
 \alias{tide_datetimes}
 \title{Tide Date Times}
 \usage{
-tide_datetimes(minutes = 60L, from = as.Date("2015-01-01"),
-  to = as.Date("2015-12-31"), tz = "PST8PDT")
+tide_datetimes(
+  minutes = 60L,
+  from = as.Date("2015-01-01"),
+  to = as.Date("2015-12-31"),
+  tz = "PST8PDT"
+)
 }
 \arguments{
 \item{minutes}{An integer of the number of minutes between tide heights}
