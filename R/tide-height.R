@@ -10,7 +10,9 @@ ft2m <- function(x) {
 #' @param harmonics The harmonics object.
 #' @export
 tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
-  check_vector(stations, "")
+  chk_s3_class(stations, "character")
+  chk_not_empty(stations)
+  chk_not_any_na(stations)
   check_tide_harmonics(harmonics)
   if (!is.tide_harmonics(harmonics))
     stop("harmonics must be an object of class 'tide_harmonics'", call. = FALSE)
@@ -40,18 +42,18 @@ tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
 #' tide_datetimes()
 tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.Date("2015-12-31"),
                            tz = "PST8PDT") {
+  chk_number(minutes)
+  chk_range(minutes, c(1, 60))
 
   if (class(minutes) == "numeric"){
-    check_vector(minutes, c(1,60), length = 1)
     if (minutes %% 1 != 0)	# If modulo isn't 0, decimal value is present
       warning("Truncating minutes interval to whole number", call.=FALSE)
     minutes <- as.integer(minutes)
   }
-  check_vector(minutes, c(1L, 60L), length = 1)
 
   chk_date(from)
   chk_date(to)
-  chk_string(tz)
+  chk_tz(tz)
 
   from <- ISOdatetime(year = dtt_year(from), month = dtt_month(from),
                       day = dtt_day(from), hour = 0, min = 0, sec = 0, tz = tz)

@@ -15,6 +15,6 @@ test_that("tide_datetimes works", {
 
   expect_identical(tide_datetimes(minutes = 1), tide_datetimes(minutes = 1L))
   expect_warning(tide_datetimes(minutes = 1.9), "Truncating minutes interval to whole number")
-  expect_error(tide_datetimes(minutes = 0L), "the values in minutes must lie between 1 and 60")
-  expect_error(tide_datetimes(minutes = 0.9), "the values in minutes must lie between 1 and 60")
+  expect_chk_error(tide_datetimes(minutes = 0L), "^`minutes` must be between 1 and 60, not 0[.]$")
+  expect_chk_error(tide_datetimes(minutes = 0.9), "^`minutes` must be between 1 and 60, not 0[.]9[.]$")
 })
