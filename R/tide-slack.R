@@ -95,5 +95,5 @@ tide_slack_data <- function (data, harmonics = rtide::harmonics) {
   data$DateTime <- dtt_adjust_tz(data$DateTime, tz = tz)
   data$SlackDateTime <- dtt_adjust_tz(data$SlackDateTime, tz = tz)
   data <- data[order(data$Station, data$DateTime),]
-  as_conditional_tibble(data)
+  tibble::as_tibble(data)
 }

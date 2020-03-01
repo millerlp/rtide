@@ -18,14 +18,15 @@ Imports:
     abind,
     chk,
     dttr2,
-    utils
+    utils,
+    tibble
 Suggests:
     ggplot2,
     scales,
-    tibble,
     testthat
 Remotes:
-    poissonconsulting/dttr2
+    poissonconsulting/dttr2,
+    poissonconsulting/chk
 URL: https://github.com/poissonconsulting/rtide
 BugReports: https://github.com/poissonconsulting/rtide/issues
 Encoding: UTF-8

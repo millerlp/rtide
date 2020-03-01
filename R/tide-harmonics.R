@@ -83,8 +83,8 @@ tide_harmonics <- function (x) {
   x$StationNode <- x$StationNode[,node,,drop = FALSE]
   x$NodeYear <- x$NodeYear[node,,,drop = FALSE]
 
-  x$Node <- as_conditional_tibble(x$Node)
-  x$Station <- as_conditional_tibble(x$Station)
+  x$Node <- tibble::as_tibble(x$Node)
+  x$Station <- tibble::as_tibble(x$Station)
 
   class(x) <- c("tide_harmonics")
   check_tide_harmonics(x)
