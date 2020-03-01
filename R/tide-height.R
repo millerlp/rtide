@@ -64,7 +64,8 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
 }
 
 hours_year <- function(datetime) {
-  check_vector(datetime, Sys.time())
+  chk_s3_class(datetime, "POSIXct")
+  chk_not_any_na(datetime)
   stopifnot(identical(dtt_tz(datetime), "UTC"))
 
   year <- dtt_year(datetime)

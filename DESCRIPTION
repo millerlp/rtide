@@ -16,7 +16,6 @@ Depends:
     R (>= 3.3.0)
 Imports:
     abind,
-    checkr,
     chk,
     dttr2,
     utils
