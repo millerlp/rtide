@@ -1,7 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+# rtide
+
+<!-- badges: start -->
+
+[![lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis-CI Build
 Status](https://travis-ci.org/poissonconsulting/rtide.svg?branch=master)](https://travis-ci.org/poissonconsulting/rtide)
 [![AppVeyor build
@@ -9,10 +14,12 @@ status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/rti
 [![codecov](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide)
 [![License:
 GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
-![CRAN Downloads](http://cranlogs.r-pkg.org/badges/ypr)
-
-# rtide
+[![Tinyverse
+status](https://tinyverse.netlify.com/badge/rtide)](https://CRAN.R-project.org/package=rtide)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide)
+<!-- badges: end -->
 
 ## Introduction
 
@@ -61,30 +68,30 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
 
 ## Installation
 
-To install the latest release version from
-[CRAN](https://cran.r-project.org)
+To install the latest release from [CRAN](https://cran.r-project.org)
 
-    install.packages("rtide")
+``` r
+install.packages("rtide")
+```
 
-To install the latest development version from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-    if(!"drat" %in% installed.packages()[,1]) 
-      install.packages("drat")
-    drat::addRepo("poissonconsulting")
-    install.packages("rtide")
-
-To install the latest development version from
+To install the developmental version from
 [GitHub](https://github.com/poissonconsulting/rtide)
 
-    if(!"devtools" %in% installed.packages()[,1]) 
-      install.packages("devtools")
-    devtools::install_github("poissonconsulting/err")
-    devtools::install_github("poissonconsulting/checkr")
-    devtools::install_github("poissonconsulting/dttr")
-    devtools::install_github("poissonconsulting/rtide")
+``` r
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/rtide")
+```
 
-## Interaction
+To install the latest developmental release from the Poisson drat
+[repository](https://github.com/poissonconsulting/drat)
+
+``` r
+# install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("rtide")
+```
+
+## Shiny
 
 Tide heights can be also obtained using rtide through a [shiny
 interface](https://poissonconsulting.shinyapps.io/rtide/) developed by
@@ -98,9 +105,12 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/rtide/pulls) are
 always welcome.
 
-Please note that this project is released with a [Contributor Code of
-Conduct](CONDUCT.md). By participating in this project you agree to
-abide by its terms.
+### Code of Conduct
+
+Please note that the rtide project is released with a [Contributor Code
+of
+Conduct](https://www.contributor-covenant.org/version/1/0/0/code-of-conduct/).
+By contributing to this project, you agree to abide by its terms.
 
 ## Inspiration
 
