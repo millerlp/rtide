@@ -6,9 +6,9 @@
 \title{Monterey Tide Height Data}
 \format{A tbl data frame:
 \describe{
-  \item{Station}{The station name (chr).}
-  \item{DateTime}{The date time (time).}
-  \item{MLLW}{The tide height in m (dbl).}
+\item{Station}{The station name (chr).}
+\item{DateTime}{The date time (time).}
+\item{MLLW}{The tide height in m (dbl).}
 }}
 \usage{
 monterey

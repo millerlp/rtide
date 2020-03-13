@@ -15,7 +15,9 @@ monterey <- mutate(monterey, Station = tide_stations("Monterey,"))
 monterey <- select(monterey, Station, Date, Time, MLLW = Pred)
 monterey <- unite(monterey, DateTime, Date, Time, sep = " ")
 
-monterey <- mutate(monterey, DateTime = ymd_hm(DateTime, tz = "PST8PDT"),
-                 MLLW = rtide:::ft2m(MLLW))
+monterey <- mutate(monterey,
+  DateTime = ymd_hm(DateTime, tz = "PST8PDT"),
+  MLLW = rtide:::ft2m(MLLW)
+)
 
 use_data(monterey, overwrite = TRUE)

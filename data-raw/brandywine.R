@@ -15,7 +15,9 @@ brandywine <- mutate(brandywine, Station = tide_stations("Brandywine"))
 brandywine <- select(brandywine, Station, Date, Time, MLLW = Pred)
 brandywine <- unite(brandywine, DateTime, Date, Time, sep = " ")
 
-brandywine <- mutate(brandywine, DateTime = ymd_hm(DateTime, tz = "EST5EDT"),
-                     MLLW = rtide:::ft2m(MLLW))
+brandywine <- mutate(brandywine,
+  DateTime = ymd_hm(DateTime, tz = "EST5EDT"),
+  MLLW = rtide:::ft2m(MLLW)
+)
 
 use_data(brandywine, overwrite = TRUE)
