@@ -31,23 +31,31 @@ It includes the harmonics data for 637 US stations.
 ## Utilisation
 
 ``` r
+library(tibble)
 library(rtide)
 #> rtide is not suitable for navigation
 
 data <- rtide::tide_height(
-  "Monterey Harbor", from = as.Date("2016-07-13"), to = as.Date("2016-07-15"), 
-  minutes = 10L, tz = "PST8PDT")
+  "Monterey Harbor",
+  from = as.Date("2016-07-13"), to = as.Date("2016-07-15"),
+  minutes = 10L, tz = "PST8PDT"
+)
 
-print(head(data))
-#> # A tibble: 6 x 3
-#>   Station                               DateTime            TideHeight
-#>   <chr>                                 <dttm>                   <dbl>
-#> 1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514
-#> 2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.496
-#> 3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.481
-#> 4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.468
-#> 5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.457
-#> 6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.449
+print(data)
+#> # A tibble: 432 x 3
+#>    Station                               DateTime            TideHeight
+#>    <chr>                                 <dttm>                   <dbl>
+#>  1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514
+#>  2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.496
+#>  3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.481
+#>  4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.468
+#>  5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.457
+#>  6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.449
+#>  7 Monterey, Monterey Harbor, California 2016-07-13 01:00:00      0.443
+#>  8 Monterey, Monterey Harbor, California 2016-07-13 01:10:00      0.440
+#>  9 Monterey, Monterey Harbor, California 2016-07-13 01:20:00      0.439
+#> 10 Monterey, Monterey Harbor, California 2016-07-13 01:30:00      0.441
+#> # … with 422 more rows
 ```
 
 ``` r
@@ -56,10 +64,12 @@ library(scales)
 ```
 
 ``` r
-ggplot(data = data, aes(x = DateTime, y = TideHeight)) + 
-  geom_line() + 
-  scale_x_datetime(name = "Date", 
-                   labels = date_format("%d %b %Y", tz="PST8PDT")) +
+ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
+  geom_line() +
+  scale_x_datetime(
+    name = "Date",
+    labels = date_format("%d %b %Y", tz = "PST8PDT")
+  ) +
   scale_y_continuous(name = "Tide Height (m)") +
   ggtitle("Monterey Harbour")
 ```

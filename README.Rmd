@@ -34,6 +34,7 @@ It includes the harmonics data for `r length(rtide::tide_stations())` US station
 ## Utilisation
 
 ```{r}
+library(tibble)
 library(rtide)
 
 data <- rtide::tide_height(
@@ -42,7 +43,7 @@ data <- rtide::tide_height(
   minutes = 10L, tz = "PST8PDT"
 )
 
-print(head(data))
+print(data)
 ```
 
 ```{r, message=FALSE}
