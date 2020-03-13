@@ -35,7 +35,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">rtide</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.6.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7</span>
       </span>
     </div>
 
@@ -77,7 +77,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#rtide" class="anchor"></a>rtide</h1></div>
 <!-- badges: start -->
-<p><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="lifecycle: stable"></a> <a href="https://travis-ci.org/poissonconsulting/rtide"><img src="https://travis-ci.org/poissonconsulting/rtide.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/poissonconsulting/rtide"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/rtide?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <a href="https://codecov.io/gh/poissonconsulting/rtide"><img src="https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg" alt="codecov"></a> <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://img.shields.io/badge/License-GPL3-blue.svg" alt="License: GPL3"></a> <a href="https://CRAN.R-project.org/package=rtide"><img src="https://tinyverse.netlify.com/badge/rtide" alt="Tinyverse status"></a> <a href="https://cran.r-project.org/package=rtide"><img src="https://www.r-pkg.org/badges/version/rtide" alt="CRAN status"></a> <img src="https://cranlogs.r-pkg.org/badges/rtide" alt="CRAN downloads"><!-- badges: end --></p>
+<p><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="lifecycle: stable"></a> <a href="https://travis-ci.com/poissonconsulting/rtide"><img src="https://travis-ci.com/poissonconsulting/rtide.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/poissonconsulting/rtide"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/rtide?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <a href="https://codecov.io/gh/poissonconsulting/rtide"><img src="https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg" alt="codecov"></a> <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://img.shields.io/badge/License-GPL3-blue.svg" alt="License: GPL3"></a> <a href="https://CRAN.R-project.org/package=rtide"><img src="https://tinyverse.netlify.com/badge/rtide" alt="Tinyverse status"></a> <a href="https://cran.r-project.org/package=rtide"><img src="https://www.r-pkg.org/badges/version/rtide" alt="CRAN status"></a> <img src="https://cranlogs.r-pkg.org/badges/rtide" alt="CRAN downloads"><!-- badges: end --></p>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
@@ -87,31 +87,41 @@
 <div id="utilisation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#utilisation" class="anchor"></a>Utilisation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rtide)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#&gt; rtide is not suitable for navigation</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a>data &lt;-<span class="st"> </span>rtide<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/rtide/man/tide_height.html">tide_height</a></span>(</span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="st">"Monterey Harbor"</span>, <span class="dt">from =</span> <span class="kw"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2016-07-13"</span>), <span class="dt">to =</span> <span class="kw"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2016-07-15"</span>), </span>
-<span id="cb1-6"><a href="#cb1-6"></a>  <span class="dt">minutes =</span> 10L, <span class="dt">tz =</span> <span class="st">"PST8PDT"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(data))</span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#&gt; # A tibble: 6 x 3</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co">#&gt;   Station                               DateTime            TideHeight</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co">#&gt;   &lt;chr&gt;                                 &lt;dttm&gt;                   &lt;dbl&gt;</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="co">#&gt; 1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co">#&gt; 2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.496</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="co">#&gt; 3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.481</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co">#&gt; 4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.468</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co">#&gt; 5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.457</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="co">#&gt; 6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.449</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tibble)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rtide)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#&gt; rtide is not suitable for navigation</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>data &lt;-<span class="st"> </span>rtide<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/rtide/man/tide_height.html">tide_height</a></span>(</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="st">"Monterey Harbor"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="dt">from =</span> <span class="kw"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2016-07-13"</span>), <span class="dt">to =</span> <span class="kw"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2016-07-15"</span>),</span>
+<span id="cb1-8"><a href="#cb1-8"></a>  <span class="dt">minutes =</span> 10L, <span class="dt">tz =</span> <span class="st">"PST8PDT"</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(data)</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co">#&gt; # A tibble: 432 x 3</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co">#&gt;    Station                               DateTime            TideHeight</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co">#&gt;    &lt;chr&gt;                                 &lt;dttm&gt;                   &lt;dbl&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co">#&gt;  1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co">#&gt;  2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.496</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co">#&gt;  3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.481</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co">#&gt;  4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.468</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co">#&gt;  5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.457</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co">#&gt;  6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.449</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="co">#&gt;  7 Monterey, Monterey Harbor, California 2016-07-13 01:00:00      0.443</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="co">#&gt;  8 Monterey, Monterey Harbor, California 2016-07-13 01:10:00      0.440</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co">#&gt;  9 Monterey, Monterey Harbor, California 2016-07-13 01:20:00      0.439</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co">#&gt; 10 Monterey, Monterey Harbor, California 2016-07-13 01:30:00      0.441</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="co">#&gt; # … with 422 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(scales)</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data =</span> data, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> DateTime, <span class="dt">y =</span> TideHeight)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_datetime</a></span>(<span class="dt">name =</span> <span class="st">"Date"</span>, </span>
-<span id="cb3-4"><a href="#cb3-4"></a>                   <span class="dt">labels =</span> <span class="kw"><a href="https://scales.r-lib.org//reference/label_date.html">date_format</a></span>(<span class="st">"%d %b %Y"</span>, <span class="dt">tz=</span><span class="st">"PST8PDT"</span>)) <span class="op">+</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span>(<span class="dt">name =</span> <span class="st">"Tide Height (m)"</span>) <span class="op">+</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="st">"Monterey Harbour"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data =</span> data, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> DateTime, <span class="dt">y =</span> TideHeight)) <span class="op">+</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() <span class="op">+</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_datetime</a></span>(</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="dt">name =</span> <span class="st">"Date"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="dt">labels =</span> <span class="kw"><a href="https://scales.r-lib.org//reference/label_date.html">date_format</a></span>(<span class="st">"%d %b %Y"</span>, <span class="dt">tz =</span> <span class="st">"PST8PDT"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  ) <span class="op">+</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span>(<span class="dt">name =</span> <span class="st">"Tide Height (m)"</span>) <span class="op">+</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="st">"Monterey Harbour"</span>)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png"><!-- --></p>
 </div>
 <div id="installation" class="section level2">
