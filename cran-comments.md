@@ -9,15 +9,7 @@ release 3.6.2
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: ‘Joe Thorley <joe@poissonconsulting.ca>’
-
-Possibly mis-spelled words in DESCRIPTION:
-  dwf (12:53)
-  
-**All words are spelt correctly.**
+0 errors | 0 warnings | 0 notes
 
 ## Authorship
 
