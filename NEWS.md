@@ -1,7 +1,7 @@
-# rtide 0.0.6.9002
+# rtide 0.0.7
 
-- Internal changes only.
-
+- Replaced dependency on checkr with chk.
+- Replaced dependency on dttr with dttr2.
 
 # rtide 0.0.6
 
