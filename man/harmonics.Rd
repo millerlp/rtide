@@ -4,7 +4,9 @@
 \name{harmonics}
 \alias{harmonics}
 \title{Harmonics}
-\format{An object of class \code{tide_harmonics} of length 4.}
+\format{
+An object of class \code{tide_harmonics} of length 4.
+}
 \usage{
 harmonics
 }
