@@ -18,7 +18,8 @@ GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/l
 status](https://tinyverse.netlify.com/badge/rtide)](https://CRAN.R-project.org/package=rtide)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
-![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide) [![R build
+status](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
 <!-- badges: end -->
 
 ## Introduction
