@@ -74,13 +74,6 @@ To install the developmental version from [GitHub](https://github.com/poissoncon
 remotes::install_github("poissonconsulting/rtide")
 ```
 
-To install the latest developmental release from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
-```{r, eval=FALSE}
-# install.packages("drat")
-drat::addRepo("poissonconsulting")
-install.packages("rtide")
-```
-
 ## Shiny
 
 Tide heights can be also obtained using rtide through a [shiny interface](https://poissonconsulting.shinyapps.io/rtide/) developed by Seb Dalgarno.
