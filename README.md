@@ -16,7 +16,9 @@ GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/l
 status](https://tinyverse.netlify.com/badge/rtide)](https://CRAN.R-project.org/package=rtide)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
-![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide) [![Codecov
+test
+coverage](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide?branch=master)
 <!-- badges: end -->
 
 ## Introduction
@@ -104,11 +106,11 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/rtide/pulls) are
 always welcome.
 
-### Code of Conduct
+## Code of Conduct
 
 Please note that the rtide project is released with a [Contributor Code
 of
-Conduct](https://www.contributor-covenant.org/version/1/0/0/code-of-conduct/).
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
 
 ## Inspiration

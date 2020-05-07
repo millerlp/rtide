@@ -4,7 +4,12 @@
 .Ruserdata
 
 .DS_Store
-.settings/de.walware.r.core.prefs
-*.project
-.Rapp.history
+.Renviron
+.RProfile
+.httr-oauth
+
+*.html
+
 docs/
+inst/docs/
+scripts/

@@ -17,3 +17,4 @@ cran-comments.md
 ^\.github$
 ^scripts$
 ^codecov\.yml$
+^\.gitignore$
