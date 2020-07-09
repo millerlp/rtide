@@ -1,6 +1,7 @@
-# rtide 0.0.7.9000
+# rtide 0.0.8
 
 - No longer support R 3.3.
+- House keeping.
 
 # rtide 0.0.7
 
