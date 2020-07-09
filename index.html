@@ -87,17 +87,18 @@
 <div id="utilisation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#utilisation" class="anchor"></a>Utilisation</h2>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tibble</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">rtide</span>)
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://tibble.tidyverse.org">tibble</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/poissonconsulting/rtide">rtide</a></span>)
 <span class="co">#&gt; rtide is not suitable for navigation</span>
 
-<span class="no">data</span> <span class="kw">&lt;-</span> <span class="kw pkg">rtide</span><span class="kw ns">::</span><span class="fu"><a href="reference/tide_height.html">tide_height</a></span>(
+<span class="kw">data</span> <span class="op">&lt;-</span> <span class="kw">rtide</span>::<span class="fu"><a href="reference/tide_height.html">tide_height</a></span>(
   <span class="st">"Monterey Harbor"</span>,
-  <span class="kw">from</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2016-07-13"</span>), <span class="kw">to</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2016-07-15"</span>),
-  <span class="kw">minutes</span> <span class="kw">=</span> <span class="fl">10L</span>, <span class="kw">tz</span> <span class="kw">=</span> <span class="st">"PST8PDT"</span>
+  from = <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2016-07-13"</span>), to = <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="st">"2016-07-15"</span>),
+  minutes = <span class="fl">10L</span>, tz = <span class="st">"PST8PDT"</span>
 )
 
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">data</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="kw">data</span>)
 <span class="co">#&gt; # A tibble: 432 x 3</span>
 <span class="co">#&gt;    Station                               DateTime            TideHeight</span>
 <span class="co">#&gt;    &lt;chr&gt;                                 &lt;dttm&gt;                   &lt;dbl&gt;</span>
@@ -111,27 +112,36 @@
 <span class="co">#&gt;  8 Monterey, Monterey Harbor, California 2016-07-13 01:10:00      0.440</span>
 <span class="co">#&gt;  9 Monterey, Monterey Harbor, California 2016-07-13 01:20:00      0.439</span>
 <span class="co">#&gt; 10 Monterey, Monterey Harbor, California 2016-07-13 01:30:00      0.441</span>
-<span class="co">#&gt; # … with 422 more rows</span></pre></div>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">scales</span>)</pre></div>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">DateTime</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">TideHeight</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() +
+<span class="co">#&gt; # … with 422 more rows</span>
+</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://scales.r-lib.org">scales</a></span>)
+</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(data = <span class="kw">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">DateTime</span>, y = <span class="kw">TideHeight</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_datetime</a></span>(
-    <span class="kw">name</span> <span class="kw">=</span> <span class="st">"Date"</span>,
-    <span class="kw">labels</span> <span class="kw">=</span> <span class="fu"><a href="https://scales.r-lib.org//reference/label_date.html">date_format</a></span>(<span class="st">"%d %b %Y"</span>, <span class="kw">tz</span> <span class="kw">=</span> <span class="st">"PST8PDT"</span>)
-  ) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span>(<span class="kw">name</span> <span class="kw">=</span> <span class="st">"Tide Height (m)"</span>) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="st">"Monterey Harbour"</span>)</pre></div>
+    name = <span class="st">"Date"</span>,
+    labels = <span class="fu"><a href="https://scales.r-lib.org//reference/label_date.html">date_format</a></span>(<span class="st">"%d %b %Y"</span>, tz = <span class="st">"PST8PDT"</span>)
+  ) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span>(name = <span class="st">"Tide Height (m)"</span>) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="st">"Monterey Harbour"</span>)
+</pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png"><!-- --></p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the latest release from <a href="https://cran.r-project.org">CRAN</a></p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"rtide"</span>)</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"rtide"</span>)
+</pre></div>
 <p>To install the developmental version from <a href="https://github.com/poissonconsulting/rtide">GitHub</a></p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"poissonconsulting/rtide"</span>)</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="co"># install.packages("remotes")</span>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"poissonconsulting/rtide"</span>)
+</pre></div>
 </div>
 <div id="shiny" class="section level2">
 <h2 class="hasAnchor">
@@ -179,6 +189,7 @@
 <div class="community">
 <h2>Community</h2>
 <ul class="list-unstyled">
+<li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
@@ -197,11 +208,10 @@
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="lifecycle: stable"></a></li>
 <li><a href="https://github.com/poissonconsulting/rtide/actions"><img src="https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://codecov.io/gh/poissonconsulting/rtide"><img src="https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://codecov.io/gh/poissonconsulting/rtide?branch=master"><img src="https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://img.shields.io/badge/License-GPL3-blue.svg" alt="License: GPL3"></a></li>
 <li><a href="https://CRAN.R-project.org/package=rtide"><img src="https://tinyverse.netlify.com/badge/rtide" alt="Tinyverse status"></a></li>
 <li><a href="https://cran.r-project.org/package=rtide"><img src="https://www.r-pkg.org/badges/version/rtide" alt="CRAN status"></a></li>
-<li><a href="https://codecov.io/gh/poissonconsulting/rtide?branch=master"><img src="https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 </div>
