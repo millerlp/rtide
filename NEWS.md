@@ -2,7 +2,6 @@
 
 - No longer support R 3.3.
 
-
 # rtide 0.0.7
 
 - Replaced dependency on checkr with chk.
