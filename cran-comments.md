@@ -10,7 +10,14 @@ release 4.0.2
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 notes
+
+> Found the following (possibly) invalid URLs:
+  URL: https://poissonconsulting.shinyapps.io/rtide/
+    From: README.md
+    Status: Error
+
+The url is valid.
 
 ## Authorship
 
