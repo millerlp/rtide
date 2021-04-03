@@ -7,14 +7,11 @@
 
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R build
-status](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide?branch=master)
 [![License:
 GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Tinyverse
-status](https://tinyverse.netlify.com/badge/rtide)](https://CRAN.R-project.org/package=rtide)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide)
