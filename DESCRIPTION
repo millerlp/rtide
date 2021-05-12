@@ -29,7 +29,7 @@ Depends:
     R (>= 3.4)
 Imports:
     abind,
-    chk (>= 0.5.1.9002),
+    chk,
     dttr2,
     tibble,
     utils
@@ -38,8 +38,6 @@ Suggests:
     ggplot2,
     scales,
     testthat
-Remotes:
-    poissonconsulting/chk
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
