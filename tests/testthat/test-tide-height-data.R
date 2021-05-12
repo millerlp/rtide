@@ -5,12 +5,12 @@ test_that("tide_height_data works", {
     stringsAsFactors = FALSE
   )
 
-  expect_null(chk::check_data(tide_height_data(data),
+  expect_error(chk::check_data(tide_height_data(data),
     values = list(
       Station = "", DateTime = Sys.time(), TideHeight = 1
     ),
     nrow = 1, exclusive = TRUE, order = TRUE
-  ))
+  ), NA)
   expect_identical(dtt_tz(data$DateTime), "PST8PDT")
 })
 

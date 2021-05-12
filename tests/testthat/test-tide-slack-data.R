@@ -5,13 +5,13 @@ test_that("tide_slack_data works", {
     stringsAsFactors = FALSE
   )
 
-  expect_null(chk::check_data(tide_slack_data(data),
+  expect_error(chk::check_data(tide_slack_data(data),
     values = list(
       Station = "", DateTime = Sys.time(), SlackDateTime = Sys.time(),
       SlackTideHeight = 1, SlackType = ""
     ),
     nrow = 1, exclusive = TRUE, order = TRUE
-  ))
+  ), NA)
 })
 
 test_that("tide_height_data predictions", {
