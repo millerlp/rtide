@@ -114,5 +114,5 @@ By contributing to this project, you agree to abide by its terms.
 The harmonics data was converted from
 <https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
 NOAA web site data processed by David Flater for
-[`XTide`](http://www.flaterco.com/xtide/). The code to calculate tide
+[`XTide`](https://www.flaterco.com/xtide/). The code to calculate tide
 heights from the harmonics is based on `XTide`.

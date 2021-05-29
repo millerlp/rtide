@@ -16,6 +16,6 @@ A tbl data frame:
 brandywine
 }
 \description{
-High/Low Tide Predictions from \url{http://tidesandcurrents.noaa.gov/tide_predictions.html}.
+High/Low Tide Predictions from \url{https://tidesandcurrents.noaa.gov/tide_predictions.html}.
 }
 \keyword{datasets}

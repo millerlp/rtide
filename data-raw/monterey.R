@@ -7,7 +7,7 @@ library(rtide)
 
 rm(list = ls())
 
-# From http://tidesandcurrents.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=9413450
+# From https://tidesandcurrents.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=9413450
 
 monterey <- read_tsv("data-raw/9413450.txt", skip = 13)
 monterey <- mutate(monterey, Station = tide_stations("Monterey,"))

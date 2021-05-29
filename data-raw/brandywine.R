@@ -7,7 +7,7 @@ library(rtide)
 
 rm(list = ls())
 
-# From http://tidesandcurrents.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=9413450
+# From https://tidesandcurrents.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=9413450
 
 brandywine <- read_tsv("data-raw/8555889.txt", skip = 13)
 brandywine <- mutate(brandywine, Station = tide_stations("Brandywine"))

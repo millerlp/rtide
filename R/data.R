@@ -7,7 +7,7 @@
 
 #' Monterey Tide Height Data
 #'
-#' High/Low Tide Predictions from <http://tidesandcurrents.noaa.gov/tide_predictions.html>.
+#' High/Low Tide Predictions from <https://tidesandcurrents.noaa.gov/tide_predictions.html>.
 #'
 #' @format A tbl data frame:
 #' \describe{
@@ -19,7 +19,7 @@
 
 #' Brandywine Tide Height Data
 #'
-#' High/Low Tide Predictions from <http://tidesandcurrents.noaa.gov/tide_predictions.html>.
+#' High/Low Tide Predictions from <https://tidesandcurrents.noaa.gov/tide_predictions.html>.
 #'
 #' @format A tbl data frame:
 #' \describe{
