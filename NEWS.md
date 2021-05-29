@@ -1,3 +1,10 @@
+<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+
+# rtide 0.0.9.9000
+
+- Same as previous version.
+
+
 # rtide 0.0.9
 
 - No longer supports R 3.3.
