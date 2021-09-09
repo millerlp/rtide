@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rtide
+# rtide <img src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
 
@@ -38,7 +38,7 @@ data <- rtide::tide_height(
 )
 
 print(data)
-#> # A tibble: 432 x 3
+#> # A tibble: 432 × 3
 #>    Station                               DateTime            TideHeight
 #>    <chr>                                 <dttm>                   <dbl>
 #>  1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514

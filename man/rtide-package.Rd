@@ -6,6 +6,8 @@
 \alias{rtide-package}
 \title{rtide: Tide Heights}
 \description{
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
 Calculates tide heights based on tide station harmonics.  It
     includes the harmonics data for 637 US stations.  The harmonics data
     was converted from
