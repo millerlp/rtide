@@ -8,12 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Calculates tide heights based on tide station harmonics.  It
-    includes the harmonics data for 637 US stations.  The harmonics data
-    was converted from
-    <https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
-    NOAA web site data processed by David Flater for 'XTide'.  The code to
-    calculate tide heights from the harmonics is based on 'XTide'.
+Calculates tide heights based on tide station harmonics. It includes the harmonics data for 637 US stations. The harmonics data was converted from <https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>, NOAA web site data processed by David Flater for 'XTide'. The code to calculate tide heights from the harmonics is based on 'XTide'.
 }
 \seealso{
 Useful links:
