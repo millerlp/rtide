@@ -1,6 +1,5 @@
 library(devtools)
 library(readr)
-library(lubridate)
 library(dplyr)
 library(tidyr)
 library(rtide)
@@ -16,7 +15,7 @@ brandywine <- select(brandywine, Station, Date, Time, MLLW = Pred)
 brandywine <- unite(brandywine, DateTime, Date, Time, sep = " ")
 
 brandywine <- mutate(brandywine,
-  DateTime = ymd_hm(DateTime, tz = "EST5EDT"),
+  DateTime = dtt_date_time(DateTime, tz = "EST5EDT"),
   MLLW = rtide:::ft2m(MLLW)
 )
 
