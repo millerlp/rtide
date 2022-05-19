@@ -1,6 +1,5 @@
 library(devtools)
 library(readr)
-library(lubridate)
 library(dplyr)
 library(tidyr)
 library(rtide)
@@ -16,7 +15,7 @@ monterey <- select(monterey, Station, Date, Time, MLLW = Pred)
 monterey <- unite(monterey, DateTime, Date, Time, sep = " ")
 
 monterey <- mutate(monterey,
-  DateTime = ymd_hm(DateTime, tz = "PST8PDT"),
+  DateTime = dtt_date_time(DateTime, tz = "PST8PDT"),
   MLLW = rtide:::ft2m(MLLW)
 )
 
