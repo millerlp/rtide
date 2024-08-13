@@ -46,7 +46,7 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
   chk_number(minutes)
   chk_range(minutes, c(1, 60))
 
-  if (class(minutes) == "numeric") {
+  if (inherits(minutes, "numeric")) {
     if (minutes %% 1 != 0) { # If modulo isn't 0, decimal value is present
       warning("Truncating minutes interval to whole number", call. = FALSE)
     }
