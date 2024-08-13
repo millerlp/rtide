@@ -46,7 +46,7 @@ tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.
   chk_number(minutes)
   chk_range(minutes, c(1, 60))
 
-  if (class(minutes) == "numeric") {
+  if (inherits(minutes, "numeric")) {
     if (minutes %% 1 != 0) { # If modulo isn't 0, decimal value is present
       warning("Truncating minutes interval to whole number", call. = FALSE)
     }
@@ -99,7 +99,7 @@ tide_height_data_datetime <- function(d, h) {
 
 tide_height_data_station <- function(data, harmonics) {
   harmonics <- subset(harmonics, paste0("^", data$Station[1], "$"))
-  data <- split(data, 1:nrow(data))
+  data <- split(data, seq_len(nrow(data)))
   data <- lapply(data, FUN = tide_height_data_datetime, h = harmonics)
   data <- do.call("rbind", data)
   if (harmonics$Station$Units %in% c("feet", "ft")) {
@@ -159,8 +159,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
 #' @inheritParams tide_datetimes
 #' @return A data frame of the tide heights in m by the number of minutes for each station from from to to.
 #' @export
-tide_height <- function(
-                        stations = "Monterey Harbor", minutes = 60L,
+tide_height <- function(stations = "Monterey Harbor", minutes = 60L,
                         from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), tz = "UTC",
                         harmonics = rtide::harmonics) {
   stations <- tide_stations(stations, harmonics)

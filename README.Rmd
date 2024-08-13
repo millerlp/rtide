@@ -12,12 +12,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-# rtide <img src="man/figures/logo.png" align="right" />
+# rtide
 
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
-[![Codecov test coverage](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide?branch=master)
+[![R-CMD-check](https://github.com/poissonconsulting/rtide/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/rtide/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/poissonconsulting/rtide/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/rtide)
 [![License: GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![CRAN status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide)
@@ -28,6 +28,19 @@ knitr::opts_chunk$set(
 `rtide` is an R package to calculate tide heights based on tide station harmonics.
 
 It includes the harmonics data for `r length(rtide::tide_stations())` US stations.
+
+## Installation
+
+To install the latest release from [CRAN](https://cran.r-project.org)
+```{r, eval=FALSE}
+install.packages("rtide")
+```
+
+To install the developmental version from [GitHub](https://github.com/poissonconsulting/rtide)
+```{r, eval=FALSE}
+# install.packages("pak")
+pak::pak("poissonconsulting/rtide")
+```
 
 ## Utilisation
 
@@ -60,19 +73,6 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   ggtitle("Monterey Harbour")
 ```
 
-## Installation
-
-To install the latest release from [CRAN](https://cran.r-project.org)
-```{r, eval=FALSE}
-install.packages("rtide")
-```
-
-To install the developmental version from [GitHub](https://github.com/poissonconsulting/rtide)
-```{r, eval=FALSE}
-# install.packages("remotes")
-remotes::install_github("poissonconsulting/rtide")
-```
-
 ## Shiny
 
 Tide heights can be also obtained using rtide through a [shiny interface](https://poissonconsulting.shinyapps.io/rtide/) developed by Seb Dalgarno.
@@ -84,9 +84,8 @@ Please report any [issues](https://github.com/poissonconsulting/rtide/issues).
 [Pull requests](https://github.com/poissonconsulting/rtide/pulls) are always welcome.
 
 ## Code of Conduct
-
-Please note that the rtide project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). 
-By contributing to this project, you agree to abide by its terms.
+  
+Please note that the rtide project is released with a [Contributor Code of Conduct](https://poissonconsulting.github.io/rtide/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
 ## Inspiration
 

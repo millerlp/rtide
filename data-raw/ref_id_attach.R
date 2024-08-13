@@ -12,23 +12,23 @@ library(rtide)
 library(magrittr)
 
 noaa_tide <- read_html("https://tidesandcurrents.noaa.gov/tide_predictions.html")
-noaa_tide %>%
+a <- noaa_tide %>%
   html_nodes(xpath = "//table//td//a") %>%
-  html_attrs() -> a
+  html_attrs()
 dataOut <- NULL
 head(a)
 # get info for each tide station then subset for subordinate stations only
-for (i in 1:length(a)) {
+for (i in seq_along(a)) {
   noaa_tide_temp <- read_html(paste0("https://tidesandcurrents.noaa.gov/tide_predictions.html", a[i]))
-  noaa_tide_temp %>%
+  b <- noaa_tide_temp %>%
     html_nodes("table") %>%
-    html_table() -> b
+    html_table()
   b <- b[[1]][b[[1]]$Predictions != "&nbsp", ]
   head(b)
 
-  noaa_tide_temp %>%
+  bb <- noaa_tide_temp %>%
     html_nodes(xpath = "//table//tr//td/a") %>%
-    html_attrs() -> bb
+    html_attrs()
   b$path <- (unlist(bb))
   bb <- b[b$Predictions == "Harmonic", ]
 
@@ -52,7 +52,7 @@ rhar_full <- rtide::harmonics$Node
 # loop through the rtide::harmonics$Station data and match latitude and longitude to the data from the noaa site.
 # I had to round the lat/lon values when matching to 3 decimals because the same site in some cases were off by a little
 rhar$Id <- NA
-for (i in 1:nrow(rhar)) {
+for (i in seq_len(nrow(rhar))) {
   rhar$Id[round(rhar$Longitude, 3) == round(harmonic_stations$Lon[i], 3) &
     round(rhar$Latitude, 3) == round(harmonic_stations$Lat[i], 3)] <- harmonic_stations$Id[i]
 }

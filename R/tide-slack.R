@@ -48,7 +48,7 @@ tide_slack_data_datetime <- function(d, h) {
 
 tide_slack_data_station <- function(data, harmonics) {
   harmonics <- subset(harmonics, paste0("^", data$Station[1], "$"))
-  data <- split(data, 1:nrow(data))
+  data <- split(data, seq_len(nrow(data)))
   data <- lapply(data, FUN = tide_slack_data_datetime, h = harmonics)
   data <- do.call("rbind", data)
   if (harmonics$Station$Units %in% c("feet", "ft")) {
