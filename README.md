@@ -24,6 +24,22 @@ harmonics.
 
 It includes the harmonics data for 637 US stations.
 
+## Installation
+
+To install the latest release from [CRAN](https://cran.r-project.org)
+
+``` r
+install.packages("rtide")
+```
+
+To install the developmental version from
+[GitHub](https://github.com/poissonconsulting/rtide)
+
+``` r
+# install.packages("pak")
+pak::pak("poissonconsulting/rtide")
+```
+
 ## Utilisation
 
 ``` r
@@ -70,23 +86,7 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   ggtitle("Monterey Harbour")
 ```
 
-![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
-
-## Installation
-
-To install the latest release from [CRAN](https://cran.r-project.org)
-
-``` r
-install.packages("rtide")
-```
-
-To install the developmental version from
-[GitHub](https://github.com/poissonconsulting/rtide)
-
-``` r
-# install.packages("remotes")
-remotes::install_github("poissonconsulting/rtide")
-```
+![](man/figures/README-unnamed-chunk-6-1.png)<!-- -->
 
 ## Shiny
 
@@ -106,7 +106,7 @@ always welcome.
 
 Please note that the rtide project is released with a [Contributor Code
 of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+Conduct](https://poissonconsulting.github.io/rtide/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
 
 ## Inspiration
