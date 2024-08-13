@@ -26,7 +26,7 @@ License: GPL-3
 URL: https://github.com/poissonconsulting/rtide, https://poissonconsulting.github.io/rtide/
 BugReports: https://github.com/poissonconsulting/rtide/issues
 Depends: 
-    R (>= 3.4)
+    R (>= 4.0)
 Imports:
     abind,
     chk,
