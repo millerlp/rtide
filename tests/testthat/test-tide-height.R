@@ -9,5 +9,5 @@ test_that("tide_height works", {
     order = TRUE
   ), NA)
 
-  expect_is(tide_height(stations = ".*"), "data.frame")
+  expect_s3_class(tide_height(stations = ".*"), "data.frame")
 })
