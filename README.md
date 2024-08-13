@@ -9,7 +9,7 @@
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/poissonconsulting/rtide/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/rtide/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/rtide/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/rtide?branch=master)
+coverage](https://codecov.io/gh/poissonconsulting/rtide/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/rtide)
 [![License:
 GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![CRAN
@@ -51,7 +51,7 @@ print(data)
 #>  8 Monterey, Monterey Harbor, California 2016-07-13 01:10:00      0.440
 #>  9 Monterey, Monterey Harbor, California 2016-07-13 01:20:00      0.439
 #> 10 Monterey, Monterey Harbor, California 2016-07-13 01:30:00      0.441
-#> # … with 422 more rows
+#> # ℹ 422 more rows
 ```
 
 ``` r
