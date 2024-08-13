@@ -1,21 +1,13 @@
 Package: rtide
 Title: Tide Heights
 Version: 0.0.9.9000
-Authors@R: 
-    c(person(given = "Joe",
-             family = "Thorley",
-             role = c("aut", "cre"),
-             email = "joe@poissonconsulting.ca",
-             comment = c(ORCID = "0000-0002-7683-4592")),
-      person(given = "Luke",
-             family = "Miller",
-             role = "aut",
-             email = "contact@lukemiller.org"),
-      person(given = "Abram",
-             family = "Fleishman",
-             role = "aut"),
-      person(given = "Poisson Consulting",
-             role = "cph"))
+Authors@R: c(
+    person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-7683-4592")),
+    person("Luke", "Miller", , "contact@lukemiller.org", role = "aut"),
+    person("Abram", "Fleishman", role = "aut"),
+    person("Poisson Consulting", role = "cph")
+  )
 Description: Calculates tide heights based on tide station harmonics.  It
     includes the harmonics data for 637 US stations.  The harmonics data
     was converted from
@@ -23,7 +15,8 @@ Description: Calculates tide heights based on tide station harmonics.  It
     NOAA web site data processed by David Flater for 'XTide'.  The code to
     calculate tide heights from the harmonics is based on 'XTide'.
 License: GPL-3
-URL: https://github.com/poissonconsulting/rtide, https://poissonconsulting.github.io/rtide/
+URL: https://github.com/poissonconsulting/rtide,
+    https://poissonconsulting.github.io/rtide/
 BugReports: https://github.com/poissonconsulting/rtide/issues
 Depends: 
     R (>= 4.0)
@@ -38,8 +31,8 @@ Suggests:
     ggplot2,
     scales,
     testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Config/testthat/edition: 3
