@@ -46,22 +46,22 @@ test_that("tide_height_data works", {
   )
 
   expect_error(chk::check_data(tide_height_data(data),
-                               values = list(
-                                 Station = "", DateTime = Sys.time(), TideHeight = 1
-                               ),
-                               nrow = 1, exclusive = TRUE, order = TRUE
+    values = list(
+      Station = "", DateTime = Sys.time(), TideHeight = 1
+    ),
+    nrow = 1, exclusive = TRUE, order = TRUE
   ), NA)
   expect_identical(dtt_tz(data$DateTime), "PST8PDT")
 })
 
 test_that("tide_height_data predictions", {
   expect_equal(rtide::monterey$MLLW,
-               tide_height_data(rtide::monterey)$TideHeight,
-               tolerance = 0.002
+    tide_height_data(rtide::monterey)$TideHeight,
+    tolerance = 0.002
   )
   expect_equal(rtide::brandywine$MLLW,
-               tide_height_data(rtide::brandywine)$TideHeight,
-               tolerance = 0.002
+    tide_height_data(rtide::brandywine)$TideHeight,
+    tolerance = 0.002
   )
 })
 

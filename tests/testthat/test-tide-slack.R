@@ -6,11 +6,11 @@ test_that("tide_slack_data works", {
   )
 
   expect_error(chk::check_data(tide_slack_data(data),
-                               values = list(
-                                 Station = "", DateTime = Sys.time(), SlackDateTime = Sys.time(),
-                                 SlackTideHeight = 1, SlackType = ""
-                               ),
-                               nrow = 1, exclusive = TRUE, order = TRUE
+    values = list(
+      Station = "", DateTime = Sys.time(), SlackDateTime = Sys.time(),
+      SlackTideHeight = 1, SlackType = ""
+    ),
+    nrow = 1, exclusive = TRUE, order = TRUE
   ), NA)
 })
 
