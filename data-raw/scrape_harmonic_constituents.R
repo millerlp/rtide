@@ -10,23 +10,23 @@ library(dplyr)
 library(rvest)
 library(rtide)
 noaa_tide <- read_html("https://tidesandcurrents.noaa.gov/tide_predictions.html")
-noaa_tide %>%
+a <- noaa_tide %>%
   html_nodes(xpath = "//table//td//a") %>%
-  html_attrs() -> a
+  html_attrs()
 dataOut <- NULL
 head(a)
 # get info for each tide station then subset for subordinate stations only
 for (i in 30:length(a)) {
   noaa_tide_temp <- read_html(paste0("https://tidesandcurrents.noaa.gov/tide_predictions.html", a[i]))
-  noaa_tide_temp %>%
+  b <- noaa_tide_temp %>%
     html_nodes("table") %>%
-    html_table() -> b
+    html_table()
   b <- b[[1]][b[[1]]$Predictions != "&nbsp", ]
   head(b)
 
-  noaa_tide_temp %>%
+  bb <- noaa_tide_temp %>%
     html_nodes(xpath = "//table//tr//td/a") %>%
-    html_attrs() -> bb
+    html_attrs()
   b$path <- (unlist(bb))
   bb <- b[b$Predictions == "Harmonic", ]
   if (nrow(bb) == 0) next
@@ -35,11 +35,11 @@ for (i in 30:length(a)) {
   bb$Lon <- as.character(bb$Lon)
   bb$harpath <- paste0("/harcon.html?id=", bb$Id)
   # Loop through the stations to get harmonic_constituents
-  for (j in 1:length(bb$Predictions)) {
+  for (j in seq_along(bb$Predictions)) {
     noaa_tide_temp <- read_html(paste0("https://tidesandcurrents.noaa.gov", bb$harpath[j]))
-    noaa_tide_temp %>%
+    aa <- noaa_tide_temp %>%
       html_nodes("table.table.table-striped") %>%
-      html_table() -> aa
+      html_table()
     if (length(aa) == 0) next
 
     aaa <- data.frame(aa[[1]], bb[j, ])

@@ -9,40 +9,40 @@ library(stringr)
 library(dplyr)
 library(rvest)
 noaa_tide <- read_html("https://tidesandcurrents.noaa.gov/tide_predictions.html")
-noaa_tide %>%
+a <- noaa_tide %>%
   html_nodes(xpath = "//table//td//a") %>%
-  html_attrs() -> a
+  html_attrs()
 dataOut <- NULL
 # get info for each tide station then subset for subordinate stations only
-for (i in 1:length(a)) {
+for (i in seq_along(a)) {
   noaa_tide_temp <- read_html(paste0("https://tidesandcurrents.noaa.gov/tide_predictions.html", a[i]))
-  noaa_tide_temp %>%
+  b <- noaa_tide_temp %>%
     html_nodes("table") %>%
-    html_table() -> b
+    html_table()
   b <- b[[1]][b[[1]]$Predictions != "&nbsp", ]
   head(b)
 
-  noaa_tide_temp %>%
+  bb <- noaa_tide_temp %>%
     html_nodes(xpath = "//table//tr//td/a") %>%
-    html_attrs() -> bb
+    html_attrs()
   b$path <- (unlist(bb))
   bb <- b[b$Predictions == "Subordinate", ]
 
   # Loop through the stations to get off sets and ref staton names
-  for (j in 1:length(bb$Predictions)) {
+  for (j in seq_along(bb$Predictions)) {
     noaa_tide_temp <- read_html(paste0("https://tidesandcurrents.noaa.gov", bb$path[j]))
-    noaa_tide_temp %>%
+    aa <- noaa_tide_temp %>%
       html_nodes(xpath = "//div//div//ul//div//div//div//div") %>%
-      html_text() -> aa
+      html_text()
     aaa <- str_extract(aa, "Time Zone: .*D")[1]
     aaa <- gsub(".{1}$", "", aaa)
     bb$timezone[j] <- aaa
     bb$Datum[j] <- str_extract(aa, "Datum: .*")[1]
     bb$units[j] <- str_extract(aa, "Daily Tide Prediction in.*")[1]
 
-    noaa_tide_temp %>%
+    bbb <- noaa_tide_temp %>%
       html_nodes(xpath = "//p") %>%
-      html_text() -> bbb
+      html_text()
     result <- bbb[str_detect(bbb, "Referenced.*.")]
     result <- str_trim(result, "both")
     result <- gsub("Referenced to Station\\:", "", result)
