@@ -1,9 +1,9 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-# rtide 0.0.9.9000
+# rtide 0.0.10
 
-- Same as previous version.
-
+- Only supports R >= 4.0.
+- Housekeeping and minor updates.
 
 # rtide 0.0.9
 
