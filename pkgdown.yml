@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.0
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-08-13T23:57Z
+last_built: 2024-08-14T00:14Z
 urls:
   reference: https://poissonconsulting.github.io/rtide/reference
   article: https://poissonconsulting.github.io/rtide/articles
