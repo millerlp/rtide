@@ -1,8 +1,16 @@
 ## R CMD check results
 
-0 errors | 0 warnings | 0 note
+0 errors | 0 warnings | 1 note
 
-Doing submission to update CRAN maintainer. 
+* checking CRAN incoming feasibility ... [11s] NOTE
+Maintainer: 'Luke Miller <contact@lukemiller.org>'
+
+New maintainer:
+  Luke Miller <contact@lukemiller.org>
+Old maintainer(s):
+  Joe Thorley <joe@poissonconsulting.ca>
+
+New person has agreed to be the maintainer. 
 
 ## Reverse Dependencies
 
