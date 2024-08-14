@@ -2,9 +2,9 @@ Package: rtide
 Title: Tide Heights
 Version: 0.0.10
 Authors@R: c(
-    person("Joe", "Thorley", , "ayla@poissonconsulting.ca", role = c("aut", "cre"),
+    person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = "aut",
            comment = c(ORCID = "0000-0002-7683-4592")),
-    person("Luke", "Miller", , "contact@lukemiller.org", role = "aut"),
+    person("Luke", "Miller", , "contact@lukemiller.org", role = c("aut", "cre")),
     person("Abram", "Fleishman", role = "aut"),
     person("Poisson Consulting", role = "cph")
   )
@@ -30,9 +30,11 @@ Suggests:
     covr,
     ggplot2,
     scales,
+    spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Language: en-US
