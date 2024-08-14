@@ -1,12 +1,7 @@
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 note
 
-Found the following (possibly) invalid URLs:
-  URL: https://poissonconsulting.shinyapps.io/rtide/
-    From: README.md
-    Status: Error
-    Message: libcurl error code 35:
-      	schannel: next InitializeSecurityContext failed: SEC_E_ILLEGAL_MESSAGE (0x80090326) - This error usually occurs when a fatal SSL/TLS alert is received (e.g. handshake failed).
+## Reverse Dependencies
 
-The URL is valid.
+There are no reverse dependencies.
