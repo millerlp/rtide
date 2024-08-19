@@ -18,3 +18,4 @@ cran-comments.md
 ^\.gitignore$
 ^cran-comments\.md$
 ^pkgdown$
+^CRAN-SUBMISSION$
