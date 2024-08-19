@@ -13,7 +13,6 @@ Recognises
 Seb
 Utilisation
 XTide
-bz
 checkr
 chk
 chr
@@ -21,11 +20,9 @@ datacheckr
 dplyr
 dttr
 dwf
-github
-https
+lubridate
 magrittr
 plyr
-poissonconsulting
 stringr
 stringsAsFactors
 tbl
