@@ -42,7 +42,7 @@ tide_stations <- function(stations = ".*", harmonics = rtide::harmonics) {
 #' @examples
 #' tide_datetimes()
 tide_datetimes <- function(minutes = 60L, from = as.Date("2015-01-01"), to = as.Date("2015-12-31"),
-                           tz = "PST8PDT") {
+                           tz = "America/Los_Angeles") {
   chk_number(minutes)
   chk_range(minutes, c(1, 60))
 
