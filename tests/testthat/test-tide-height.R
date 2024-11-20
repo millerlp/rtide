@@ -26,7 +26,7 @@ test_that("tide_datetimes works", {
   to <- as.Date("2000-05-02")
   tz <- "PST8PDT"
 
-  expect_equal(dtt_tz(tide_datetimes(minutes = minutes, from = from, to = to, tz = tz)), "PST8PDT")
+  expect_equal(dtt_tz(tide_datetimes(minutes = minutes, from = from, to = to, tz = tz)), "America/Los_Angeles")
   expect_equal(tide_datetimes(minutes = minutes, from = from, to = to, tz = tz)[1], ISOdate(2000, 02, 01, 0, tz = tz))
   expect_equal(max(dtt_date(tide_datetimes(minutes = minutes, from = from, to = to, tz = tz))), to)
 
@@ -41,7 +41,7 @@ test_that("tide_datetimes works", {
 test_that("tide_height_data works", {
   data <- data.frame(
     Station = "Monterey, Monterey Harbor, California",
-    DateTime = ISOdate(2015, 1, 1, 10, tz = "PST8PDT"),
+    DateTime = ISOdate(2015, 1, 1, 10, tz = "America/Los_Angeles"),
     stringsAsFactors = FALSE
   )
 
@@ -51,7 +51,7 @@ test_that("tide_height_data works", {
     ),
     nrow = 1, exclusive = TRUE, order = TRUE
   ), NA)
-  expect_identical(dtt_tz(data$DateTime), "PST8PDT")
+  expect_identical(dtt_tz(data$DateTime), "America/Los_Angeles")
 })
 
 test_that("tide_height_data predictions", {
@@ -68,7 +68,7 @@ test_that("tide_height_data predictions", {
 test_that("tide_height_data checks", {
   data <- data.frame(
     Station = "Monterey, Monterey Harbor, California",
-    DateTime = ISOdate(2015, 1, 1, 10, tz = "PST8PDT"),
+    DateTime = ISOdate(2015, 1, 1, 10, tz = "America/Los_Angeles"),
     stringsAsFactors = FALSE
   )
 
@@ -84,12 +84,12 @@ test_that("tide_height_data checks", {
 test_that("tide_height_data tz", {
   data <- data.frame(
     Station = "Monterey, Monterey Harbor, California",
-    DateTime = ISOdate(2015, 1, 1, 10, tz = "PST8PDT"),
+    DateTime = ISOdate(2015, 1, 1, 10, tz = "America/Los_Angeles"),
     stringsAsFactors = FALSE
   )
 
   data2 <- data
-  data2$DateTime <- dtt_adjust_tz(data2$DateTime, tz = "EST")
+  data2$DateTime <- dtt_adjust_tz(data2$DateTime, tz = "America/New_York"). # Formerly EST
 
   expect_equal(tide_height_data(data)$TideHeight, tide_height_data(data2)$TideHeight)
 })
