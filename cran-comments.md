@@ -1,16 +1,13 @@
-## R CMD check results
+## ── R CMD check results ──────── rtide 0.0.11 ────
 
-0 errors | 0 warnings | 1 note
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
-* checking CRAN incoming feasibility ... [11s] NOTE
-Maintainer: 'Luke Miller <contact@lukemiller.org>'
+R CMD check succeeded
 
-New maintainer:
-  Luke Miller <contact@lukemiller.org>
-Old maintainer(s):
-  Joe Thorley <joe@poissonconsulting.ca>
+This is a patch version to remove old time zone designations that are no
+longer present in the recent Debian system upgrade to tzdata 2024b. This fix
+was given a deadline of 2024-12-09 to correct by the CRAN team. 
 
-New person has agreed to be the maintainer. 
 
 ## Reverse Dependencies
 
