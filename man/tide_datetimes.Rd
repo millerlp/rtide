@@ -8,7 +8,7 @@ tide_datetimes(
   minutes = 60L,
   from = as.Date("2015-01-01"),
   to = as.Date("2015-12-31"),
-  tz = "PST8PDT"
+  tz = "America/Los_Angeles"
 )
 }
 \arguments{
