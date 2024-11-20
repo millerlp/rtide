@@ -15,8 +15,7 @@ Description: Calculates tide heights based on tide station harmonics.  It
     NOAA web site data processed by David Flater for 'XTide'.  The code to
     calculate tide heights from the harmonics is based on 'XTide'.
 License: GPL-3
-URL: https://github.com/millerlp/rtide,
-    
+URL: https://github.com/millerlp/rtide
 BugReports: https://github.com/millerlp/rtide/issues
 Depends: 
     R (>= 4.0)
