@@ -11,9 +11,8 @@ Calculates tide heights based on tide station harmonics. It includes the harmoni
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/poissonconsulting/rtide}
-  \item \url{https://poissonconsulting.github.io/rtide/}
-  \item Report bugs at \url{https://github.com/poissonconsulting/rtide/issues}
+  \item \url{https://github.com/millerlp/rtide}
+  \item Report bugs at \url{https://github.com/millerlp/rtide/issues}
 }
 
 }
