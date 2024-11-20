@@ -7,9 +7,8 @@
 
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check](https://github.com/poissonconsulting/rtide/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/rtide/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/rtide/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/rtide)
+[![R-CMD-check](https://github.com/millerlp/rtide/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/millerlp/rtide/actions/workflows/R-CMD-check.yaml)
+<!--[![Codecov test coverage](https://codecov.io/gh/poissonconsulting/rtide/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/rtide) -->
 [![License:
 GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![CRAN
@@ -33,11 +32,11 @@ install.packages("rtide")
 ```
 
 To install the developmental version from
-[GitHub](https://github.com/poissonconsulting/rtide)
+[GitHub](https://github.com/millerlp/rtide)
 
 ``` r
 # install.packages("pak")
-pak::pak("poissonconsulting/rtide")
+pak::pak("millerlp/rtide")
 ```
 
 ## Utilisation
@@ -50,7 +49,7 @@ library(rtide)
 data <- rtide::tide_height(
   "Monterey Harbor",
   from = as.Date("2016-07-13"), to = as.Date("2016-07-15"),
-  minutes = 10L, tz = "PST8PDT"
+  minutes = 10L, tz = "America/Los_Angeles"
 )
 
 print(data)
@@ -80,7 +79,7 @@ ggplot(data = data, aes(x = DateTime, y = TideHeight)) +
   geom_line() +
   scale_x_datetime(
     name = "Date",
-    labels = date_format("%d %b %Y", tz = "PST8PDT")
+    labels = date_format("%d %b %Y", tz = "America/Los_Angeles")
   ) +
   scale_y_continuous(name = "Tide Height (m)") +
   ggtitle("Monterey Harbour")
@@ -96,18 +95,13 @@ Seb Dalgarno.
 
 ## Contribution
 
-Please report any
-[issues](https://github.com/poissonconsulting/rtide/issues).
+Please report any [issues](https://github.com/millerlp/rtide/issues).
 
-[Pull requests](https://github.com/poissonconsulting/rtide/pulls) are
-always welcome.
+[Pull requests](https://github.com/millerlp/rtide/pulls) are always
+welcome.
 
-## Code of Conduct
-
-Please note that the rtide project is released with a [Contributor Code
-of
-Conduct](https://poissonconsulting.github.io/rtide/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+<!--  ## Code of Conduct
+  &#10;Please note that the rtide project is released with a [Contributor Code of Conduct](https://poissonconsulting.github.io/rtide/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms. -->
 
 ## Inspiration
 
