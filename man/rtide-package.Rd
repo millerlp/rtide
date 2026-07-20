@@ -21,6 +21,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Luke Miller \email{contact@lukemiller.org}
   \item Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID})
   \item Abram Fleishman
 }
