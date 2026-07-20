@@ -1,5 +1,9 @@
 # Changelog
 
+## rtide 0.0.12
+
+- patch to conform to new chk package (v0.11.0) expectations
+
 ## rtide 0.0.11
 
 CRAN release: 2024-11-20

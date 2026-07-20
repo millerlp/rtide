@@ -21,6 +21,8 @@ Useful links:
 
 Authors:
 
+- Luke Miller <contact@lukemiller.org>
+
 - Joe Thorley <joe@poissonconsulting.ca>
   ([ORCID](https://orcid.org/0000-0002-7683-4592))
 
