@@ -13,7 +13,9 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 GPL3](https://img.shields.io/badge/License-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rtide)](https://cran.r-project.org/package=rtide)
-![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/rtide) [![Codecov
+test
+coverage](https://codecov.io/gh/millerlp/rtide/graph/badge.svg)](https://app.codecov.io/gh/millerlp/rtide)
 <!-- badges: end -->
 
 ## Introduction
