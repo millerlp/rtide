@@ -13,7 +13,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/millerlp/rtide/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/millerlp/rtide/blob/v0.0.12/DESCRIPTION)
 
 Thorley J, Miller L, Fleishman A (2026). *rtide: Tide Heights*. R
 package version 0.0.12, <https://github.com/millerlp/rtide>.
