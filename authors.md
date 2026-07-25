@@ -13,15 +13,15 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/millerlp/rtide/blob/v0.0.12/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/millerlp/rtide/blob/main/DESCRIPTION)
 
 Thorley J, Miller L, Fleishman A (2026). *rtide: Tide Heights*. R
-package version 0.0.12, <https://github.com/millerlp/rtide>.
+package version 0.0.12.9000, <https://github.com/millerlp/rtide>.
 
     @Manual{,
       title = {rtide: Tide Heights},
       author = {Joe Thorley and Luke Miller and Abram Fleishman},
       year = {2026},
-      note = {R package version 0.0.12},
+      note = {R package version 0.0.12.9000},
       url = {https://github.com/millerlp/rtide},
     }
