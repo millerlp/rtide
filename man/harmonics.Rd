@@ -14,6 +14,6 @@ harmonics
 A object of class tide_harmonics providing tidal harmonic data for US stations.
 }
 \details{
-Converted from harmonics-dwf-20151227-free, NOAA web site data processed by David Flater for XTide.
+Converted from harmonics-dwf-20261228-free.tar.xz, NOAA web site data processed by David Flater for XTide.
 }
 \keyword{datasets}
