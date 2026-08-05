@@ -60,7 +60,7 @@
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p><code>rtide</code> is an R package to calculate tide heights based on tide station harmonics.</p>
-<p>It includes the harmonics data for 637 US stations.</p>
+<p>It includes the harmonics data for 1293 US stations.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -91,16 +91,16 @@
 <span><span class="co">#&gt; # A tibble: 432 × 3</span></span>
 <span><span class="co">#&gt;    Station                               DateTime            TideHeight</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                                 &lt;dttm&gt;                   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.514</span></span>
-<span><span class="co">#&gt;  2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.496</span></span>
-<span><span class="co">#&gt;  3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.481</span></span>
-<span><span class="co">#&gt;  4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.468</span></span>
-<span><span class="co">#&gt;  5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.457</span></span>
-<span><span class="co">#&gt;  6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.449</span></span>
-<span><span class="co">#&gt;  7 Monterey, Monterey Harbor, California 2016-07-13 01:00:00      0.443</span></span>
-<span><span class="co">#&gt;  8 Monterey, Monterey Harbor, California 2016-07-13 01:10:00      0.440</span></span>
-<span><span class="co">#&gt;  9 Monterey, Monterey Harbor, California 2016-07-13 01:20:00      0.439</span></span>
-<span><span class="co">#&gt; 10 Monterey, Monterey Harbor, California 2016-07-13 01:30:00      0.441</span></span>
+<span><span class="co">#&gt;  1 Monterey, Monterey Harbor, California 2016-07-13 00:00:00      0.523</span></span>
+<span><span class="co">#&gt;  2 Monterey, Monterey Harbor, California 2016-07-13 00:10:00      0.505</span></span>
+<span><span class="co">#&gt;  3 Monterey, Monterey Harbor, California 2016-07-13 00:20:00      0.489</span></span>
+<span><span class="co">#&gt;  4 Monterey, Monterey Harbor, California 2016-07-13 00:30:00      0.476</span></span>
+<span><span class="co">#&gt;  5 Monterey, Monterey Harbor, California 2016-07-13 00:40:00      0.465</span></span>
+<span><span class="co">#&gt;  6 Monterey, Monterey Harbor, California 2016-07-13 00:50:00      0.457</span></span>
+<span><span class="co">#&gt;  7 Monterey, Monterey Harbor, California 2016-07-13 01:00:00      0.452</span></span>
+<span><span class="co">#&gt;  8 Monterey, Monterey Harbor, California 2016-07-13 01:10:00      0.449</span></span>
+<span><span class="co">#&gt;  9 Monterey, Monterey Harbor, California 2016-07-13 01:20:00      0.449</span></span>
+<span><span class="co">#&gt; 10 Monterey, Monterey Harbor, California 2016-07-13 01:30:00      0.451</span></span>
 <span><span class="co">#&gt; # ℹ 422 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
@@ -132,7 +132,12 @@
 <div class="section level2">
 <h2 id="inspiration">Inspiration<a class="anchor" aria-label="anchor" href="#inspiration"></a>
 </h2>
-<p>The harmonics data was converted from <a href="https://github.com/poissonconsulting/rtide/blob/main/data-raw/harmonics-dwf-20151227-free.tar.bz2" class="external-link uri">https://github.com/poissonconsulting/rtide/blob/main/data-raw/harmonics-dwf-20151227-free.tar.bz2</a>, NOAA web site data processed by David Flater for <a href="https://flaterco.com/xtide/" class="external-link"><code>XTide</code></a>. The code to calculate tide heights from the harmonics is based on <code>XTide</code>.</p>
+<p>The harmonics data was converted from <a href="https://github.com/millerlp/rtide/blob/main/data-raw/harmonics-dwf-20251228-free.tar.xz" class="external-link uri">https://github.com/millerlp/rtide/blob/main/data-raw/harmonics-dwf-20251228-free.tar.xz</a>, NOAA web site data processed by David Flater for <a href="https://flaterco.com/xtide/" class="external-link"><code>XTide</code></a>. The code to calculate tide heights from the harmonics is based on <code>XTide</code>.</p>
+</div>
+<div class="section level2">
+<h2 id="tide-prediction-updates">Tide prediction updates<a class="anchor" aria-label="anchor" href="#tide-prediction-updates"></a>
+</h2>
+<p>The harmonic constituent data for the various tide stations are updated yearly by the XTide maintainer. The <code>rtide</code> package originally used a harmonic data base from 2015. An updated harmonic constituent database file from 2025-12-28 has been incorporated into <code>rtide</code> as of v0.0.12.9000 (August 2026), which adds many new tide stations, as well as slightly changing the harmonic constituent values for many stations. As a result, tide height predictions produced with earlier versions of the <code>rtide</code> package (v0.0.12 and earlier) may produce slightly different values than the predictions generated by the new harmonic data base. Those differences may typically only amount to a centimeter or less.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">

@@ -45,5 +45,5 @@ tide_height(
 
 ## Value
 
-A data frame of the tide heights in m by the number of minutes for each
-station from from to to.
+A data frame of the tide heights in meters by the number of minutes for
+each station from from to to.

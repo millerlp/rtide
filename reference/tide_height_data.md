@@ -21,4 +21,4 @@ tide_height_data(data, harmonics = rtide::harmonics)
 
 ## Value
 
-A data frame of the tide heights in m.
+A data frame of the tide heights in meters.
