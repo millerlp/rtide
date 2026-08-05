@@ -115,7 +115,7 @@ tide_height_data_station <- function(data, harmonics) {
 #'
 #' @param data A data frame with the columns Station and DateTime.
 #' @inheritParams tide_stations
-#' @return A data frame of the tide heights in m.
+#' @return A data frame of the tide heights in meters.
 #' @export
 tide_height_data <- function(data, harmonics = rtide::harmonics) {
   check_data(data,
@@ -157,7 +157,7 @@ tide_height_data <- function(data, harmonics = rtide::harmonics) {
 #'
 #' @inheritParams tide_stations
 #' @inheritParams tide_datetimes
-#' @return A data frame of the tide heights in m by the number of minutes for each station from from to to.
+#' @return A data frame of the tide heights in meters by the number of minutes for each station from from to to.
 #' @export
 tide_height <- function(stations = "Monterey Harbor", minutes = 60L,
                         from = as.Date("2015-01-01"), to = as.Date("2015-01-01"), tz = "UTC",
