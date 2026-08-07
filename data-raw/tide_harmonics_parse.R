@@ -7,7 +7,7 @@
 ###############################################################################
 # This is essentially a one-time use script to call the read_harmonicsfile.R
 # functions and parse the tidal harmonics file from XTide. The resulting data
-# for the ~637 (now ~1286 circa 2025) reference stations can be stored in a Rdata file for quick
+# for the ~637 (now ~1285 circa 2025) reference stations can be stored in a Rdata file for quick
 # loading and use in tide predictions.
 # The harmonics file must be a text format, not the binary
 # tcd format that is generally distributed with XTide. To generate this text
