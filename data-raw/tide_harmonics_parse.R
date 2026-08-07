@@ -1,18 +1,18 @@
 # Filename: tide_harmonics_parse.R
-# 
+#
 # Author: Luke Miller  May 1, 2012
 # Updated 2026-08-04 to use new harmonics input file from 2025-12-28
 # Updated 2025-02-04 to use new harmonics input file from 2024-12-29
 # Updated 2015-06-03 to use new harmonics input file from 2014-12-24
 ###############################################################################
-# This is essentially a one-time use script to call the read_harmonicsfile.R 
-# functions and parse the tidal harmonics file from XTide. The resulting data 
-# for the ~637 reference stations can be stored in a Rdata file for quick 
+# This is essentially a one-time use script to call the read_harmonicsfile.R
+# functions and parse the tidal harmonics file from XTide. The resulting data
+# for the ~637 (now 1293 circa 2025) reference stations can be stored in a Rdata file for quick
 # loading and use in tide predictions.
-# The harmonics file must be a text format, not the binary 
-# tcd format that is generally distributed with XTide. To generate this text 
-# version of the harmonics.tcd file, you must use the command line tool 
-# 'restore_tide_db' found in the tcd-utils package distributed on the XTide 
+# The harmonics file must be a text format, not the binary
+# tcd format that is generally distributed with XTide. To generate this text
+# version of the harmonics.tcd file, you must use the command line tool
+# 'restore_tide_db' found in the tcd-utils package distributed on the XTide
 # site. This will require a Linux or Mac (not Windows) machine.
 # See http://www.flaterco.com/xtide/files.html for downloads.
 
@@ -33,13 +33,13 @@ close(fid)
 
 ##############
 # Now remove the current speed stations from the data set to avoid potential
-# ambiguities in finding tide stations by name. This should leave only 
-# the tide Reference stations (Subordinate stations are not included in the 
-# tide harmonics tcd database. 
-harms2 = list(name = harms$name, speed = harms$speed, 
-		startyear = harms$startyear, 
+# ambiguities in finding tide stations by name. This should leave only
+# the tide Reference stations (Subordinate stations are not included in the
+# tide harmonics tcd database.
+harms2 = list(name = harms$name, speed = harms$speed,
+		startyear = harms$startyear,
 		equilarg = harms$equilarg,
-		nodefactor = harms$nodefactor, 
+		nodefactor = harms$nodefactor,
 		station = NULL,
 		stationIDnumber = NULL,
 		units = NULL,
@@ -54,7 +54,7 @@ harms2 = list(name = harms$name, speed = harms$speed,
 for (i in 1:length(harms$units)) {
 	if (harms$units[i] == 'feet') {
 		harms2$station = c(harms2$station, harms$station[i])
-		harms2$stationIDnumber = c(harms2$stationIDnumber, 
+		harms2$stationIDnumber = c(harms2$stationIDnumber,
 				harms$stationIDnumber[i])
 		harms2$units = c(harms2$units, harms$units[i])
 		harms2$longitude = c(harms2$longitude, harms$longitude[i])
@@ -70,7 +70,7 @@ for (i in 1:length(harms$units)) {
 # Replace harms with harms2 contents
 harms = harms2
 
-# Save the results to a Rdata file, since there's no need to re-parse the 
-# harmonics file once you've done it once. 
+# Save the results to a Rdata file, since there's no need to re-parse the
+# harmonics file once you've done it once.
 save(harms, file = 'Harmonics_20251228.Rdata')
 
