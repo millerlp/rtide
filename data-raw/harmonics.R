@@ -7,7 +7,7 @@ rm(list = ls())
 # text-format harmonics database file from Xtide, run this script
 # to further process the harmonics Rdata file into the final
 # harmonics format used by rtide.
-load("data-raw/Harmonics_20251228.Rdata")
+load("./Harmonics_20251228.Rdata")
 
 harmonics <- rtide:::tide_harmonics(harms) # convert to tide_harmonics object
 
