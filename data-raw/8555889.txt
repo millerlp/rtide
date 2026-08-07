@@ -11,7 +11,7 @@ Time Zone: LST_LDT
 Datum: MLLW
 Interval Type: High/Low
 
-Date 		Day	Time	Pred	High/Low
+Date	Day	Time	Pred	High/Low
 2016/07/13	Wed	04:11	4.32	H
 2016/07/13	Wed	10:21	0.68	L
 2016/07/13	Wed	16:51	4.85	H
