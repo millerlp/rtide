@@ -95,7 +95,12 @@ test_that("tide_height_data tz", {
 })
 
 test_that("tide_stations works", {
-  expect_equal(tide_stations("Monterey", rtide::harmonics), c("Elkhorn Slough railroad bridge, Monterey Bay, California", "Monterey, Monterey Harbor, California"))
+  expect_equal(tide_stations("Monterey", rtide::harmonics),
+               c("Elkhorn Slough at Elkhorn, Monterey Bay, California",
+                 "Elkhorn Slough railroad bridge, Monterey Bay, California",
+                 "Kirby Park, Elkhorn Slough, Monterey Bay, Port San Luis, California",
+                 "Monterey, Monterey Harbor, California",
+                 "Tidal Creek, Elkhorn Slough, Monterey Bay, Port San Luis, California"))
   expect_equal(
     tide_stations(
       c("Elkhorn Slough railroad bridge, Monterey Bay, California", "Monterey, Monterey Harbor, California")
@@ -103,7 +108,8 @@ test_that("tide_stations works", {
     c("Elkhorn Slough railroad bridge, Monterey Bay, California", "Monterey, Monterey Harbor, California")
   )
 
-  expect_equal(tide_stations("Annapolis (US Naval Academy), Severn River, Maryland", rtide::harmonics), "Annapolis (US Naval Academy), Severn River, Maryland")
+  expect_equal(tide_stations("Annapolis (US Naval Academy), Severn River, Maryland", rtide::harmonics),
+               "Annapolis (US Naval Academy), Severn River, Maryland")
 
   expect_error(tide_stations("^Monterey$", rtide::harmonics), "no matching stations")
   expect_chk_error(tide_stations(1, rtide::harmonics), "^`stations` must inherit from S3 class 'character'")
