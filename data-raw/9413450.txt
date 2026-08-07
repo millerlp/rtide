@@ -1,22 +1,22 @@
 NOAA/NOS/CO-OPS
 Disclaimer: These data are based upon the latest information available as of the date of your request, and may differ from the published tide tables.
-Daily Tide Prediction
-StationName: Monterey
-State: CA
+Daily Tide Predictions
+StationName: Monterey 
+State: CA 
 Stationid: 9413450
 Prediction Type: Harmonic
-From: 20160713 12:00AM - 20160714 11:59PM
+From: 20160713 01:18 - 20160714 19:30
 Units: Feet
-Time Zone: LST/LDT
+Time Zone: LST_LDT
 Datum: MLLW
-Interval Type: High/Low Tide Predictions
+Interval Type: High/Low
 
-Date 	Day	Time	Pred	High/Low
-2016/07/13	Wed	01:18 AM	1.44	L
-2016/07/13	Wed	07:03 AM	3.07	H
-2016/07/13	Wed	11:58 AM	2.01	L
-2016/07/13	Wed	06:50 PM	5.01	H
-2016/07/14	Thu	02:10 AM	1.01	L
-2016/07/14	Thu	08:19 AM	3.14	H
-2016/07/14	Thu	12:48 PM	2.26	L
-2016/07/14	Thu	07:29 PM	5.2	H
+Date 		Day	Time	Pred	High/Low
+2016/07/13	Wed	01:18	1.46	L
+2016/07/13	Wed	07:01	3.10	H
+2016/07/13	Wed	11:59	2.06	L
+2016/07/13	Wed	18:51	5.06	H
+2016/07/14	Thu	02:09	1.03	L
+2016/07/14	Thu	08:18	3.18	H
+2016/07/14	Thu	12:48	2.31	L
+2016/07/14	Thu	19:30	5.25	H
