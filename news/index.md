@@ -2,6 +2,11 @@
 
 ## rtide (development version)
 
+- Updated tidal harmonic constituent data base using data from
+  2025-12-28
+- Increased number of available tide stations to 1285 (from 637
+  previously)
+
 ## rtide 0.0.12
 
 CRAN release: 2026-07-25

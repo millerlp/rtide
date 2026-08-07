@@ -21,4 +21,4 @@ tide_slack_data(data, harmonics = rtide::harmonics)
 
 ## Value
 
-A data frame of the slack tide date times and heights in m.
+A data frame of the slack tide date times and heights in meters.
