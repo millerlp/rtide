@@ -63,7 +63,7 @@ tide_slack_data_station <- function(data, harmonics) {
 #'
 #' @param data A data frame with the columns Station and DateTime.
 #' @inheritParams tide_stations
-#' @return A data frame of the slack tide date times and heights in m.
+#' @return A data frame of the slack tide date times and heights in meters.
 #' @export
 tide_slack_data <- function(data, harmonics = rtide::harmonics) {
   check_data(data,
