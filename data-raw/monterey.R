@@ -11,12 +11,12 @@ rm(list = ls())
 monterey <- read_tsv("data-raw/9413450.txt", skip = 13)
 monterey <- mutate(monterey, Station = tide_stations("Monterey,"))
 
-monterey <- select(monterey, Station, Date, Time, TideHeight = Pred)
+monterey <- select(monterey, Station, Date, Time, NOAATideHeight = Pred)
 monterey <- unite(monterey, DateTime, Date, Time, sep = " ")
 
 monterey <- mutate(monterey,
   DateTime = dtt_date_time(DateTime, tz = "America/Los_Angeles"),
-  TideHeight = rtide:::ft2m(TideHeight)
+  NOAATideHeight = rtide:::ft2m(NOAATideHeight)
 )
 
 use_data(monterey, overwrite = TRUE)

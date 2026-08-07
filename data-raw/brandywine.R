@@ -11,12 +11,12 @@ rm(list = ls())
 brandywine <- read_tsv("data-raw/8555889.txt", skip = 13)
 brandywine <- mutate(brandywine, Station = tide_stations("Brandywine"))
 
-brandywine <- select(brandywine, Station, Date, Time, TideHeight = Pred)
+brandywine <- select(brandywine, Station, Date, Time, NOAATideHeight = Pred)
 brandywine <- unite(brandywine, DateTime, Date, Time, sep = " ")
 
 brandywine <- mutate(brandywine,
   DateTime = dtt_date_time(DateTime, tz = "America/New_York"),
-  TideHeight= rtide:::ft2m(TideHeight)
+  NOAATideHeight= rtide:::ft2m(NOAATideHeight)
 )
 
 use_data(brandywine, overwrite = TRUE)
