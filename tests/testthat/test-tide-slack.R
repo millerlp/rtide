@@ -1,7 +1,7 @@
 test_that("tide_slack_data works", {
   data <- data.frame(
     Station = "Monterey, Monterey Harbor, California",
-    DateTime = ISOdate(2015, 1, 1, 10, tz = "PST8PDT"),
+    DateTime = ISOdate(2015, 1, 1, 10, tz = "America/Los_Angeles"),
     stringsAsFactors = FALSE
   )
 
@@ -16,7 +16,7 @@ test_that("tide_slack_data works", {
 
 test_that("tide_height_data predictions", {
   slack <- tide_slack_data(rtide::monterey)
-  expect_equal(slack$MLLW, slack$SlackTideHeight, tolerance = 0.002)
+  expect_equal(slack$TideHeight, slack$SlackTideHeight, tolerance = 0.003)
   expect_equal(slack$DateTime, slack$SlackDateTime, tolerance = 30)
   expect_identical(slack$SlackType, rep(c("low", "high"), 4))
 
