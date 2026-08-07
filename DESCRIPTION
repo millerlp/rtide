@@ -9,11 +9,11 @@ Authors@R: c(
     person("Poisson Consulting", role = "cph")
   )
 Description: Calculates tide heights based on tide station harmonics.  It
-    includes the harmonics data for 637 US stations.  The harmonics data
+    includes the harmonics data for 1285 US stations.  The harmonics data
     was converted from
-    <https://github.com/poissonconsulting/rtide/blob/main/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
-    NOAA web site data processed by David Flater for 'XTide'.  The code to
-    calculate tide heights from the harmonics is based on 'XTide'.
+    <https://github.com/millerlp/rtide/blob/main/data-raw/harmonics-dwf-20251228-free.tar.xz>
+    NOAA web site data processed by David Flater for 'XTide 2'.  The code to
+    calculate tide heights from the harmonics is based on 'XTide 2'.
 License: GPL-3
 URL: https://github.com/millerlp/rtide
 BugReports: https://github.com/millerlp/rtide/issues
