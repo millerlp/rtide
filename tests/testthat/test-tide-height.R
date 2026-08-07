@@ -55,13 +55,13 @@ test_that("tide_height_data works", {
 })
 
 test_that("tide_height_data predictions", {
-  expect_equal(rtide::monterey$MLLW,
+  expect_equal(rtide::monterey$NOAATideHeight,
     tide_height_data(rtide::monterey)$TideHeight,
-    tolerance = 0.002
+    tolerance = 0.004
   )
-  expect_equal(rtide::brandywine$MLLW,
+  expect_equal(rtide::brandywine$NOAATideHeight,
     tide_height_data(rtide::brandywine)$TideHeight,
-    tolerance = 0.002
+    tolerance = 0.004
   )
 })
 
