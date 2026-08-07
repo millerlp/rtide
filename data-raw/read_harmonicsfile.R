@@ -264,6 +264,7 @@ noncom = function(fid) {
 	# Read next line of file
   line = readLines(fid, n = 1)
   line = stri_trans_general(line, "Latin-ASCII") # strip out accent marks
+  line = iconv(line, to='latin1')
 	# line = iconv(s(fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
 	# Next check if the line has anyything in it
 	if (length(line) > 0) {
@@ -282,6 +283,7 @@ noncom = function(fid) {
 			# line. Move to the next line.
 		  line = readLines(fid, n = 1)
 		  line = stri_trans_general(line, "Latin-ASCII") # strip out accent marks
+		  line = iconv(line, to='latin1')
 			# line = iconv(readLines(fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
 			# If the line is empty (end of file) return -1
 			if (length(line) == 0) {line = '-1'; break}
@@ -302,8 +304,9 @@ noncomST = function(fid) {
 	# Read next line of file
   line = readLines(fid, n = 1)
   line = stri_trans_general(line, "Latin-ASCII") # strip out accent marks
+  line = iconv(line, to='latin1')
 	# line = iconv(readLines(fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
-	# Next check if the line has anyything in it
+	# Next check if the line has anything in it
 	if (length(line) > 0) {
 		# If the line has contents, test whether the first character is a #
 		# and the 3rd character is NOT a !. If this is true (because it only
@@ -328,7 +331,8 @@ noncomST = function(fid) {
 			# Otherwise, move to the next line.
 		  line = readLines(fid, n = 1)
 		  line = stri_trans_general(line, "Latin-ASCII") # strip out accent marks
-			# line = iconv(readLines(fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
+		  line = iconv(line, to='latin1')
+			# line = iconv((fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
 			# If the next line is empty (end of file) return -1
 			if (length(line) == 0) {line = '-1'; break}
 		}
