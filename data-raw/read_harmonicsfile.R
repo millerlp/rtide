@@ -24,7 +24,6 @@
 # You can create a file connection like follows:
 # fid = file('harmonics-20251228.txt', open = 'rt')
 # and feed that connection to the read_harmonicsfile() function
-library(stringi)
 
 
 read_harmonicsfile = function(fid) {
@@ -263,9 +262,6 @@ read_harmonicsfile = function(fid) {
 noncom = function(fid) {
 	# Read next line of file
   line = readLines(fid, n = 1)
-  line = stri_trans_general(line, "Latin-ASCII") # strip out accent marks
-  line = iconv(line, to='latin1')
-	# line = iconv(s(fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
 	# Next check if the line has anyything in it
 	if (length(line) > 0) {
 		# If the line has contents, test whether the first character is a #
@@ -282,9 +278,6 @@ noncom = function(fid) {
 			# character is NOT an exclamation point, this is just a comment
 			# line. Move to the next line.
 		  line = readLines(fid, n = 1)
-		  line = stri_trans_general(line, "Latin-ASCII") # strip out accent marks
-		  line = iconv(line, to='latin1')
-			# line = iconv(readLines(fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
 			# If the line is empty (end of file) return -1
 			if (length(line) == 0) {line = '-1'; break}
 		}
@@ -303,9 +296,6 @@ noncom = function(fid) {
 noncomST = function(fid) {
 	# Read next line of file
   line = readLines(fid, n = 1)
-  line = stri_trans_general(line, "Latin-ASCII") # strip out accent marks
-  line = iconv(line, to='latin1')
-	# line = iconv(readLines(fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
 	# Next check if the line has anything in it
 	if (length(line) > 0) {
 		# If the line has contents, test whether the first character is a #
@@ -330,9 +320,6 @@ noncomST = function(fid) {
 			}
 			# Otherwise, move to the next line.
 		  line = readLines(fid, n = 1)
-		  line = stri_trans_general(line, "Latin-ASCII") # strip out accent marks
-		  line = iconv(line, to='latin1')
-			# line = iconv((fid, n = 1), from = 'UTF-8', to = 'latin1',sub="?")
 			# If the next line is empty (end of file) return -1
 			if (length(line) == 0) {line = '-1'; break}
 		}
